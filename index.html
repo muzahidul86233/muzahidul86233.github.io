@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="MD Muzahidul Islam — CSE student interested in software development, AI automation, web development and robotics.">
+<meta name="description" content="MD Muzahidul Islam — CSE student interested in software development, AI automation, Android app development, AI automation and robotics.">
 <meta name="theme-color" content="#f7f0df">
 <title>MD Muzahidul Islam | Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,13 +43,13 @@ h1{font-size:clamp(43px,6vw,76px);line-height:1.04;letter-spacing:-1.8px;margin:
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
 .socials{display:flex;gap:12px;margin-top:22px}
 .socials a{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#fff8e9;border:1px solid var(--line);color:var(--green)}
-.hero-art{min-height:340px;display:flex;align-items:center;justify-content:center;position:relative}
-.portrait-frame{width:min(340px,78vw);height:340px;border-radius:48% 48% 12px 12px;background:var(--green);border:5px solid #d9aa4b;box-shadow:0 18px 40px rgba(5,55,39,.18);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
-.portrait-frame img{width:100%;height:100%;object-fit:cover;display:block}
-.portrait-placeholder{color:#fff;text-align:center;padding:25px}
+.hero-art{min-height:370px;display:flex;align-items:center;justify-content:flex-end;position:relative;padding-left:165px}
+.portrait-frame{width:min(320px,68vw);height:340px;flex:0 0 auto;z-index:2;border-radius:48% 48% 12px 12px;background:var(--green);border:5px solid #d9aa4b;box-shadow:0 18px 40px rgba(5,55,39,.18);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.portrait-frame img{width:100%;height:100%;object-fit:cover;object-position:center 28%;display:block}
+.portrait-placeholder{display:none}
 .portrait-placeholder strong{display:block;font:800 72px "Playfair Display";color:#e8c16d}
 .portrait-placeholder span{font-size:12px;color:#e8eadf}
-.focus-card{position:absolute;left:0;top:45px;background:#fff9eb;border:1px solid var(--line);border-radius:14px;padding:13px 16px;box-shadow:var(--shadow);font-size:12px;font-weight:700;display:grid;gap:9px}
+.focus-card{position:absolute;left:0;top:50%;transform:translateY(-50%);width:185px;z-index:1;background:#fff9eb;border:1px solid var(--line);border-radius:14px;padding:13px 16px;box-shadow:var(--shadow);font-size:12px;font-weight:700;display:grid;gap:9px}
 .focus-card span{display:flex;gap:10px;align-items:center}
 .focus-card i{color:var(--gold);font-size:17px;width:20px;text-align:center}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);background:rgba(255,250,240,.85);border:1px solid var(--line);border-radius:15px;padding:20px 12px;margin-top:10px;box-shadow:var(--shadow)}
@@ -64,7 +64,19 @@ section{padding:66px 0}
 .section-title:after{content:"";width:42px;height:2px;background:var(--gold)}
 .about-skills{display:grid;grid-template-columns:.95fr 1.05fr;gap:38px;align-items:start}
 .about-card{display:grid;grid-template-columns:150px 1fr;gap:20px;align-items:center}
-.about-photo{height:165px;border:4px solid white;border-radius:16px;background:var(--green);box-shadow:var(--shadow);display:grid;place-items:center;color:#f2d48e;font:700 40px "Playfair Display";overflow:hidden}
+.about-photo{height:165px;border:4px solid white;border-radius:16px;background:var(--green);box-shadow:var(--shadow);display:grid;place-items:center;color:#f2d48e;font:700 40px "Playfair Display";overflow:hidden}.about-photo img{width:100%;height:100%;object-fit:cover;object-position:center 24%;display:block}
+
+.focus-panel{margin-top:24px;padding:17px 18px;background:linear-gradient(135deg,#fffaf0,#f7ecd4);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:14px;box-shadow:0 7px 18px rgba(70,50,20,.06)}
+.focus-panel-heading{display:flex;align-items:center;gap:11px;margin-bottom:13px}
+.focus-panel-heading>i{width:36px;height:36px;border-radius:10px;background:#f1dfb8;color:#9a650c;display:grid;place-items:center;font-size:17px}
+.focus-panel-heading strong{display:block;font:700 16px "Playfair Display";color:var(--ink)}
+.focus-panel-heading small,.focus-items small{display:block;color:var(--muted);font-size:10px;margin-top:3px}
+.focus-items{display:grid;gap:10px}
+.focus-items>div{display:flex;align-items:center;gap:10px}
+.focus-items>div>i{width:28px;color:var(--green);font-size:17px;text-align:center}
+.focus-items b{font-size:11px;display:block}
+.study-status{border-top:1px solid var(--line);margin-top:13px;padding-top:11px;color:var(--green);font-size:10px;font-weight:700;line-height:1.5}
+.study-status i{margin-right:5px;color:var(--gold)}
 .about-copy p{font-size:13px;color:#4f5968;margin-bottom:12px}
 .checks{list-style:none;display:grid;gap:7px;margin-top:12px}
 .checks li{font-size:12px;font-weight:600}
@@ -143,7 +155,7 @@ body.dark .tags span{background:#2b3d30;color:#e1c47c}
   <nav id="nav"><a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a></nav>
   <div class="nav-right">
    <button class="icon-btn" id="theme" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
-   <a class="btn btn-green" href="#certificates"><i class="fa-solid fa-award"></i> Certificates</a>
+   <a class="btn btn-green" href="#certificates"><i class="fa-solid fa-award"></i> 3 Certificates</a>
    <button class="menu-btn" id="menu" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
   </div>
  </div>
@@ -154,9 +166,9 @@ body.dark .tags span{background:#2b3d30;color:#e1c47c}
  <div class="wrap">
   <div class="hero-grid">
    <div>
-    <div class="kicker"><i class="fa-solid fa-circle"></i> CSE Student · Developer · Robotics Enthusiast</div>
+    <div class="kicker"><i class="fa-solid fa-circle"></i> CSE Undergraduate · Android Developer · AI Automation Enthusiast</div>
     <h1>MD Muzahidul <span class="gold">Islam</span></h1>
-    <div class="role">Computer Science & Engineering Student</div>
+    <div class="role">BSc in Computer Science & Engineering · Currently Studying</div>
     <p class="intro">Interested in software development, AI automation, Android app development and robotics. I enjoy building practical projects, learning new technologies and connecting software with real-world ideas.</p>
     <div class="hero-actions">
      <a class="btn btn-green" href="#projects"><i class="fa-solid fa-code"></i> View My Projects</a>
@@ -176,14 +188,12 @@ body.dark .tags span{background:#2b3d30;color:#e1c47c}
      <span><i class="fa-solid fa-robot"></i> Robotics & IoT</span>
     </div>
     <div class="portrait-frame">
-     <!-- Replace assets/profile.jpg with your own portrait photo when ready. -->
-     <img src="assets/profile.png" alt="Muzahidul Islam professional portrait" style="display:block">
-     <div class="portrait-placeholder"><strong>MI</strong><span>Your professional photo goes here</span></div>
+     <img src="assets/profile.png" alt="MD Muzahidul Islam professional portrait">
     </div>
    </div>
   </div>
   <div class="stats">
-   <div class="stat"><i class="fa-solid fa-graduation-cap"></i><div><b>Ongoing</b><small>CSE Degree</small></div></div>
+   <div class="stat"><i class="fa-solid fa-graduation-cap"></i><div><b>Undergraduate</b><small>BSc in CSE · Ongoing</small></div></div>
    <div class="stat"><i class="fa-solid fa-code"></i><div><b>Projects</b><small>Hands-on Practice</small></div></div>
    <div class="stat"><i class="fa-solid fa-robot"></i><div><b>AI & IoT</b><small>Exploring</small></div></div>
    <div class="stat"><i class="fa-solid fa-seedling"></i><div><b>Always</b><small>Learning</small></div></div>
@@ -196,10 +206,10 @@ body.dark .tags span{background:#2b3d30;color:#e1c47c}
   <div>
    <div class="section-title"><h2>About Me</h2></div>
    <div class="about-card">
-    <div class="about-photo"><img src="assets/profile.png" alt="Muzahidul Islam portrait" style="width:100%;height:100%;object-fit:cover;border-radius:12px"></div>
+    <div class="about-photo"><img src="assets/profile.png" alt="MD Muzahidul Islam portrait"></div>
     <div class="about-copy">
      <p>I'm a Computer Science and Engineering student at Northern University Bangladesh. I enjoy solving problems, building applications and exploring technology.</p>
-     <p>My interests include software development, AI-powered workflow automation, web development and robotics.</p>
+     <p>My interests include Android app development, Firebase, AI-powered workflow automation and robotics.</p>
     </div>
    </div>
    <ul class="checks">
@@ -207,6 +217,15 @@ body.dark .tags span{background:#2b3d30;color:#e1c47c}
     <li><i class="fa-solid fa-circle-check"></i> Interested in software and hardware</li>
     <li><i class="fa-solid fa-circle-check"></i> Always learning and improving</li>
    </ul>
+   <div class="focus-panel">
+    <div class="focus-panel-heading"><i class="fa-solid fa-compass"></i><div><strong>Current Focus & Learning Journey</strong><small>Building skills step by step</small></div></div>
+    <div class="focus-items">
+     <div><i class="fa-brands fa-android"></i><span><b>Android Development</b><small>Creating and improving mobile apps</small></span></div>
+     <div><i class="fa-solid fa-wand-magic-sparkles"></i><span><b>AI & Workflow Automation</b><small>Exploring n8n, AI agents and integrations</small></span></div>
+     <div><i class="fa-solid fa-microchip"></i><span><b>Robotics & IoT</b><small>Learning through ESP32 and Arduino projects</small></span></div>
+    </div>
+    <div class="study-status"><i class="fa-solid fa-graduation-cap"></i> Currently pursuing BSc in CSE at Northern University Bangladesh</div>
+   </div>
   </div>
   <div id="skills">
    <div class="section-title"><h2>Skills & Technologies</h2></div>
@@ -260,7 +279,7 @@ body.dark .tags span{background:#2b3d30;color:#e1c47c}
   <div>
    <div class="section-title"><h2>Education</h2></div>
    <div class="timeline">
-    <div class="timeline-item"><h3>BSc in Computer Science & Engineering</h3><p>Northern University Bangladesh</p><small>Currently pursuing</small></div>
+    <div class="timeline-item"><h3>BSc in Computer Science & Engineering</h3><p>Northern University Bangladesh</p><small>Currently pursuing · Undergraduate</small></div>
     <div class="timeline-item"><h3>Higher Secondary Certificate (HSC)</h3><p>Hazi Nasir Uddin College</p><small>2023</small></div>
     <div class="timeline-item"><h3>Secondary School Certificate (SSC)</h3><p>Khordo ML High School</p><small>2021</small></div>
    </div>
@@ -270,7 +289,7 @@ body.dark .tags span{background:#2b3d30;color:#e1c47c}
    <div class="contact"><h3>Have a project, idea or collaboration in mind?</h3><p>I'm interested in learning, building useful projects and connecting with people in technology.</p>
     <div class="contact-links">
      <a class="btn btn-green" href="https://github.com/muzahidul86233" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
-     <a class="btn btn-outline" href="#certificates"><i class="fa-solid fa-award"></i> Certificates</a>
+     <a class="btn btn-outline" href="#certificates"><i class="fa-solid fa-award"></i> 3 Certificates</a>
     </div>
     <p class="note">LinkedIn button is ready. Add your exact LinkedIn profile URL and email address to activate the contact links.</p>
    </div>
@@ -293,7 +312,7 @@ body.dark .tags span{background:#2b3d30;color:#e1c47c}
 <footer>
  <div class="wrap">
   <div class="footer-row">
-   <div class="footer-brand"><span>M</span> MD Muzahidul Islam</div>
+   <div class="footer-brand">MD Muzahidul Islam</div>
    <div class="footer-nav"><a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a></div>
    <div class="footer-social"><a href="https://github.com/muzahidul86233" aria-label="GitHub"><i class="fa-brands fa-github"></i></a></div>
   </div>

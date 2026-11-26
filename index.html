@@ -31,32 +31,129 @@ section{padding:78px 0;position:relative}.section-head{display:flex;align-items:
 @media(max-width:760px){.library-preview{grid-template-columns:1fr;padding:22px}.library-scene-mini{height:190px}.mini-room{height:155px}.library-shell{height:96vh;width:98vw;border-radius:13px}.library-top{align-items:flex-start;flex-direction:column}.room-shelf{left:5%;right:5%;top:32%;grid-template-columns:repeat(3,1fr);height:42%;gap:6px}.room-skill{min-height:52px;max-height:70px;flex-direction:row;gap:5px;border-bottom-width:5px}.room-skill .object-icon{font-size:19px}.room-skill small{display:none}.room-back{inset:0 3% 27%}.room-back:after{top:19%;box-shadow:0 75px #d7ae5c,0 150px #d7ae5c}.room-nav{bottom:56px}.room-instructions{font-size:10px;bottom:10px;max-width:94%;white-space:normal;text-align:center}.reader-shell{height:94vh}.book{height:min(580px,100%);width:98%}.book-stage{padding:8px}.reader-bottom{gap:8px}.reader-bottom button{padding:8px 12px}.detail-actions{grid-template-columns:1fr}.library-controls{width:100%}}
 @media(prefers-reduced-motion:reduce){.mini-shelves i,.mini-person{animation:none!important}.page-flip.turn{animation-duration:.01ms}}
 
+
+/* Cinematic corridor library: clear wayfinding, visible walking figure and workstation */
+.corridor-scene{position:absolute;inset:0;overflow:hidden;perspective:1100px;background:radial-gradient(ellipse at 50% 38%,#42634c 0%,#183e31 48%,#08281f 100%)}
+.corridor-ceiling{position:absolute;inset:0 15% 55%;background:linear-gradient(180deg,#183d30,#254f3e);clip-path:polygon(20% 0,80% 0,100% 100%,0 100%);border-bottom:2px solid #c99a45}
+.corridor-end{position:absolute;z-index:2;left:37%;right:37%;top:9%;height:48%;background:linear-gradient(180deg,#194634,#092d23);border:2px solid #bd9142;box-shadow:0 0 50px #0008,inset 0 0 30px #0007;display:flex;flex-direction:column;align-items:center}
+.end-sign{margin-top:9px;color:#f3d58e;font:700 clamp(9px,1.2vw,15px) Georgia;letter-spacing:1.5px;text-align:center;text-shadow:0 2px 8px #000}
+.desk-monitor{position:absolute;bottom:3%;width:80%;height:68%;display:flex;flex-direction:column;align-items:center;justify-content:flex-end}
+.monitor-frame{width:88%;height:72%;padding:5px;border:4px solid #b7b8ad;border-radius:9px 9px 4px 4px;background:#202a27;box-shadow:0 8px 15px #0009}
+.monitor-screen{position:relative;width:100%;height:100%;overflow:hidden;background:#0c2d23}
+.monitor-screen img{width:100%;height:100%;object-fit:cover;object-position:center 35%;filter:saturate(.82) brightness(.8)}
+.monitor-screen span{position:absolute;left:0;right:0;bottom:0;padding:8px 4px;background:linear-gradient(transparent,#05261edb);color:#fff2c9;font:700 clamp(7px,.8vw,11px) Georgia;text-align:center;letter-spacing:1px}
+.monitor-screen small{font:500 7px Arial;letter-spacing:2px}
+.monitor-stand{height:15%;width:13%;background:linear-gradient(90deg,#626d66,#d0cfc2,#6b746d);clip-path:polygon(28% 0,72% 0,100% 100%,0 100%)}
+.desk-surface{width:100%;height:7%;background:linear-gradient(#c69b4f,#755125);border-top:2px solid #efd08a;box-shadow:0 5px 12px #0008}
+.corridor-wall{position:absolute;z-index:3;top:8%;bottom:21%;width:39%;background:linear-gradient(90deg,#0a2d23,#174633 72%,#0a2b21);border:2px solid #a77a32;box-shadow:inset 0 0 35px #0008;transform-style:preserve-3d}
+.corridor-wall.left{left:-7%;transform:rotateY(24deg);transform-origin:right center;border-left:0}
+.corridor-wall.right{right:-7%;transform:rotateY(-24deg);transform-origin:left center;border-right:0}
+.wall-label{position:absolute;top:5%;left:8%;right:8%;text-align:center;color:#f1d28a;font:700 clamp(8px,1vw,12px) Georgia;letter-spacing:1px;border-bottom:1px solid #d4ad60;padding-bottom:7px}
+.side-shelf{position:absolute;top:18%;left:8%;right:8%;bottom:6%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(3,minmax(0,1fr));gap:9px;padding:8px;background:repeating-linear-gradient(180deg,transparent 0 31%,#bd914455 31.5% 33%,transparent 33.5% 100%)}
+.room-skill{min-height:0!important;max-height:none!important;height:auto!important;padding:6px 3px!important;gap:3px!important;border-radius:5px!important;border:1px solid #ead39b!important;border-bottom:5px solid #986c2d!important;background:linear-gradient(145deg,#fff3d8,#cba65e)!important;box-shadow:0 5px 12px #0007!important;transform:translateZ(0);transition:transform .3s,filter .3s,box-shadow .3s}
+.room-skill:nth-child(3n){background:linear-gradient(145deg,#e9f4e8,#79a28a)!important}
+.room-skill:nth-child(3n+2){background:linear-gradient(145deg,#f2e7d6,#a88b68)!important}
+.room-skill:hover,.room-skill:focus-visible{transform:translateY(-7px) translateZ(22px) scale(1.04)!important;box-shadow:0 12px 20px #0009,0 0 18px #e6c46f88!important}
+.room-skill b{font-size:clamp(9px,.95vw,13px)!important}
+.room-skill small{font-size:8px!important}
+.room-skill .object-icon{font-size:clamp(17px,2vw,27px)!important}
+.corridor-floor{position:absolute;z-index:1;left:0;right:0;bottom:-3%;height:45%;background:linear-gradient(180deg,#80602f,#b18b4c 45%,#65451f);clip-path:polygon(39% 0,61% 0,100% 100%,0 100%);border-top:2px solid #d5b66e;overflow:hidden}
+.floor-lines{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 18px,#f4d68a38 19px 20px),repeating-linear-gradient(90deg,transparent 0 9%,#f4d68a22 9.2% 9.5%);transform:perspective(260px) rotateX(15deg);transform-origin:top}
+.walking-person{position:absolute;z-index:6;left:50%;bottom:12%;width:76px;height:190px;transform:translateX(-50%) translateY(var(--walk-depth,0px));filter:drop-shadow(0 5px 9px #0009);transition:transform .6s cubic-bezier(.2,.75,.2,1)}
+.person-shadow{position:absolute;bottom:-2px;left:4px;width:70px;height:17px;background:#020d09a8;border-radius:50%;filter:blur(5px)}
+.person-head{position:absolute;top:4px;left:27px;width:23px;height:27px;background:#07140f;border-radius:48% 48% 42% 42%;box-shadow:inset -4px 0 #1c3028}
+.person-body{position:absolute;top:29px;left:17px;width:43px;height:77px;background:linear-gradient(90deg,#07130f,#20352b 50%,#07130f);clip-path:polygon(25% 0,75% 0,100% 25%,83% 100%,17% 100%,0 25%);border-radius:10px}
+.person-arm{position:absolute;top:35px;width:13px;height:67px;background:#0b1b14;border-radius:10px;transform-origin:top center}
+.left-arm{left:13px;transform:rotate(13deg)}.right-arm{right:9px;transform:rotate(-13deg)}
+.person-leg{position:absolute;top:98px;width:17px;height:77px;background:linear-gradient(90deg,#07120e,#26362d,#07120e);border-radius:8px 8px 5px 5px;transform-origin:top center}
+.left-leg{left:21px}.right-leg{right:19px}
+.walking-person.walking .left-leg{animation:legWalk .34s ease-in-out 4 alternate}
+.walking-person.walking .right-leg{animation:legWalk .34s ease-in-out 4 alternate-reverse}
+.walking-person.walking .left-arm{animation:armWalk .34s ease-in-out 4 alternate-reverse}
+.walking-person.walking .right-arm{animation:armWalk .34s ease-in-out 4 alternate}
+@keyframes legWalk{to{transform:rotate(24deg) translateY(-3px)}}
+@keyframes armWalk{to{transform:rotate(-18deg)}}
+.room-caption{left:50%!important;top:12px!important;transform:translateX(-50%);background:#092d23a8;padding:7px 13px;border:1px solid #d6b56e;border-radius:30px;white-space:nowrap}
+.room-nav{bottom:59px!important}
+.room-instructions{bottom:10px!important}
+.lib-room:after{content:"";position:absolute;inset:0;pointer-events:none;z-index:7;background:linear-gradient(90deg,#031a12aa,transparent 18%,transparent 82%,#031a12aa),linear-gradient(180deg,#031a1230,transparent 35%,#031a1230)}
+/* Handwritten study-book pages */
+.hand-page{width:50%;height:100%;position:relative;overflow:hidden;padding:30px 28px 25px 42px;background-color:#fffdf4;background-image:linear-gradient(90deg,transparent 0 30px,#e5a6a6 31px,#e5a6a6 32px,transparent 33px),repeating-linear-gradient(180deg,transparent 0 29px,#b7d1e4 30px,#b7d1e4 31px);color:#234d82;box-shadow:inset 0 0 22px #6f552015}
+.hand-page:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 20% 10%,#fff9 0,transparent 60%);pointer-events:none}
+.hand-page.left{border-radius:10px 0 0 10px;transform:rotate(-.35deg)}
+.hand-page.right{border-radius:0 10px 10px 0;transform:rotate(.35deg);box-shadow:inset 12px 0 18px -18px #57452a}
+.hand-content{position:relative;z-index:1;height:100%;overflow:hidden;font-family:'FreeSerif','Noto Sans Bengali',serif;font-style:italic;font-size:clamp(11px,1.25vw,15px);line-height:1.9;transform:rotate(-.35deg);color:#234d82}
+.hand-content h3{font-family:'FreeSerif','Noto Sans Bengali',serif;font-style:italic;color:#174f39;font-size:clamp(17px,2vw,24px);margin:0 0 12px;text-decoration:underline;text-decoration-color:#d2a04b;text-underline-offset:5px}
+.hand-content p{margin:5px 0 10px}
+.hand-content .hand-code{font-family:'Kalam','FreeSerif',monospace;font-style:normal;font-size:clamp(10px,1.1vw,13px);line-height:1.65;color:#1d5b8c;background:#e8f1f4a8;border-left:3px solid #d2a04b;padding:7px 10px;white-space:pre-wrap}
+.hand-content .hand-note{color:#a04c3b;font-size:.9em}
+.hand-content .page-number{position:absolute;bottom:0;right:4px;font-size:11px;color:#8a7251}
+.hand-cover{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.hand-cover .cover-stamp{border:2px solid #b98937;padding:8px 18px;color:#936a28;font-size:12px;letter-spacing:2px;margin-bottom:20px}
+.hand-cover h2{font:italic 700 clamp(24px,3vw,38px) 'FreeSerif',serif;color:#174f39}
+.hand-cover p{font-size:15px}
+.reader-loading{display:none!important}
+@media(max-width:760px){
+ .corridor-end{left:35%;right:35%;top:12%;height:37%}
+ .corridor-wall{top:12%;bottom:22%;width:48%}
+ .corridor-wall.left{left:-17%;transform:rotateY(17deg)}
+ .corridor-wall.right{right:-17%;transform:rotateY(-17deg)}
+ .side-shelf{top:20%;grid-template-columns:1fr;grid-template-rows:repeat(6,minmax(0,1fr));gap:5px;padding:5px}
+ .room-skill{padding:4px 2px!important}
+ .room-skill .object-icon{font-size:16px!important}
+ .room-skill b{font-size:9px!important}
+ .room-skill small{font-size:7px!important;display:block!important}
+ .walking-person{transform:translateX(-50%) scale(.75) translateY(var(--walk-depth,0px));bottom:10%}
+ .room-caption{font-size:9px!important;max-width:90%;white-space:normal!important;text-align:center}
+ .hand-page{padding:20px 12px 20px 23px;background-image:linear-gradient(90deg,transparent 0 16px,#e5a6a6 17px,#e5a6a6 18px,transparent 19px),repeating-linear-gradient(180deg,transparent 0 25px,#b7d1e4 26px,#b7d1e4 27px)}
+ .hand-content{font-size:10px;line-height:1.65}
+ .hand-content h3{font-size:15px}
+}
+@media(prefers-reduced-motion:reduce){.walking-person.walking .person-leg,.walking-person.walking .person-arm{animation:none!important}}
+
 </style>
 </head>
 <body>
 <div class="loader" id="loader"><div><div class="loader-mark">M</div><small>স্বাগতম</small></div></div><div class="grain"></div><div class="cursor-glow"></div><div class="progress" id="progress"></div>
 <header><div class="wrap nav"><a class="brand" href="#home"><span class="brand-mark">M</span><span>MD Muzahidul Islam</span></a><nav id="nav"><a href="#home">হোম</a><a href="#about">আমার সম্পর্কে</a><a href="#skills">দক্ষতা</a><a href="#knowledge-library">নোট লাইব্রেরি</a><a href="#projects">প্রকল্প</a><a href="#education">শিক্ষা</a><a href="#certificates">সনদ</a><a href="#contact">যোগাযোগ</a></nav><div class="nav-actions"><button class="round-btn" id="themeBtn" aria-label="রঙ পরিবর্তন">☾</button><button class="menu-btn" id="menuBtn" aria-label="মেনু">☰</button></div></div></header>
 <main>
-<section class="hero" id="home"><div class="waterfall-glow"></div><div class="wrap"><div class="hero-grid"><div class="hero-copy"><div class="kicker reveal"><span class="dot"></span> সিএসই শিক্ষার্থী · সফটওয়্যার ও প্রযুক্তিপ্রেমী</div><h1 class="reveal delay-1">আমি <span class="gold">মুজাহিদুল</span><br>ইসলাম</h1><p class="role reveal delay-2">কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং শিক্ষার্থী</p><p class="intro reveal delay-2">সফটওয়্যার তৈরি, অ্যান্ড্রয়েড অ্যাপ, কৃত্রিম বুদ্ধিমত্তাভিত্তিক অটোমেশন এবং রোবোটিকস নিয়ে কাজ করতে ও শিখতে ভালোবাসি। বাস্তব সমস্যার প্রযুক্তিনির্ভর সমাধান তৈরি করাই আমার আগ্রহ।</p><div class="hero-actions reveal delay-3"><a class="btn btn-green magnetic" href="#projects">⌘ আমার প্রকল্প দেখুন</a><a class="btn btn-outline magnetic" href="#contact">✉ যোগাযোগ করুন</a></div><div class="socials reveal delay-3"><a href="https://github.com/muzahidul86233" target="_blank" rel="noreferrer" aria-label="GitHub">GH</a><a href="#contact" aria-label="LinkedIn">in</a><a href="#contact" aria-label="ইমেইল">✉</a></div></div><div class="hero-art parallax"><div class="orbit"></div><div class="focus-card"><span><i>⌘</i> সফটওয়্যার উন্নয়ন</span><span><i>✦</i> এআই অটোমেশন</span><span><i>▣</i> অ্যান্ড্রয়েড অ্যাপ</span><span><i>⚙</i> রোবোটিকস</span></div><div class="portrait-frame" id="heroPortrait"><img src="assets/profile.webp" alt="মুজাহিদুল ইসলামের পেশাদার ছবি"></div><div class="float-chip">কোডিং · শেখা · তৈরি</div></div></div><div class="stats reveal"><div class="stat"><i>♧</i><div><b>চলমান</b><small>সিএসই ডিগ্রি</small></div></div><div class="stat"><i>⌘</i><div><b>৫+</b><small>বাস্তব প্রকল্প</small></div></div><div class="stat"><i>⚙</i><div><b>এআই ও আইওটি</b><small>অনুশীলন ও অনুসন্ধান</small></div></div><div class="stat"><i>✦</i><div><b>নিয়মিত</b><small>নতুন কিছু শেখা</small></div></div></div></div></section>
+<section class="hero" id="home"><div class="waterfall-glow"></div><div class="wrap"><div class="hero-grid"><div class="hero-copy"><div class="kicker reveal"><span class="dot"></span> সিএসই শিক্ষার্থী · সফটওয়্যার ও প্রযুক্তিপ্রেমী</div><h1 class="reveal delay-1">আমি <span class="gold">মুজাহিদুল</span><br>ইসলাম</h1><p class="role reveal delay-2">কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং শিক্ষার্থী</p><p class="intro reveal delay-2">সফটওয়্যার তৈরি, অ্যান্ড্রয়েড অ্যাপ, কৃত্রিম বুদ্ধিমত্তাভিত্তিক অটোমেশন এবং রোবোটিকস নিয়ে কাজ করতে ও শিখতে ভালোবাসি। বাস্তব সমস্যার প্রযুক্তিনির্ভর সমাধান তৈরি করাই আমার আগ্রহ।</p><div class="hero-actions reveal delay-3"><a class="btn btn-green magnetic" href="#projects">⌘ আমার প্রকল্প দেখুন</a><a class="btn btn-outline magnetic" href="#contact">✉ যোগাযোগ করুন</a></div><div class="socials reveal delay-3"><a href="https://github.com/muzahidul86233" target="_blank" rel="noreferrer" aria-label="GitHub">GH</a><a href="https://www.linkedin.com/in/md-muzahidul-islam-19b4a8400/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a><a href="#contact" aria-label="ইমেইল">✉</a></div></div><div class="hero-art parallax"><div class="orbit"></div><div class="focus-card"><span><i>⌘</i> সফটওয়্যার উন্নয়ন</span><span><i>✦</i> এআই অটোমেশন</span><span><i>▣</i> অ্যান্ড্রয়েড অ্যাপ</span><span><i>⚙</i> রোবোটিকস</span></div><div class="portrait-frame" id="heroPortrait"><img src="assets/profile.webp" alt="মুজাহিদুল ইসলামের পেশাদার ছবি"></div><div class="float-chip">কোডিং · শেখা · তৈরি</div></div></div><div class="stats reveal"><div class="stat"><i>♧</i><div><b>চলমান</b><small>সিএসই ডিগ্রি</small></div></div><div class="stat"><i>⌘</i><div><b>৫+</b><small>বাস্তব প্রকল্প</small></div></div><div class="stat"><i>⚙</i><div><b>এআই ও আইওটি</b><small>অনুশীলন ও অনুসন্ধান</small></div></div><div class="stat"><i>✦</i><div><b>নিয়মিত</b><small>নতুন কিছু শেখা</small></div></div></div></div></section>
 <section id="about"><div class="wrap"><div class="about-skills"><div class="reveal from-left"><div class="section-head"><h2>আমার সম্পর্কে</h2></div><div class="about-card"><div class="about-photo"><img src="assets/working.webp" alt="ল্যাপটপে কাজ করার সময় মুজাহিদুল"></div><div class="about-copy"><p>আমি Northern University Bangladesh-এর কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং বিভাগের একজন শিক্ষার্থী।</p><p>প্রোগ্রামিং, অ্যাপ তৈরি, প্রযুক্তি নিয়ে পরীক্ষা-নিরীক্ষা এবং বাস্তবভিত্তিক প্রকল্পে কাজ করতে আগ্রহী।</p></div></div><ul class="checks"><li>বাস্তব সমস্যার কার্যকর সমাধান তৈরিতে আগ্রহী</li><li>সফটওয়্যার ও হার্ডওয়্যার দুই ক্ষেত্রেই শেখার চেষ্টা করি</li><li>নতুন প্রযুক্তি শেখা ও দক্ষতা বাড়ানো আমার লক্ষ্য</li></ul><div class="study-card"><strong>🇩🇪 জার্মান ভাষা শিখছি</strong><p>বর্তমানে জার্মান ভাষার A1 পর্যায়ে পড়াশোনা করছি। ভাষার দক্ষতা বাড়িয়ে ভবিষ্যতে জার্মানিতে পড়াশোনা ও পেশাগত সুযোগের জন্য নিজেকে প্রস্তুত করছি।</p><span class="study-badge">বর্তমান স্তর: A1 · শেখা চলছে</span></div></div><div class="reveal from-right delay-1" id="skills"><div class="section-head"><h2>দক্ষতা ও প্রযুক্তি</h2></div><div class="skill-groups"><div><div class="group-label">প্রোগ্রামিং</div><div class="skill-grid"><div class="skill"><span class="ico">C++</span><b>C / C++</b><small>প্রোগ্রামিং</small></div><div class="skill"><span class="ico">☕</span><b>Java</b><small>শেখা ও অনুশীলন</small></div><div class="skill"><span class="ico">⌘</span><b>OOP ও DSA</b><small>সমস্যা সমাধান</small></div></div></div><div><div class="group-label">অ্যান্ড্রয়েড অ্যাপ উন্নয়ন</div><div class="skill-grid"><div class="skill"><span class="ico">▣</span><b>Android</b><small>অ্যাপ তৈরি</small></div><div class="skill"><span class="ico">◈</span><b>Android Studio</b><small>ডেভেলপমেন্ট টুল</small></div><div class="skill"><span class="ico">🔥</span><b>Firebase</b><small>অ্যাপ ব্যাকএন্ড</small></div></div></div><div><div class="group-label">এআই ও অটোমেশন</div><div class="skill-grid"><div class="skill"><span class="ico">✦</span><b>এআই অটোমেশন</b><small>কর্মপ্রবাহ তৈরি</small></div><div class="skill"><span class="ico">⛓</span><b>n8n</b><small>ওয়ার্কফ্লো</small></div><div class="skill"><span class="ico">◉</span><b>এআই এজেন্ট</b><small>অনুসন্ধান ও অনুশীলন</small></div></div></div><div><div class="group-label">ক্লাউড ও ডেভেলপার টুল</div><div class="skill-grid"><div class="skill"><span class="ico">aws</span><b>AWS</b><small>ক্লাউড সেবা</small></div><div class="skill"><span class="ico">⌂</span><b>Git ও GitHub</b><small>কোড ব্যবস্থাপনা</small></div><div class="skill"><span class="ico">⌨</span><b>VS Code</b><small>কোড এডিটর</small></div></div></div><div><div class="group-label">রোবোটিকস ও ইলেকট্রনিকস</div><div class="skill-grid"><div class="skill"><span class="ico">▦</span><b>ESP32</b><small>মাইক্রোকন্ট্রোলার</small></div><div class="skill"><span class="ico">♧</span><b>Arduino</b><small>ইলেকট্রনিকস</small></div><div class="skill"><span class="ico">⚙</span><b>রোবোটিকস</b><small>হাতে-কলমে কাজ</small></div></div></div></div></div></div></div></section>
 
-<section class="library-section" id="knowledge-library"><div class="wrap"><div class="section-head reveal"><h2>আমার Knowledge Library</h2></div><p class="section-sub reveal">প্রযুক্তি, প্রোগ্রামিং ও শেখার নোট এক জায়গায়। সাধারণভাবে স্কিল দেখুন, অথবা লাইব্রেরিতে ঢুকে 3D অভিজ্ঞতা নিন।</p><div class="library-preview reveal"><div class="library-copy"><div class="library-kicker">INTERACTIVE LEARNING SPACE</div><h3>শিখুন, ঘুরে দেখুন, <span class="gold">নোট পড়ুন</span></h3><p>এখানে C++, Java, Android, AI Automation, Cloud এবং Robotics-এর স্কিলগুলো সাজানো আছে। যেকোনো স্কিল বেছে নিয়ে তার নোট ও প্রজেক্টের তথ্য দেখতে পারবেন।</p><div class="library-points"><span>সহজ Skill Navigation</span><span>PDF নোট</span><span>বইয়ের পাতা উল্টানোর অভিজ্ঞতা</span></div><button class="btn btn-green library-open" id="openLibrary">✦ 3D Library-তে প্রবেশ করুন</button> <a class="btn btn-outline" href="#skills">সাধারণ স্কিল দেখুন ↓</a></div><div class="library-scene-mini" aria-label="লাইব্রেরির 3D প্রিভিউ"><div class="mini-room"><div class="mini-sign">KNOWLEDGE LIBRARY</div><div class="mini-shelves"><i></i><i></i><i></i><i></i><i></i></div><div class="mini-floor"></div><div class="mini-person"></div></div></div></div></div></section>
+<section class="library-section" id="knowledge-library"><div class="wrap"><div class="section-head reveal"><h2>আমার Knowledge Library</h2></div><p class="section-sub reveal">আমার পড়া, শেখা ও নিয়মিত অনুশীলনের নোট এখানে সাজানো আছে। স্কিল বেছে নোট পড়ুন, অথবা 3D লাইব্রেরি ঘুরে দেখুন।</p><div class="library-preview reveal"><div class="library-copy"><div class="library-kicker">INTERACTIVE LEARNING SPACE</div><h3>শিখুন, ঘুরে দেখুন, <span class="gold">নোট পড়ুন</span></h3><p>আমার শেখা ও অনুশীলনের বিষয়গুলো এখানে সাজানো। যেকোনো স্কিল বেছে তার নোট, শেখার বিষয় এবং সংশ্লিষ্ট কাজ দেখতে পারবেন।</p><div class="library-points"><span>সহজ Skill Navigation</span><span>PDF নোট</span><span>বইয়ের পাতা উল্টানোর অভিজ্ঞতা</span></div><button class="btn btn-green library-open" id="openLibrary">✦ 3D Library-তে প্রবেশ করুন</button> <a class="btn btn-outline" href="#skills">সাধারণ স্কিল দেখুন ↓</a></div><div class="library-scene-mini" aria-label="লাইব্রেরির 3D প্রিভিউ"><div class="mini-room"><div class="mini-sign">KNOWLEDGE LIBRARY</div><div class="mini-shelves"><i></i><i></i><i></i><i></i><i></i></div><div class="mini-floor"></div><div class="mini-person"></div></div></div></div></div></section>
 
 <section class="projects" id="projects"><div class="wrap"><div class="section-head reveal"><h2>আমার প্রকল্পসমূহ</h2></div><p class="section-sub reveal">শেখা, পরীক্ষা ও বাস্তব প্রয়োগের মাধ্যমে তৈরি কিছু কাজ।</p><div class="project-grid"><article class="project reveal"><div class="project-visual">🛒</div><div class="project-body"><h3>সুপার শপ ব্যবস্থাপনা</h3><p>C++ দিয়ে পণ্য ব্যবস্থাপনা, খোঁজ, হালনাগাদ, বিল তৈরি এবং বিক্রির হিসাব রাখার ডেস্কটপ অ্যাপ্লিকেশন।</p><div class="tags"><span>C++</span><span>OOP</span><span>ফাইল ব্যবস্থাপনা</span></div></div></article><article class="project reveal delay-1"><div class="project-visual">🍽</div><div class="project-body"><h3>মিল ব্যবস্থাপনা সিস্টেম</h3><p>দৈনিক মিল, সদস্য ও খরচের হিসাব সহজভাবে পরিচালনার জন্য তৈরি ব্যবস্থাপনা প্রকল্প।</p><div class="tags"><span>অ্যাপ্লিকেশন</span><span>ডেটা ব্যবস্থাপনা</span></div></div></article><article class="project reveal delay-2"><div class="project-visual">✂</div><div class="project-body"><h3>Barber GO</h3><p>গ্রাহক, দোকান মালিক ও অ্যাডমিনের জন্য বুকিং, কিউ এবং দোকান ব্যবস্থাপনার অ্যান্ড্রয়েড অ্যাপ।</p><div class="tags"><span>Android</span><span>Firebase</span><span>মোবাইল অ্যাপ</span></div></div></article><article class="project reveal"><div class="project-visual">🚗</div><div class="project-body"><h3>স্বয়ংক্রিয় রোবট কার</h3><p>ESP32, মোটর ড্রাইভার ও সেন্সর ব্যবহার করে বাধা শনাক্ত করে চলতে পারে এমন রোবট গাড়ি।</p><div class="tags"><span>ESP32</span><span>Arduino</span><span>রোবোটিকস</span></div></div></article><article class="project reveal delay-1"><div class="project-visual">✧</div><div class="project-body"><h3>এআই অটোমেশন</h3><p>n8n, এআই এজেন্ট ও বিভিন্ন সেবার সংযোগ ব্যবহার করে স্বয়ংক্রিয় কর্মপ্রবাহ তৈরির অনুশীলন।</p><div class="tags"><span>n8n</span><span>AI Agent</span><span>Automation</span></div></div></article></div></div></section>
 <section id="education"><div class="wrap"><div class="section-head reveal"><h2>শিক্ষা ও ভাষা শিক্ষা</h2></div><div class="education-grid"><div class="timeline reveal from-left"><div class="edu-item"><h3>কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং</h3><p>Northern University Bangladesh</p><small>বর্তমানে অধ্যয়নরত</small></div><div class="edu-item"><h3>উচ্চমাধ্যমিক সার্টিফিকেট (HSC)</h3><p>Hazi Nasir Uddin College</p><small>২০২৩</small></div><div class="edu-item"><h3>মাধ্যমিক স্কুল সার্টিফিকেট (SSC)</h3><p>Khordo ML High School</p><small>২০২১</small></div></div><div class="language-card reveal from-right"><div class="flag">🇩🇪</div><h3>জার্মান ভাষা শিক্ষা</h3><p>নতুন ভাষা শেখার যাত্রায় বর্তমানে A1 স্তরে আছি। নিয়মিত শব্দভান্ডার, ব্যাকরণ, পড়া, লেখা ও কথোপকথনের অনুশীলন করছি।</p><span class="level">A1 · প্রাথমিক পর্যায়</span></div></div></div></section>
 <section class="certificates" id="certificates"><div class="wrap"><div class="section-head reveal"><h2>আমার সনদপত্র</h2></div><p class="section-sub reveal">সনদে ক্লিক করলে মূল PDF নতুন ট্যাবে খুলবে।</p><div class="cert-grid"><article class="cert reveal"><div class="cert-icon">✹</div><h3>Zero to Hero in Android — Season 1</h3><p>২৩ ঘণ্টা ১১ মিনিট · সনদ প্রদান: ১৭ জুন ২০২৬</p><a href="assets/certificates/android-season-1.pdf" target="_blank" rel="noreferrer">সনদ দেখুন ↗</a></article><article class="cert reveal delay-1"><div class="cert-icon">✹</div><h3>Zero to Hero in Android — Season 2</h3><p>৩৯ ঘণ্টা ০৬ মিনিট · সনদ প্রদান: ২৭ সেপ্টেম্বর ২০২৬</p><a href="assets/certificates/android-season-2.pdf" target="_blank" rel="noreferrer">সনদ দেখুন ↗</a></article><article class="cert reveal delay-2"><div class="cert-icon">✹</div><h3>Zero to Hero in Android — Season 3</h3><p>৪৩ ঘণ্টা ৫৪ মিনিট · সনদ প্রদান: ২৭ সেপ্টেম্বর ২০২৬</p><a href="assets/certificates/android-season-3.pdf" target="_blank" rel="noreferrer">সনদ দেখুন ↗</a></article></div></div></section>
-<section id="contact"><div class="wrap"><div class="section-head reveal"><h2>যোগাযোগ করুন</h2></div><div class="contact-grid"><div class="contact-info reveal from-left"><p>কোনো প্রকল্প, প্রযুক্তি বা সহযোগিতার বিষয়ে কথা বলতে চাইলে GitHub-এর মাধ্যমে যোগাযোগ করতে পারেন।</p><div class="contact-row"><div class="contact-icon">⌂</div><div><b>GitHub</b><small>github.com/muzahidul86233</small></div></div><div class="contact-row"><div class="contact-icon">in</div><div><b>LinkedIn</b><small>প্রোফাইল লিংক পরে যুক্ত করুন</small></div></div></div><div class="contact-box reveal from-right"><h3>একসঙ্গে কিছু তৈরি করি</h3><p>নতুন ধারণা, শেখার সুযোগ ও প্রযুক্তিভিত্তিক সহযোগিতাকে স্বাগত জানাই।</p><div class="contact-actions"><a class="btn btn-green" href="https://github.com/muzahidul86233" target="_blank" rel="noreferrer">GitHub দেখুন ↗</a><a class="btn btn-outline" href="#home">উপরে ফিরে যান ↑</a></div></div></div></div></section>
+<section id="contact"><div class="wrap"><div class="section-head reveal"><h2>যোগাযোগ করুন</h2></div><div class="contact-grid"><div class="contact-info reveal from-left"><p>কোনো প্রকল্প, প্রযুক্তি বা সহযোগিতার বিষয়ে কথা বলতে চাইলে GitHub-এর মাধ্যমে যোগাযোগ করতে পারেন।</p><div class="contact-row"><div class="contact-icon">⌂</div><div><b>GitHub</b><small>github.com/muzahidul86233</small></div></div><div class="contact-row"><div class="contact-icon">in</div><div><b>LinkedIn</b><small><a href="https://www.linkedin.com/in/md-muzahidul-islam-19b4a8400/" target="_blank" rel="noopener noreferrer">linkedin.com/in/md-muzahidul-islam</a></small></div></div></div><div class="contact-box reveal from-right"><h3>একসঙ্গে কিছু তৈরি করি</h3><p>নতুন ধারণা, শেখার সুযোগ ও প্রযুক্তিভিত্তিক সহযোগিতাকে স্বাগত জানাই।</p><div class="contact-actions"><a class="btn btn-green" href="https://github.com/muzahidul86233" target="_blank" rel="noreferrer">GitHub দেখুন ↗</a><a class="btn btn-outline" href="https://www.linkedin.com/in/md-muzahidul-islam-19b4a8400/" target="_blank" rel="noopener noreferrer">LinkedIn প্রোফাইল দেখুন ↗</a></div></div></div></div></section>
 </main><footer><div class="wrap"><div class="footer-row"><div class="footer-brand"><span>M.</span> MD Muzahidul Islam</div><div class="footer-nav"><a href="#home">হোম</a><a href="#about">আমার সম্পর্কে</a><a href="#skills">দক্ষতা</a><a href="#projects">প্রকল্প</a><a href="#contact">যোগাযোগ</a></div><a href="https://github.com/muzahidul86233" target="_blank" rel="noreferrer">GitHub ↗</a></div><div class="copyright">© ২০২৬ MD Muzahidul Islam · কৌতূহল, অনুশীলন ও নিষ্ঠায় তৈরি</div></div></footer><button class="to-top" id="toTop" aria-label="উপরে যান">↑</button>
 
-<div class="library-modal" id="libraryModal" role="dialog" aria-modal="true" aria-label="3D Knowledge Library"><div class="library-shell"><div class="library-top"><div><strong>MUZAHIDUL'S KNOWLEDGE LIBRARY</strong><small>শেলফ থেকে একটি স্কিল বেছে নিন। নোট পড়তে স্কিলের কার্ডে ক্লিক করুন।</small></div><div class="library-controls"><button class="lib-control" id="soundToggle">🔊 সাউন্ড চালু</button><button class="lib-control" id="ambienceToggle">♫ পরিবেশের শব্দ: বন্ধ</button><button class="lib-control" id="closeLibrary">বন্ধ করুন ✕</button></div></div><div class="lib-room" id="libRoom"><div class="room-back"></div><div class="room-caption">← স্কিল নির্বাচন করুন · মাউস বা টাচ দিয়ে কার্ডে ক্লিক করুন</div><div class="room-shelf" id="roomShelf"></div><div class="room-walkway"></div><div class="room-floor"></div><div class="room-nav"><button class="walk-btn" id="walkForward">↑ সামনে হাঁটুন</button><button class="walk-btn" id="walkBack">↓ পেছনে যান</button></div><div class="room-instructions">আপনি লাইব্রেরিতে আছেন · উপরের শেলফ থেকে স্কিল নির্বাচন করুন</div><div class="library-toast" id="libraryToast"></div></div></div></div>
-<div class="skill-modal" id="skillModal" role="dialog" aria-modal="true" aria-label="স্কিলের বিস্তারিত"><div class="skill-detail-card"><button class="detail-close" id="closeSkill" aria-label="বন্ধ করুন">✕</button><div class="detail-head"><div class="detail-icon" id="detailIcon">C++</div><div><h3 id="detailTitle">C++</h3><p id="detailSubtitle">Programming Language</p></div></div><p id="detailDescription">স্কিলের বিস্তারিত এখানে দেখা যাবে।</p><div class="detail-actions"><button class="detail-action primary" id="openSkillNotes">📖 নোট পড়ুন<span>PDF বইয়ের পাতার মতো উল্টে পড়ুন</span></button><button class="detail-action" id="openSkillProjects">⌘ অনুশীলন ও কাজ<span>সম্পর্কিত প্রজেক্ট ও প্র্যাকটিস</span></button></div></div></div>
-<div class="reader-modal" id="readerModal" role="dialog" aria-modal="true" aria-label="PDF নোট রিডার"><div class="reader-shell"><div class="reader-top"><strong id="readerTitle">C++ Notes</strong><button id="closeReader">বন্ধ করুন ✕</button></div><div class="book-stage"><div class="reader-loading" id="readerLoading">নোট লোড হচ্ছে...</div><div class="book" id="book"><div class="book-page left"><canvas id="pageLeft"></canvas><div class="empty-page" id="emptyLeft" hidden></div></div><div class="book-page right"><canvas id="pageRight"></canvas><div class="empty-page" id="emptyRight" hidden></div></div><div class="page-flip" id="pageFlip"><div class="flip-front">পাতা উল্টাচ্ছে...</div><div class="flip-back">পরের পৃষ্ঠা</div></div></div></div><div class="reader-bottom"><button id="prevPage">← আগের পৃষ্ঠা</button><span id="pageCount">পৃষ্ঠা ১ / ১</span><button id="nextPage">পরের পৃষ্ঠা →</button></div><div class="reader-note">মোবাইলেও বাটন ব্যবহার করে পৃষ্ঠা উল্টাতে পারবেন। PDF আলাদাভাবে খুলতে বা ডাউনলোড করতে চাইলে নিচের লিংক ব্যবহার করুন: <a id="downloadNote" href="assets/notes/cpp-starter-notes.pdf" target="_blank" rel="noreferrer">PDF খুলুন ↗</a></div></div></div>
+<div class="library-modal" id="libraryModal" role="dialog" aria-modal="true" aria-label="3D Knowledge Library"><div class="library-shell"><div class="library-top"><div><strong>MUZAHIDUL'S KNOWLEDGE LIBRARY</strong><small>শেলফ থেকে একটি স্কিল বেছে নিন। নোট পড়তে স্কিলের কার্ডে ক্লিক করুন।</small></div><div class="library-controls"><button class="lib-control" id="soundToggle">🔊 সাউন্ড চালু</button><button class="lib-control" id="ambienceToggle">♫ পরিবেশের শব্দ: বন্ধ</button><button class="lib-control" id="closeLibrary">বন্ধ করুন ✕</button></div></div><div class="lib-room" id="libRoom">
+<div class="corridor-scene" id="corridorScene">
+  <div class="corridor-ceiling"></div>
+  <div class="corridor-end">
+    <div class="end-sign">MUZAHIDUL'S KNOWLEDGE LIBRARY</div>
+    <div class="desk-monitor"><div class="monitor-frame"><div class="monitor-screen"><img src="assets/working.webp" alt="ল্যাপটপে কাজ করার সময় মুজাহিদুল"><span>MD MUZAHIDUL ISLAM<br><small>LEARN · BUILD · PRACTICE</small></span></div></div><div class="monitor-stand"></div><div class="desk-surface"></div></div>
+  </div>
+  <div class="corridor-wall left"><div class="wall-label">PROGRAMMING & DEVELOPMENT</div><div class="side-shelf" id="leftShelf"></div></div>
+  <div class="corridor-wall right"><div class="wall-label">TOOLS, CLOUD & ROBOTICS</div><div class="side-shelf" id="rightShelf"></div></div>
+  <div class="corridor-floor"><div class="floor-lines"></div></div>
+  <div class="walking-person" id="walkingPerson" aria-hidden="true"><i class="person-shadow"></i><i class="person-head"></i><i class="person-body"></i><i class="person-arm left-arm"></i><i class="person-arm right-arm"></i><i class="person-leg left-leg"></i><i class="person-leg right-leg"></i></div>
+  <div class="room-caption">লাইব্রেরির দুই পাশের তাক থেকে একটি স্কিল বেছে নিন</div>
+</div>
+<div class="room-nav"><button class="walk-btn" id="walkForward">↑ সামনে হাঁটুন</button><button class="walk-btn" id="walkBack">↓ পেছনে যান</button></div>
+<div class="room-instructions">আপনি এখন লাইব্রেরির পথে · স্কিলের কার্ডে ক্লিক করে নোট দেখুন</div>
+<div class="library-toast" id="libraryToast"></div>
+</div></div></div>
+<div class="skill-modal" id="skillModal" role="dialog" aria-modal="true" aria-label="স্কিলের বিস্তারিত"><div class="skill-detail-card"><button class="detail-close" id="closeSkill" aria-label="বন্ধ করুন">✕</button><div class="detail-head"><div class="detail-icon" id="detailIcon">C++</div><div><h3 id="detailTitle">C++</h3><p id="detailSubtitle">Programming Language</p></div></div><p id="detailDescription">স্কিলের বিস্তারিত এখানে দেখা যাবে।</p><div class="detail-actions"><button class="detail-action primary" id="openSkillNotes">📖 আমার শেখার নোট<span>পড়াশোনা ও অনুশীলনের নোট বইয়ের মতো পড়ুন</span></button><button class="detail-action" id="openSkillProjects">⌘ অনুশীলন ও কাজ<span>সম্পর্কিত প্রজেক্ট ও প্র্যাকটিস</span></button></div></div></div>
+<div class="reader-modal" id="readerModal" role="dialog" aria-modal="true" aria-label="PDF নোট রিডার"><div class="reader-shell"><div class="reader-top"><strong id="readerTitle">C++ Notes</strong><button id="closeReader">বন্ধ করুন ✕</button></div><div class="book-stage"><div class="reader-loading" id="readerLoading">নোট লোড হচ্ছে...</div><div class="book" id="book"><div class="hand-page left" id="pageLeft"></div><div class="hand-page right" id="pageRight"></div><div class="page-flip" id="pageFlip"><div class="flip-front">পাতা উল্টাচ্ছে...</div><div class="flip-back">পরের পৃষ্ঠা</div></div></div></div><div class="reader-bottom"><button id="prevPage">← আগের পৃষ্ঠা</button><span id="pageCount">পৃষ্ঠা ১ / ১</span><button id="nextPage">পরের পৃষ্ঠা →</button></div><div class="reader-note">মোবাইলেও বাটন ব্যবহার করে পৃষ্ঠা উল্টাতে পারবেন। PDF আলাদাভাবে খুলতে বা ডাউনলোড করতে চাইলে নিচের লিংক ব্যবহার করুন: <a id="downloadNote" href="assets/notes/cpp-starter-notes.pdf" target="_blank" rel="noreferrer">PDF খুলুন ↗</a></div></div></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script>
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
 
-// Knowledge Library interactions and gentle synthesized footsteps (no external audio files required)
+
+// Knowledge Library: corridor navigation, generated soundscape and handwritten page-turn reader.
 const libraryModal=$('#libraryModal'),skillModal=$('#skillModal'),readerModal=$('#readerModal');
 const librarySkills=[
  {name:'C / C++',short:'C++',icon:'C++',sub:'Programming & OOP',desc:'C এবং C++ প্রোগ্রামিং, OOP, Data Structures ও সমস্যা সমাধানের অনুশীলন।',pdf:'assets/notes/cpp-starter-notes.pdf',hasPdf:true},
@@ -72,28 +169,129 @@ const librarySkills=[
  {name:'Arduino',short:'Arduino',icon:'♧',sub:'Electronics',desc:'Arduino programming এবং electronics project।',pdf:'assets/notes/arduino-notes.pdf'},
  {name:'Git & GitHub',short:'Git',icon:'⌘',sub:'Developer Tools',desc:'Version control, repository এবং GitHub Pages workflow।',pdf:'assets/notes/git-github-notes.pdf'}
 ];
-let activeSkill=librarySkills[0],audioCtx=null,soundEnabled=false,ambienceEnabled=false,walkTimer=null,walkCount=0,pdfDoc=null,currentPage=1,flipBusy=false;
-const shelf=$('#roomShelf');librarySkills.forEach((sk,i)=>{const b=document.createElement('button');b.className='room-skill';b.type='button';b.innerHTML=`<span class="object-icon">${sk.icon}</span><b>${sk.name}</b><small>বিস্তারিত দেখতে ক্লিক</small>`;b.addEventListener('click',()=>{footstep();activeSkill=sk;$('#detailIcon').textContent=sk.icon;$('#detailTitle').textContent=sk.name;$('#detailSubtitle').textContent=sk.sub;$('#detailDescription').textContent=sk.desc;skillModal.classList.add('open')});shelf.appendChild(b)});
-function ensureAudio(){if(!audioCtx){const AC=window.AudioContext||window.webkitAudioContext;if(AC)audioCtx=new AC()}if(audioCtx&&audioCtx.state==='suspended')audioCtx.resume();}
-function footstep(){if(!soundEnabled)return;ensureAudio();if(!audioCtx)return;const t=audioCtx.currentTime;const n=audioCtx.createBuffer(1,Math.floor(audioCtx.sampleRate*.12),audioCtx.sampleRate);const d=n.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/d.length,3);const src=audioCtx.createBufferSource();src.buffer=n;const filter=audioCtx.createBiquadFilter();filter.type='lowpass';filter.frequency.value=850;const g=audioCtx.createGain();g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.20,t+.008);g.gain.exponentialRampToValueAtTime(.0001,t+.12);src.connect(filter);filter.connect(g);g.connect(audioCtx.destination);src.start(t);const osc=audioCtx.createOscillator(),og=audioCtx.createGain();osc.type='sine';osc.frequency.setValueAtTime(105,t);osc.frequency.exponentialRampToValueAtTime(48,t+.09);og.gain.setValueAtTime(.0001,t);og.gain.exponentialRampToValueAtTime(.13,t+.01);og.gain.exponentialRampToValueAtTime(.0001,t+.11);osc.connect(og);og.connect(audioCtx.destination);osc.start(t);osc.stop(t+.12);}
-function ambience(){if(!ambienceEnabled||!soundEnabled)return;ensureAudio();if(!audioCtx)return;const o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type='sine';o.frequency.value=58;g.gain.value=.012;o.connect(g);g.connect(audioCtx.destination);o.start();return ()=>{g.gain.setTargetAtTime(0,audioCtx.currentTime,.15);setTimeout(()=>o.stop(),600)}}
+let activeSkill=librarySkills[0],audioCtx=null,soundEnabled=false,ambienceEnabled=false,ambienceNodes=[],walkCount=0,currentPage=1,flipBusy=false;
+
+function makeSkillCard(sk){
+ const b=document.createElement('button');b.className='room-skill';b.type='button';
+ b.innerHTML=`<span class="object-icon">${sk.icon}</span><b>${sk.name}</b><small>নোট দেখতে ক্লিক</small>`;
+ b.addEventListener('click',()=>{if(soundEnabled)playPaper();activeSkill=sk;$('#detailIcon').textContent=sk.icon;$('#detailTitle').textContent=sk.name;$('#detailSubtitle').textContent=sk.sub;$('#detailDescription').textContent=sk.desc;skillModal.classList.add('open')});
+ return b;
+}
+const leftShelf=$('#leftShelf'),rightShelf=$('#rightShelf');
+librarySkills.forEach((sk,i)=>(i%2?rightShelf:leftShelf).appendChild(makeSkillCard(sk)));
+
+function ensureAudio(){
+ if(!audioCtx){const AC=window.AudioContext||window.webkitAudioContext;if(AC)audioCtx=new AC()}
+ if(audioCtx&&audioCtx.state==='suspended')audioCtx.resume();
+}
+function noiseBurst(duration=.16,volume=.16,filterHz=1100){
+ if(!audioCtx)return;
+ const len=Math.floor(audioCtx.sampleRate*duration),buf=audioCtx.createBuffer(1,len,audioCtx.sampleRate),data=buf.getChannelData(0);
+ for(let i=0;i<len;i++)data[i]=(Math.random()*2-1)*Math.pow(1-i/len,2.6);
+ const src=audioCtx.createBufferSource();src.buffer=buf;
+ const filter=audioCtx.createBiquadFilter();filter.type='lowpass';filter.frequency.value=filterHz;
+ const gain=audioCtx.createGain(),now=audioCtx.currentTime;
+ gain.gain.setValueAtTime(.0001,now);gain.gain.exponentialRampToValueAtTime(volume,now+.012);gain.gain.exponentialRampToValueAtTime(.0001,now+duration);
+ src.connect(filter);filter.connect(gain);gain.connect(audioCtx.destination);src.start(now);
+}
+function footstep(){
+ if(!soundEnabled)return;ensureAudio();if(!audioCtx)return;
+ const now=audioCtx.currentTime;
+ // Heel tap followed by a softer sole contact, with a short wooden-room resonance.
+ noiseBurst(.10,.17,780);
+ const heel=audioCtx.createOscillator(),hg=audioCtx.createGain();heel.type='triangle';
+ heel.frequency.setValueAtTime(125,now);heel.frequency.exponentialRampToValueAtTime(62,now+.11);
+ hg.gain.setValueAtTime(.0001,now);hg.gain.exponentialRampToValueAtTime(.14,now+.008);hg.gain.exponentialRampToValueAtTime(.0001,now+.13);
+ heel.connect(hg);hg.connect(audioCtx.destination);heel.start(now);heel.stop(now+.14);
+ setTimeout(()=>{if(soundEnabled){noiseBurst(.075,.08,1250)}},155);
+}
+function playPaper(){if(!soundEnabled)return;ensureAudio();noiseBurst(.22,.055,2600)}
+function startAmbience(){
+ if(!audioCtx||!ambienceEnabled||!soundEnabled)return;
+ stopAmbience();
+ const osc=audioCtx.createOscillator(),gain=audioCtx.createGain(),filter=audioCtx.createBiquadFilter();
+ osc.type='sine';osc.frequency.value=72;gain.gain.value=.012;filter.type='lowpass';filter.frequency.value=180;
+ osc.connect(filter);filter.connect(gain);gain.connect(audioCtx.destination);osc.start();
+ ambienceNodes.push({stop:()=>{gain.gain.setTargetAtTime(.0001,audioCtx.currentTime,.2);setTimeout(()=>{try{osc.stop()}catch(e){}},700)}});
+ // A soft air/room tone, not music; starts only after the visitor enables sound.
+ const nlen=audioCtx.sampleRate*2,buf=audioCtx.createBuffer(1,nlen,audioCtx.sampleRate),d=buf.getChannelData(0);
+ for(let i=0;i<nlen;i++)d[i]=(Math.random()*2-1)*.12;
+ const src=audioCtx.createBufferSource(),nf=audioCtx.createBiquadFilter(),ng=audioCtx.createGain();
+ src.buffer=buf;src.loop=true;nf.type='lowpass';nf.frequency.value=420;ng.gain.value=.018;
+ src.connect(nf);nf.connect(ng);ng.connect(audioCtx.destination);src.start();
+ ambienceNodes.push({stop:()=>{ng.gain.setTargetAtTime(.0001,audioCtx.currentTime,.2);setTimeout(()=>{try{src.stop()}catch(e){}},700)}});
+}
+function stopAmbience(){ambienceNodes.forEach(n=>n.stop());ambienceNodes=[]}
 function toast(msg){const t=$('#libraryToast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
-$('#openLibrary').addEventListener('click',()=>{libraryModal.classList.add('open');document.body.style.overflow='hidden';if(soundEnabled)footstep();});
+$('#openLibrary').addEventListener('click',()=>{libraryModal.classList.add('open');document.body.style.overflow='hidden';if(soundEnabled)footstep()});
 function closeLib(){libraryModal.classList.remove('open');skillModal.classList.remove('open');document.body.style.overflow='';}
 $('#closeLibrary').addEventListener('click',closeLib);$('#closeSkill').addEventListener('click',()=>skillModal.classList.remove('open'));
-$('#soundToggle').addEventListener('click',()=>{soundEnabled=!soundEnabled;if(soundEnabled)ensureAudio();$('#soundToggle').textContent=soundEnabled?'🔊 সাউন্ড চালু':'🔇 সাউন্ড বন্ধ';toast(soundEnabled?'হাঁটার শব্দ চালু হয়েছে':'সাউন্ড বন্ধ করা হয়েছে')});
-$('#ambienceToggle').addEventListener('click',()=>{ambienceEnabled=!ambienceEnabled;$('#ambienceToggle').textContent=ambienceEnabled?'♫ পরিবেশের শব্দ: চালু':'♫ পরিবেশের শব্দ: বন্ধ';toast(ambienceEnabled?'পরিবেশের শব্দ চালু':'পরিবেশের শব্দ বন্ধ')});
-function walk(dir){const room=$('#libRoom');walkCount+=dir;room.style.backgroundPosition=`${walkCount*5}px 0`;footstep();setTimeout(footstep,230);toast(dir>0?'আপনি সামনে এগোচ্ছেন':'আপনি পেছনে ফিরছেন')}
+$('#soundToggle').addEventListener('click',()=>{
+ soundEnabled=!soundEnabled;
+ if(soundEnabled){ensureAudio();footstep();if(ambienceEnabled)startAmbience();$('#soundToggle').textContent='🔊 সাউন্ড চালু'}
+ else{stopAmbience();$('#soundToggle').textContent='🔇 সাউন্ড বন্ধ'}
+ toast(soundEnabled?'হাঁটার ও লাইব্রেরির শব্দ চালু হয়েছে':'সব সাউন্ড বন্ধ করা হয়েছে');
+});
+$('#ambienceToggle').addEventListener('click',()=>{
+ ambienceEnabled=!ambienceEnabled;
+ $('#ambienceToggle').textContent=ambienceEnabled?'♫ পরিবেশের শব্দ: চালু':'♫ পরিবেশের শব্দ: বন্ধ';
+ if(soundEnabled){ensureAudio();ambienceEnabled?startAmbience():stopAmbience()}
+ toast(ambienceEnabled?'লাইব্রেরির হালকা পরিবেশের শব্দ চালু':'পরিবেশের শব্দ বন্ধ');
+});
+function walk(dir){
+ const person=$('#walkingPerson');walkCount=Math.max(-2,Math.min(5,walkCount+dir));
+ const depth=walkCount*12;person.style.setProperty('--walk-depth',depth+'px');
+ person.classList.remove('walking');void person.offsetWidth;person.classList.add('walking');
+ if(soundEnabled){footstep();setTimeout(footstep,360);setTimeout(footstep,720);if(ambienceEnabled)startAmbience()}
+ toast(dir>0?'আপনি কম্পিউটারের দিকে এগোচ্ছেন':'আপনি পেছনে ফিরে যাচ্ছেন');
+ setTimeout(()=>person.classList.remove('walking'),1450);
+}
 $('#walkForward').addEventListener('click',()=>walk(1));$('#walkBack').addEventListener('click',()=>walk(-1));
 $('#libRoom').addEventListener('keydown',e=>{if(e.key==='ArrowUp'){e.preventDefault();walk(1)}if(e.key==='ArrowDown'){e.preventDefault();walk(-1)}});
 addEventListener('keydown',e=>{if(!libraryModal.classList.contains('open'))return;if(e.key==='Escape'){if(readerModal.classList.contains('open'))closeReader();else if(skillModal.classList.contains('open'))skillModal.classList.remove('open');else closeLib()}if(e.key==='ArrowUp'&&!skillModal.classList.contains('open'))walk(1)});
-$('#openSkillProjects').addEventListener('click',()=>{skillModal.classList.remove('open');closeLib();$('#projects').scrollIntoView({behavior:'smooth'});});
+$('#openSkillProjects').addEventListener('click',()=>{skillModal.classList.remove('open');closeLib();$('#projects').scrollIntoView({behavior:'smooth'})});
 $('#openSkillNotes').addEventListener('click',()=>{skillModal.classList.remove('open');openReader(activeSkill)});
-function openReader(sk){readerModal.classList.add('open');$('#readerTitle').textContent=sk.name+' · নোট';$('#downloadNote').href=sk.pdf;document.body.style.overflow='hidden';currentPage=1;pdfDoc=null;$('#readerLoading').style.display='block';$('#readerLoading').textContent='PDF নোট লোড হচ্ছে...';if(!sk.hasPdf){$('#readerLoading').textContent='এই বিষয়ের PDF নোট এখনো যোগ করা হয়নি।';$('#pageCount').textContent='নোট প্রস্তুত হচ্ছে';$('#prevPage').disabled=true;$('#nextPage').disabled=true;$('#downloadNote').textContent='PDF এখনো যোগ করা হয়নি';return}$('#downloadNote').textContent='PDF খুলুন ↗';if(!window.pdfjsLib){$('#readerLoading').textContent='PDF Reader লোড হয়নি। নিচের PDF খুলুন লিংক ব্যবহার করুন।';return}pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';pdfjsLib.getDocument(sk.pdf).promise.then(doc=>{pdfDoc=doc;$('#readerLoading').style.display='none';renderSpread()}).catch(()=>{$('#readerLoading').textContent='PDF লোড করা যায়নি। নিচের লিংক থেকে PDF খুলুন।'})}
-function renderCanvas(pageNum,canvasId,emptyId){const canvas=$('#'+canvasId),empty=$('#'+emptyId),ctx=canvas.getContext('2d');if(!pdfDoc||pageNum>pdfDoc.numPages){canvas.style.display='none';empty.hidden=false;empty.textContent='';return Promise.resolve()}empty.hidden=true;canvas.style.display='block';return pdfDoc.getPage(pageNum).then(page=>{const vp=page.getViewport({scale:1});const holder=canvas.parentElement;const scale=Math.min((holder.clientWidth-10)/vp.width,(holder.clientHeight-10)/vp.height,1.45);const v=page.getViewport({scale});canvas.width=v.width*devicePixelRatio;canvas.height=v.height*devicePixelRatio;canvas.style.width=v.width+'px';canvas.style.height=v.height+'px';return page.render({canvasContext:ctx,viewport:v,transform:devicePixelRatio!==1?[devicePixelRatio,0,0,devicePixelRatio,0,0]:null}).promise})}
-function renderSpread(){if(!pdfDoc)return;const left=currentPage%2===0?currentPage:currentPage;const right=currentPage+1;renderCanvas(left,'pageLeft','emptyLeft');renderCanvas(right,'pageRight','emptyRight');$('#pageCount').textContent=`পৃষ্ঠা ${currentPage}–${Math.min(right,pdfDoc.numPages)} / ${pdfDoc.numPages}`;$('#prevPage').disabled=currentPage<=1;$('#nextPage').disabled=currentPage+1>=pdfDoc.numPages}
-function turnPage(dir){if(!pdfDoc||flipBusy)return;const next=currentPage+(dir*2);if(next<1||next>pdfDoc.numPages)return;flipBusy=true;const flip=$('#pageFlip');flip.classList.remove('turn');void flip.offsetWidth;flip.classList.add('turn');footstep();setTimeout(()=>{currentPage=next;renderSpread();flip.classList.remove('turn');flipBusy=false},620)}
-$('#nextPage').addEventListener('click',()=>turnPage(1));$('#prevPage').addEventListener('click',()=>turnPage(-1));function closeReader(){readerModal.classList.remove('open');if(!libraryModal.classList.contains('open'))document.body.style.overflow=''}$('#closeReader').addEventListener('click',closeReader);
+
+const notePages={
+ "C / C++":[
+ `<div class="hand-content hand-cover"><div class="cover-stamp">MY STUDY NOTEBOOK</div><h2>C / C++</h2><p>প্রোগ্রামিং, ক্লাস ও নিজের অনুশীলনের নোট</p><p class="hand-note">মুজাহিদুল ইসলামের শেখার খাতা</p><div class="page-number">পৃষ্ঠা ১</div></div>`,
+ `<div class="hand-content"><h3>১. C++ পরিচিতি</h3><p>C++ একটি general-purpose programming language। এটি procedural এবং object-oriented programming সমর্থন করে।</p><p>ব্যবহার: desktop software, game, embedded system এবং দ্রুতগতির application তৈরি।</p><p class="hand-note">মনে রাখবে: C++-এ প্রতিটি statement-এর শেষে সাধারণত semicolon (;) থাকে।</p><div class="page-number">পৃষ্ঠা ২</div></div>`,
+ `<div class="hand-content"><h3>২. প্রথম প্রোগ্রাম</h3><p>একটি সাধারণ C++ প্রোগ্রাম:</p><div class="hand-code">#include &lt;iostream&gt;<br>using namespace std;<br><br>int main() {<br>&nbsp;&nbsp;cout &lt;&lt; "Hello, World!";<br>&nbsp;&nbsp;return 0;<br>}</div><p>iostream ইনপুট-আউটপুটের জন্য। main() হলো প্রোগ্রামের শুরু, আর cout স্ক্রিনে লেখা দেখায়।</p><div class="page-number">পৃষ্ঠা ৩</div></div>`,
+ `<div class="hand-content"><h3>৩. Variables ও Data Types</h3><p>Variable হলো ডেটা রাখার নামযুক্ত জায়গা।</p><div class="hand-code">int age = 23;<br>float price = 12.5f;<br>char grade = 'A';<br>bool active = true;<br>string name = "Muzahidul";</div><p>সাধারণ type: int, float, double, char, bool, string।</p><p class="hand-note">অনুশীলন: নিজের নাম, বয়স ও CGPA রাখার variable লেখো।</p><div class="page-number">পৃষ্ঠা ৪</div></div>`,
+ `<div class="hand-content"><h3>৪. Conditions ও Loops</h3><p>if-else শর্ত অনুযায়ী সিদ্ধান্ত নেয়। for ও while একই কাজ বারবার চালায়।</p><div class="hand-code">if (marks &gt;= 80) {<br>&nbsp;&nbsp;cout &lt;&lt; "A+";<br>} else {<br>&nbsp;&nbsp;cout &lt;&lt; "Practice more";<br>}<br><br>for (int i=1; i&lt;=5; i++) {<br>&nbsp;&nbsp;cout &lt;&lt; i;<br>}</div><div class="page-number">পৃষ্ঠা ৫</div></div>`,
+ `<div class="hand-content"><h3>৫. Functions ও OOP</h3><p>Function হলো পুনরায় ব্যবহারযোগ্য code block। Class হলো blueprint এবং object হলো class থেকে তৈরি instance।</p><div class="hand-code">int add(int a, int b) {<br>&nbsp;&nbsp;return a + b;<br>}<br><br>class Student {<br>public:<br>&nbsp;&nbsp;string name;<br>};</div><p class="hand-note">নিজের অনুশীলন: add(), multiply() function এবং Student class তৈরি করো।</p><div class="page-number">পৃষ্ঠা ৬</div></div>`
+ ]
+};
+function openReader(sk){
+ readerModal.classList.add('open');$('#readerTitle').textContent=sk.name+' · আমার শেখার নোট';
+ $('#downloadNote').href=sk.pdf;document.body.style.overflow='hidden';currentPage=1;flipBusy=false;
+ const pages=notePages[sk.name];
+ if(!sk.hasPdf||!pages){
+  $('#pageLeft').innerHTML='<div class="hand-content"><h3>নোট এখনো যোগ করা হয়নি</h3><p>এই বিষয়ের পড়াশোনা ও অনুশীলনের PDF নোট এখনো লাইব্রেরিতে যুক্ত করা হয়নি।</p><p class="hand-note">নোট যোগ হলে এখানে বইয়ের পাতার মতো পড়তে পারবেন।</p></div>';
+  $('#pageRight').innerHTML='<div class="hand-content"><h3>'+sk.name+'</h3><p>এই বিষয়ের নোট প্রস্তুত হলে এখানে দেখানো হবে।</p></div>';
+  $('#pageCount').textContent='নোট এখনো যোগ করা হয়নি';$('#prevPage').disabled=true;$('#nextPage').disabled=true;
+  $('#downloadNote').textContent='PDF এখনো যোগ করা হয়নি';$('#downloadNote').removeAttribute('href');return;
+ }
+ $('#downloadNote').textContent='PDF খুলুন / ডাউনলোড করুন ↗';
+ renderSpread();
+}
+function renderSpread(){
+ const pages=notePages[activeSkill.name]||[];
+ $('#pageLeft').innerHTML=pages[currentPage-1]||'<div class="hand-content"><h3>শেষ পৃষ্ঠা</h3></div>';
+ $('#pageRight').innerHTML=pages[currentPage]||'<div class="hand-content"><h3>শেষ পৃষ্ঠা</h3><p>এই খাতার নোট এখানেই শেষ।</p></div>';
+ $('#pageCount').textContent=`পৃষ্ঠা ${currentPage}–${Math.min(currentPage+1,pages.length)} / ${pages.length}`;
+ $('#prevPage').disabled=currentPage<=1;$('#nextPage').disabled=currentPage+2>pages.length;
+}
+function turnPage(dir){
+ const pages=notePages[activeSkill.name]||[];if(flipBusy)return;
+ const next=currentPage+(dir*2);if(next<1||next>pages.length)return;
+ flipBusy=true;const flip=$('#pageFlip');flip.classList.remove('turn');void flip.offsetWidth;flip.classList.add('turn');
+ if(soundEnabled){playPaper();setTimeout(playPaper,160)}
+ setTimeout(()=>{currentPage=next;renderSpread();flip.classList.remove('turn');flipBusy=false},650);
+}
+$('#nextPage').addEventListener('click',()=>turnPage(1));$('#prevPage').addEventListener('click',()=>turnPage(-1));
+function closeReader(){readerModal.classList.remove('open');if(!libraryModal.classList.contains('open'))document.body.style.overflow=''}
+$('#closeReader').addEventListener('click',closeReader);
 
 window.addEventListener('load',()=>setTimeout(()=>$('#loader').classList.add('done'),550));
 const progress=$('#progress'),toTop=$('#toTop');function onScroll(){const max=document.documentElement.scrollHeight-innerHeight;progress.style.width=(max>0?scrollY/max*100:0)+'%';toTop.classList.toggle('show',scrollY>500);if(innerWidth>800){const shift=Math.min(scrollY*.12,90);$('.hero-art').style.translate=`0 ${shift}px`}$$('section[id]').forEach(s=>{const r=s.getBoundingClientRect();if(r.top<innerHeight*.7&&r.bottom>0)s.classList.add('seen')})}addEventListener('scroll',onScroll,{passive:true});onScroll();

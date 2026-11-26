@@ -1,333 +1,110 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="bn">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="MD Muzahidul Islam — CSE student interested in software development, AI automation, Android app development, AI automation and robotics.">
-<meta name="theme-color" content="#f7f0df">
-<title>MD Muzahidul Islam | Portfolio</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f8f1e3">
+<meta name="description" content="MD Muzahidul Islam-এর ব্যক্তিগত পোর্টফোলিও। কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং শিক্ষার্থী, সফটওয়্যার, অ্যান্ড্রয়েড অ্যাপ, এআই অটোমেশন ও রোবোটিকসে আগ্রহী।">
+<title>MD Muzahidul Islam | ব্যক্তিগত পোর্টফোলিও</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--paper:#f7f0df;--paper2:#fffaf0;--ink:#17243b;--muted:#596273;--green:#064b35;--green2:#0b6246;--gold:#bd821d;--line:#e8d9b9;--card:#fffaf0;--shadow:0 12px 32px rgba(75,53,20,.10)}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{font-family:"DM Sans",sans-serif;background:var(--paper);color:var(--ink);line-height:1.65}
-a{color:inherit;text-decoration:none}
-.wrap{width:min(1160px,92%);margin:auto}
-header{position:sticky;top:0;z-index:50;background:rgba(255,250,240,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}
-.brand{display:flex;align-items:center;gap:10px;font:700 20px "Playfair Display",serif;white-space:nowrap}
-.brand-mark{font:800 34px "Playfair Display";color:var(--gold)}
-nav{display:flex;gap:25px;align-items:center}
-nav a{font-size:13px;font-weight:700;color:#303b49}
-nav a:hover{color:var(--green)}
-.nav-right{display:flex;align-items:center;gap:10px}
-.icon-btn,.menu-btn{width:40px;height:40px;border:1px solid var(--line);background:var(--paper2);border-radius:50%;cursor:pointer;color:var(--green)}
-.menu-btn{display:none;border-radius:10px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 19px;border-radius:999px;border:1px solid var(--gold);font-weight:700;font-size:13px;transition:.2s}
-.btn:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
-.btn-green{background:var(--green);border-color:var(--green);color:white}
-.btn-outline{color:var(--green);background:transparent}
-.hero{position:relative;overflow:hidden;padding:72px 0 36px;background:radial-gradient(circle at 78% 38%,#e9d6a9 0,transparent 30%),linear-gradient(115deg,#fff8e9,#f4ead4)}
-.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:38px;min-height:390px}
-.kicker{display:inline-flex;align-items:center;gap:8px;background:#f0e3c4;border:1px solid #e6d4a8;border-radius:30px;padding:7px 13px;font-size:11px;font-weight:700;color:#344332}
-.kicker i{color:var(--green)}
-h1,h2,h3{font-family:"Playfair Display",serif}
-h1{font-size:clamp(43px,6vw,76px);line-height:1.04;letter-spacing:-1.8px;margin:20px 0 14px}
-.gold{color:var(--gold)}
-.role{font-weight:700;margin-bottom:8px}
-.intro{max-width:570px;color:#485263;font-size:15px}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
-.socials{display:flex;gap:12px;margin-top:22px}
-.socials a{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#fff8e9;border:1px solid var(--line);color:var(--green)}
-.hero-art{min-height:370px;display:flex;align-items:center;justify-content:flex-end;position:relative;padding-left:165px}
-.portrait-frame{width:min(320px,68vw);height:340px;flex:0 0 auto;z-index:2;border-radius:48% 48% 12px 12px;background:var(--green);border:5px solid #d9aa4b;box-shadow:0 18px 40px rgba(5,55,39,.18);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
-.portrait-frame img{width:100%;height:100%;object-fit:cover;object-position:center 28%;display:block}
-.portrait-placeholder{display:none}
-.portrait-placeholder strong{display:block;font:800 72px "Playfair Display";color:#e8c16d}
-.portrait-placeholder span{font-size:12px;color:#e8eadf}
-.focus-card{position:absolute;left:0;top:50%;transform:translateY(-50%);width:185px;z-index:1;background:#fff9eb;border:1px solid var(--line);border-radius:14px;padding:13px 16px;box-shadow:var(--shadow);font-size:12px;font-weight:700;display:grid;gap:9px}
-.focus-card span{display:flex;gap:10px;align-items:center}
-.focus-card i{color:var(--gold);font-size:17px;width:20px;text-align:center}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);background:rgba(255,250,240,.85);border:1px solid var(--line);border-radius:15px;padding:20px 12px;margin-top:10px;box-shadow:var(--shadow)}
-.stat{display:flex;justify-content:center;align-items:center;gap:12px;border-right:1px solid var(--line)}
-.stat:last-child{border:0}
-.stat i{font-size:25px;color:var(--gold)}
-.stat b{display:block;font:700 21px "Playfair Display"}
-.stat small{font-size:11px;color:var(--muted)}
-section{padding:66px 0}
-.section-title{display:flex;align-items:center;gap:14px;margin-bottom:26px}
-.section-title h2{font-size:29px}
-.section-title:after{content:"";width:42px;height:2px;background:var(--gold)}
-.about-skills{display:grid;grid-template-columns:.95fr 1.05fr;gap:38px;align-items:start}
-.about-card{display:grid;grid-template-columns:150px 1fr;gap:20px;align-items:center}
-.about-photo{height:165px;border:4px solid white;border-radius:16px;background:var(--green);box-shadow:var(--shadow);display:grid;place-items:center;color:#f2d48e;font:700 40px "Playfair Display";overflow:hidden}.about-photo img{width:100%;height:100%;object-fit:cover;object-position:center 24%;display:block}
+:root{--paper:#f8f1e3;--paper2:#fffaf0;--ink:#17243b;--muted:#596273;--green:#064b35;--green2:#0b6246;--gold:#bd821d;--line:#e8d9b9;--card:rgba(255,250,240,.88);--shadow:0 18px 45px rgba(55,43,20,.12);--mx:50vw;--my:50vh}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;scroll-padding-top:90px}body{font-family:'Hind Siliguri',sans-serif;background:var(--paper);color:var(--ink);line-height:1.7;overflow-x:hidden}a{color:inherit;text-decoration:none}button{font:inherit}.wrap{width:min(1160px,92%);margin:auto}.serif{font-family:'Playfair Display',serif}.grain{position:fixed;inset:0;pointer-events:none;z-index:80;opacity:.12;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.13'/%3E%3C/svg%3E")}.cursor-glow{position:fixed;inset:0;pointer-events:none;z-index:1;background:radial-gradient(360px circle at var(--mx) var(--my),rgba(194,143,48,.11),transparent 65%)}.progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--green),var(--gold));z-index:100}
+.loader{position:fixed;inset:0;z-index:120;background:var(--green);display:grid;place-items:center;transition:opacity .7s,visibility .7s}.loader.done{opacity:0;visibility:hidden}.loader-mark{width:82px;height:82px;border:1px solid rgba(239,202,124,.45);border-radius:50%;display:grid;place-items:center;color:#f0ce86;font:800 42px 'Playfair Display',serif;position:relative;animation:loaderPulse 1.3s infinite}.loader-mark:after{content:'';position:absolute;inset:-9px;border:2px solid transparent;border-top-color:#e5b95d;border-radius:50%;animation:spin 1s linear infinite}.loader small{display:block;color:#f9eed6;text-align:center;margin-top:24px;letter-spacing:2px;font-size:11px}@keyframes spin{to{transform:rotate(360deg)}}@keyframes loaderPulse{50%{transform:scale(1.08)}}
+header{position:sticky;top:0;z-index:60;background:rgba(255,250,240,.88);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;white-space:nowrap}.brand-mark{font:800 35px 'Playfair Display',serif;color:var(--gold)}nav{display:flex;gap:23px;align-items:center}nav a{font-size:14px;font-weight:700;color:#303b49;position:relative}nav a:after{content:'';position:absolute;left:0;bottom:-7px;width:0;height:2px;background:var(--gold);transition:.3s}nav a:hover:after,nav a.active:after{width:100%}.nav-actions{display:flex;gap:9px;align-items:center}.round-btn,.menu-btn{width:42px;height:42px;border:1px solid var(--line);background:var(--paper2);border-radius:50%;cursor:pointer;color:var(--green);transition:.3s}.round-btn:hover{transform:rotate(18deg);box-shadow:0 0 0 5px #bd821d20}.menu-btn{display:none;border-radius:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 20px;border-radius:999px;border:1px solid var(--gold);font-weight:700;font-size:14px;transition:transform .25s,box-shadow .25s,background .25s;position:relative;overflow:hidden}.btn:before{content:'';position:absolute;inset:0;transform:translateX(-120%) skewX(-20deg);background:linear-gradient(90deg,transparent,#ffffff55,transparent);transition:.55s}.btn:hover:before{transform:translateX(120%) skewX(-20deg)}.btn:hover{transform:translateY(-4px);box-shadow:0 12px 26px #064b3525}.btn-green{background:var(--green);border-color:var(--green);color:white}.btn-outline{color:var(--green);background:transparent}
+.hero{position:relative;isolation:isolate;overflow:hidden;padding:76px 0 32px;background:radial-gradient(ellipse at 78% 30%,#e9d6a9 0,transparent 31%),linear-gradient(115deg,#fff9ec,#f2e7cf)}.hero:before{content:'';position:absolute;inset:auto -10% -145px;height:260px;background:radial-gradient(ellipse,#d7bd83 0,transparent 70%);opacity:.45;z-index:-1}.waterfall-glow{position:absolute;z-index:-1;right:5%;top:0;width:300px;height:100%;opacity:.34;pointer-events:none;background:repeating-linear-gradient(180deg,transparent 0 18px,#fff8e8 19px,transparent 22px),linear-gradient(180deg,transparent,#d5ad5d55,transparent);mask-image:radial-gradient(ellipse at center,#000 0,transparent 70%);animation:waterfallFlow 7s linear infinite}@keyframes waterfallFlow{to{background-position:0 180px,0 0}}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:35px;min-height:440px}.kicker{display:inline-flex;align-items:center;gap:9px;background:#f0e3c4;border:1px solid #e6d4a8;border-radius:30px;padding:7px 14px;font-size:12px;font-weight:700;color:#344332}.dot{width:9px;height:9px;background:var(--green2);border-radius:50%;box-shadow:0 0 0 5px #0b624620;animation:blink 1.8s infinite}@keyframes blink{50%{box-shadow:0 0 0 9px #0b624600}}h1,h2,h3{font-family:'Playfair Display','Hind Siliguri',serif}h1{font-size:clamp(43px,6vw,76px);line-height:1.05;letter-spacing:-1.5px;margin:20px 0 14px}.gold{color:var(--gold)}.role{font-size:19px;font-weight:700;margin-bottom:9px}.intro{max-width:600px;color:#485263;font-size:16px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}.socials{display:flex;gap:11px;margin-top:22px}.socials a{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:#fff8e9;border:1px solid var(--line);color:var(--green);font-weight:700;transition:.25s}.socials a:hover{transform:translateY(-5px) rotate(-8deg);background:var(--green);color:white}.hero-art{min-height:420px;display:flex;align-items:center;justify-content:flex-end;position:relative;padding-left:115px;perspective:1000px}.portrait-frame{width:min(345px,68vw);height:390px;z-index:2;border-radius:48% 48% 14px 14px;background:var(--green);border:5px solid #d9aa4b;box-shadow:0 24px 55px rgba(5,55,39,.22);overflow:hidden;position:relative;transform-style:preserve-3d;transition:transform .2s}.portrait-frame:before{content:'';position:absolute;inset:12px;border:1px solid #f1d48a90;border-radius:48% 48% 10px 10px;z-index:2;pointer-events:none}.portrait-frame img{width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block}.orbit{position:absolute;width:400px;height:400px;border:1px solid #bd821d60;border-radius:50%;right:-10px;top:8px;animation:orbit 22s linear infinite}.orbit:before,.orbit:after{content:'';position:absolute;width:12px;height:12px;border-radius:50%;background:var(--gold);box-shadow:0 0 20px #bd821d}.orbit:before{top:15%;left:15%}.orbit:after{bottom:12%;right:18%;width:8px;height:8px;background:var(--green)}@keyframes orbit{to{transform:rotate(360deg)}}.focus-card{position:absolute;left:0;top:50%;transform:translateY(-50%);width:190px;z-index:3;background:#fff9eb;border:1px solid var(--line);border-radius:16px;padding:15px;box-shadow:var(--shadow);font-size:13px;font-weight:700;display:grid;gap:10px}.focus-card span{display:flex;gap:10px;align-items:center}.focus-card i{font-style:normal;color:var(--gold);font-size:19px;width:23px;text-align:center}.float-chip{position:absolute;right:-5px;bottom:34px;z-index:4;background:var(--green);color:#fff8e9;padding:10px 15px;border-radius:12px;box-shadow:var(--shadow);font-size:12px;animation:float 4s ease-in-out infinite}@keyframes float{50%{transform:translateY(-12px)}}.stats{display:grid;grid-template-columns:repeat(4,1fr);background:rgba(255,250,240,.86);border:1px solid var(--line);border-radius:17px;padding:20px 12px;margin-top:12px;box-shadow:var(--shadow);backdrop-filter:blur(12px)}.stat{display:flex;justify-content:center;align-items:center;gap:12px;border-right:1px solid var(--line)}.stat:last-child{border:0}.stat i{font-style:normal;font-size:27px;color:var(--gold)}.stat b{display:block;font:700 21px 'Playfair Display',serif}.stat small{font-size:12px;color:var(--muted)}
+section{padding:78px 0;position:relative}.section-head{display:flex;align-items:center;gap:14px;margin-bottom:30px}.section-head h2{font-size:clamp(27px,3vw,35px)}.section-head:after{content:'';width:48px;height:2px;background:var(--gold)}.section-sub{color:var(--muted);margin-top:-18px;margin-bottom:24px}.about-skills{display:grid;grid-template-columns:.95fr 1.05fr;gap:42px;align-items:start}.about-card{display:grid;grid-template-columns:155px 1fr;gap:20px;align-items:center}.about-photo{height:180px;border:4px solid white;border-radius:17px;background:var(--green);box-shadow:var(--shadow);overflow:hidden;transform:rotate(-3deg);transition:.4s}.about-photo:hover{transform:rotate(0) scale(1.04)}.about-photo img{width:100%;height:100%;object-fit:cover;object-position:center 22%}.about-copy p{font-size:14px;color:#4f5968;margin-bottom:12px}.checks{list-style:none;display:grid;gap:7px;margin-top:12px}.checks li{font-size:13px;font-weight:600}.checks li:before{content:'✓';display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;background:#e9d5a8;color:var(--green);margin-right:8px}.study-card{margin-top:24px;padding:19px;background:linear-gradient(135deg,#fffaf0,#f7ecd4);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:15px;box-shadow:0 8px 20px #4632140e}.study-card strong{display:block;color:var(--green);font-size:16px}.study-card p{font-size:13px;color:var(--muted);margin-top:6px}.study-badge{display:inline-flex;margin-top:10px;padding:5px 11px;border-radius:30px;background:#e7f0e8;color:var(--green);font-size:11px;font-weight:700}.skill-groups{display:grid;gap:16px}.group-label{font-size:12px;font-weight:800;letter-spacing:.5px;color:var(--green);margin-bottom:8px}.skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.skill{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 9px;text-align:center;box-shadow:0 5px 15px #4632140a;transition:transform .35s,box-shadow .35s,border-color .35s;transform-style:preserve-3d}.skill:hover{transform:translateY(-8px) rotateX(5deg) rotateY(-5deg);box-shadow:0 18px 28px #064b3520;border-color:#c99a43}.skill .ico{font-size:25px;color:var(--green);display:block;margin-bottom:5px}.skill b{display:block;font-size:12px}.skill small{font-size:11px;color:var(--muted)}
+.projects{background:linear-gradient(180deg,#f5ecd9,#f9f3e7)}.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.project{background:var(--card);border:1px solid var(--line);border-radius:17px;overflow:hidden;box-shadow:0 8px 22px #46321410;transition:transform .25s,box-shadow .3s;transform-style:preserve-3d}.project:hover{box-shadow:0 25px 40px #064b3520;border-color:#c99a43}.project-visual{height:145px;background:radial-gradient(circle at 75% 20%,#ffffff32,transparent 28%),linear-gradient(135deg,#064b35,#153d32);display:grid;place-items:center;color:#f1ce7b;font-size:48px;position:relative;overflow:hidden}.project-visual:after{content:'';position:absolute;width:190px;height:190px;border:1px solid #ffffff30;border-radius:50%;transform:translate(45px,38px);box-shadow:0 0 0 22px #ffffff08,0 0 0 44px #ffffff05}.project:nth-child(2) .project-visual{background:linear-gradient(135deg,#283e45,#71857b)}.project:nth-child(3) .project-visual{background:linear-gradient(135deg,#153d32,#7e9b73)}.project:nth-child(4) .project-visual{background:linear-gradient(135deg,#174b4a,#72a99a)}.project:nth-child(5) .project-visual{background:linear-gradient(135deg,#263e63,#6886b0)}.project-body{padding:17px}.project-body h3{font-size:18px;margin-bottom:7px}.project-body p{font-size:13px;color:var(--muted);min-height:57px}.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}.tags span{font-size:10px;font-weight:700;padding:4px 9px;border-radius:20px;background:#f1e5ca;color:#405142}.project-link{display:inline-flex;margin-top:14px;color:var(--green);font-size:12px;font-weight:700}.project-link:hover{color:var(--gold)}
+.education-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px}.timeline{position:relative;padding-left:25px}.timeline:before{content:'';position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--green),var(--gold));transform-origin:top;transform:scaleY(var(--line-progress,0));transition:transform 1.2s}.edu-item{position:relative;padding:0 0 25px 17px}.edu-item:before{content:'';position:absolute;left:-24px;top:7px;width:13px;height:13px;border-radius:50%;background:var(--paper2);border:3px solid var(--green);box-shadow:0 0 0 5px #064b3510}.edu-item h3{font-size:17px}.edu-item p{font-size:13px;color:var(--muted)}.edu-item small{color:var(--gold);font-weight:700}.language-card{padding:24px;border-radius:18px;background:linear-gradient(135deg,#064b35,#0c6146);color:#fff8e9;position:relative;overflow:hidden;box-shadow:var(--shadow)}.language-card:after{content:'DE';position:absolute;right:12px;bottom:-35px;font:800 150px 'Playfair Display',serif;color:#ffffff0b}.language-card .flag{font-size:28px}.language-card h3{font-size:24px;margin:10px 0}.language-card p{font-size:14px;color:#e6eddf;max-width:470px}.level{display:inline-flex;margin-top:15px;padding:6px 13px;border:1px solid #e4c77c;border-radius:30px;color:#f4d88e;font-size:12px;font-weight:700}.certificates{background:#f4ead7}.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.cert{padding:21px;background:var(--paper2);border:1px solid var(--line);border-radius:16px;box-shadow:0 8px 20px #4632140c;transition:transform .35s,box-shadow .35s;transform-style:preserve-3d}.cert:hover{transform:translateY(-9px) rotateX(4deg);box-shadow:0 20px 32px #064b3520}.cert-icon{width:44px;height:44px;border-radius:13px;background:#f2e2bf;color:var(--gold);display:grid;place-items:center;font-size:23px;margin-bottom:14px}.cert h3{font-size:17px;line-height:1.4}.cert p{font-size:12px;color:var(--muted);margin:7px 0 16px}.cert a{display:inline-flex;align-items:center;gap:8px;color:var(--green);font-weight:700;font-size:13px}.cert a:hover{color:var(--gold)}
+.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:25px}.contact-info,.contact-box{padding:25px;background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}.contact-info p{color:var(--muted);font-size:14px}.contact-row{display:flex;gap:12px;align-items:center;margin-top:18px}.contact-icon{width:42px;height:42px;border-radius:12px;background:#f0e3c4;color:var(--green);display:grid;place-items:center}.contact-row b{display:block;font-size:13px}.contact-row small{color:var(--muted);font-size:11px}.contact-box h3{font-size:22px;margin-bottom:10px}.contact-box p{font-size:14px;color:var(--muted)}.contact-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}footer{background:var(--green);color:#fff8e9;border-top:4px solid var(--gold);padding:28px 0}.footer-row{display:flex;justify-content:space-between;align-items:center;gap:20px}.footer-brand{font:700 21px 'Playfair Display',serif}.footer-brand span{color:#e6bd66}.footer-nav{display:flex;gap:18px;flex-wrap:wrap;font-size:12px}.copyright{text-align:center;color:#e5e6d9;font-size:11px;margin-top:20px}.to-top{position:fixed;right:22px;bottom:22px;width:44px;height:44px;border:0;border-radius:50%;background:var(--green);color:#fff;font-size:20px;box-shadow:var(--shadow);opacity:0;visibility:hidden;transform:translateY(12px);transition:.3s;z-index:45;cursor:pointer}.to-top.show{opacity:1;visibility:visible;transform:none}
+.reveal{opacity:0;transform:translateY(42px) scale(.985);transition:opacity .85s cubic-bezier(.2,.7,.2,1),transform .85s cubic-bezier(.2,.7,.2,1)}.reveal.from-left{transform:translateX(-55px)}.reveal.from-right{transform:translateX(55px)}.reveal.zoom{transform:scale(.88)}.reveal.visible{opacity:1;transform:none}.delay-1{transition-delay:.12s}.delay-2{transition-delay:.24s}.delay-3{transition-delay:.36s}.parallax{will-change:transform}
+@media(max-width:900px){nav{gap:13px}nav a{font-size:12px}.hero-grid{gap:12px}.hero-art{padding-left:85px}.focus-card{width:155px}.portrait-frame{height:340px}.orbit{width:340px;height:340px}.about-skills{grid-template-columns:1fr}.skill-grid{grid-template-columns:repeat(4,1fr)}.project-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:680px){.nav{height:66px}.menu-btn{display:block}nav{display:none;position:absolute;top:66px;left:0;right:0;padding:18px 5%;background:rgba(255,250,240,.98);border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:15px}nav.open{display:flex}.nav-actions .round-btn{width:38px;height:38px}.hero{padding-top:45px}.hero-grid{grid-template-columns:1fr;min-height:unset}.hero-art{min-height:390px;justify-content:center;padding:15px 0 0}.portrait-frame{width:285px;height:330px}.focus-card{left:0;top:46%;width:145px;font-size:11px}.orbit{width:330px;height:330px;right:calc(50% - 165px);top:28px}.float-chip{right:2px;bottom:18px}.stats{grid-template-columns:repeat(2,1fr);gap:15px}.stat{border:0;justify-content:flex-start;padding-left:12px}.stat:nth-child(odd){border-right:1px solid var(--line)}section{padding:58px 0}.about-card{grid-template-columns:115px 1fr;gap:14px}.about-photo{height:145px}.skill-grid{grid-template-columns:repeat(3,1fr)}.project-grid,.cert-grid,.education-grid,.contact-grid{grid-template-columns:1fr}.project-body p{min-height:unset}.footer-row{flex-direction:column;text-align:center}.footer-nav{justify-content:center}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
 
-.focus-panel{margin-top:24px;padding:17px 18px;background:linear-gradient(135deg,#fffaf0,#f7ecd4);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:14px;box-shadow:0 7px 18px rgba(70,50,20,.06)}
-.focus-panel-heading{display:flex;align-items:center;gap:11px;margin-bottom:13px}
-.focus-panel-heading>i{width:36px;height:36px;border-radius:10px;background:#f1dfb8;color:#9a650c;display:grid;place-items:center;font-size:17px}
-.focus-panel-heading strong{display:block;font:700 16px "Playfair Display";color:var(--ink)}
-.focus-panel-heading small,.focus-items small{display:block;color:var(--muted);font-size:10px;margin-top:3px}
-.focus-items{display:grid;gap:10px}
-.focus-items>div{display:flex;align-items:center;gap:10px}
-.focus-items>div>i{width:28px;color:var(--green);font-size:17px;text-align:center}
-.focus-items b{font-size:11px;display:block}
-.study-status{border-top:1px solid var(--line);margin-top:13px;padding-top:11px;color:var(--green);font-size:10px;font-weight:700;line-height:1.5}
-.study-status i{margin-right:5px;color:var(--gold)}
-.about-copy p{font-size:13px;color:#4f5968;margin-bottom:12px}
-.checks{list-style:none;display:grid;gap:7px;margin-top:12px}
-.checks li{font-size:12px;font-weight:600}
-.checks i{color:var(--gold);margin-right:7px}
-.skill-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.skill{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 8px;text-align:center;box-shadow:0 4px 12px rgba(70,50,20,.05)}
-.skill i{font-size:24px;color:var(--green);margin-bottom:7px}
-.skill b{display:block;font-size:11px}
-.skill small{font-size:10px;color:var(--muted)}
-.skill-groups{display:grid;gap:14px}
-.group-label{font-size:11px;font-weight:800;letter-spacing:.8px;color:var(--green);text-transform:uppercase;margin-bottom:7px}
-.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
-.project{background:var(--card);border:1px solid var(--line);border-radius:15px;overflow:hidden;box-shadow:0 7px 18px rgba(70,50,20,.07);transition:.2s}
-.project:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-.project-visual{height:125px;background:linear-gradient(135deg,#0a4c36,#153d32);display:grid;place-items:center;color:#e9c36f;font-size:43px}
-.project:nth-child(2) .project-visual{background:linear-gradient(135deg,#253344,#63717b)}
-.project:nth-child(3) .project-visual{background:linear-gradient(135deg,#3d253e,#986a82)}
-.project:nth-child(4) .project-visual{background:linear-gradient(135deg,#174b4a,#72a99a)}
-.project:nth-child(5) .project-visual{background:linear-gradient(135deg,#263e63,#6886b0)}
-.project:nth-child(6) .project-visual{background:linear-gradient(135deg,#76501b,#c59b4a)}
-.project-body{padding:16px}
-.project h3{font-size:17px;margin-bottom:6px}
-.project p{font-size:11px;color:var(--muted);min-height:52px}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
-.tags span{font-size:9px;font-weight:700;color:var(--green);background:#f0e6ce;border-radius:20px;padding:4px 8px}
-.project-link{display:inline-block;margin-top:13px;color:var(--green);font-size:11px;font-weight:800}
-.lower-grid{display:grid;grid-template-columns:1fr 1fr;gap:42px}
-.timeline{border-left:2px solid #d9c69f;padding-left:23px;margin-left:10px}
-.timeline-item{position:relative;padding:0 0 24px}
-.timeline-item:before{content:"";position:absolute;left:-30px;top:7px;width:12px;height:12px;border:3px solid var(--green);background:var(--paper);border-radius:50%}
-.timeline-item h3{font-size:15px}
-.timeline-item p{font-size:12px;color:var(--muted)}
-.timeline-item small{display:inline-block;margin-top:3px;color:#936313;font-weight:700;font-size:10px}
-.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.cert{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:15px}
-.cert i{color:var(--gold);font-size:23px}
-.cert h3{font-size:14px;margin:8px 0 4px}
-.cert p{font-size:10px;color:var(--muted)}
-.cert a{display:inline-block;margin-top:10px;font-size:11px;color:var(--green);font-weight:800}
-.contact{background:#fff8e9;border:1px solid var(--line);border-radius:18px;padding:27px}
-.contact p{font-size:13px;color:var(--muted);margin:8px 0 18px}
-.contact-links{display:flex;gap:9px;flex-wrap:wrap}
-footer{background:#063c2b;color:#fff7e7;padding:27px 0 20px;border-top:4px solid #c9942f}
-.footer-row{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.footer-brand{font:700 20px "Playfair Display"}
-.footer-brand span{color:#e5bd65}
-.footer-nav{display:flex;gap:17px;flex-wrap:wrap;font-size:11px}
-.footer-social{display:flex;gap:9px}
-.footer-social a{width:32px;height:32px;border:1px solid #527b68;border-radius:50%;display:grid;place-items:center}
-.copyright{text-align:center;color:#cbd7cb;font-size:10px;margin-top:18px}
-.note{font-size:10px;color:var(--muted);margin-top:10px}
-body.dark{--paper:#101b17;--paper2:#17251f;--ink:#f6f0df;--muted:#c2c9bd;--green:#b7d1a8;--green2:#d5e5c8;--gold:#e1b85e;--line:#34483c;--card:#17251f;background:var(--paper);color:var(--ink)}
-body.dark header{background:rgba(16,27,23,.94)}
-body.dark nav a,body.dark .intro,body.dark .about-copy p{color:#d0d7ca}
-body.dark .hero{background:radial-gradient(circle at 78% 38%,#304b39 0,transparent 32%),linear-gradient(115deg,#14221b,#1d2d22)}
-body.dark .stats,body.dark .focus-card,body.dark .contact{background:#17251f}
-body.dark .kicker{background:#293b2d;color:#e5e9d9;border-color:#425a45}
-body.dark .skill,body.dark .project,body.dark .cert{background:var(--card)}
-body.dark .skill small,body.dark .project p,body.dark .cert p{color:#c2c9bd}
-body.dark .tags span{background:#2b3d30;color:#e1c47c}
-@media(max-width:900px){nav{gap:13px}.nav .btn{padding:10px 12px}.about-skills{grid-template-columns:1fr}.project-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:680px){
- .nav{height:68px}.menu-btn{display:block}nav{display:none;position:absolute;top:68px;left:0;right:0;background:var(--paper2);padding:20px;flex-direction:column;border-bottom:1px solid var(--line)}nav.open{display:flex}.nav-right .btn{display:none}
- .hero{padding-top:48px}.hero-grid{grid-template-columns:1fr;text-align:center;gap:20px}.hero-art{grid-row:1;min-height:270px}.portrait-frame{height:265px;width:245px}.focus-card{left:0;top:25px}.hero-actions,.socials{justify-content:center}.intro{margin:auto}
- .stats{grid-template-columns:repeat(2,1fr);gap:15px}.stat{border:0}.stat:nth-child(odd){border-right:1px solid var(--line)}
- section{padding:48px 0}.about-card{grid-template-columns:110px 1fr}.about-photo{height:130px}
- .skill-grid{grid-template-columns:repeat(3,1fr)}.project-grid,.lower-grid{grid-template-columns:1fr}.cert-grid{grid-template-columns:1fr}
- .section-title h2{font-size:25px}
-}
+/* Interactive Knowledge Library */
+.library-section{padding-top:36px}.library-preview{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:26px;align-items:center;padding:28px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(120deg,#fffaf0 0%,#f0e5cd 58%,#e8d5ad 100%);box-shadow:var(--shadow);overflow:hidden}.library-preview:before{content:"";position:absolute;width:320px;height:320px;border-radius:50%;background:rgba(189,130,29,.12);filter:blur(4px);right:-90px;top:-150px}.library-copy{position:relative;z-index:1}.library-copy h3{font-size:clamp(24px,3vw,34px);margin:10px 0}.library-copy p{color:#596273;font-size:14px;max-width:550px}.library-kicker{font-size:11px;letter-spacing:1.4px;font-weight:800;color:var(--green)}.library-points{display:flex;flex-wrap:wrap;gap:8px;margin:17px 0}.library-points span{border:1px solid #e2d2ae;background:#fff9eb;border-radius:30px;padding:6px 10px;font-size:11px;color:#315443;font-weight:700}.library-scene-mini{height:245px;position:relative;perspective:800px;display:flex;align-items:center;justify-content:center}.mini-room{width:90%;height:190px;position:relative;transform:rotateX(8deg) rotateY(-8deg);transform-style:preserve-3d;background:linear-gradient(180deg,#174c3b,#082f25);border:2px solid #c99837;border-radius:16px;box-shadow:0 22px 35px #173c2c55;overflow:hidden}.mini-room:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 47px,#d4aa5830 48px 50px),linear-gradient(180deg,transparent 65%,#b9873522 66%)}.mini-shelves{position:absolute;left:8%;right:8%;top:22%;height:42%;display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.mini-shelves i{display:block;border:1px solid #d7b15d;border-bottom:7px solid #a97729;border-radius:4px;background:linear-gradient(135deg,#f3e6c9,#b78a40);box-shadow:0 5px 10px #0005;animation:miniFloat 3s ease-in-out infinite}.mini-shelves i:nth-child(2n){animation-delay:.4s;background:linear-gradient(135deg,#e9f0e6,#6d9a7c)}.mini-shelves i:nth-child(3n){animation-delay:.8s;background:linear-gradient(135deg,#e5d9bf,#557c68)}.mini-floor{position:absolute;bottom:-5%;left:12%;width:76%;height:38%;background:repeating-linear-gradient(90deg,#c8a35c22 0 1px,transparent 1px 45px),linear-gradient(180deg,#c6a15b55,#6b4b25);transform:rotateX(58deg);transform-origin:top;border-top:2px solid #d7b15d}.mini-sign{position:absolute;top:9%;left:0;right:0;text-align:center;color:#f3d58e;font:700 15px Georgia;letter-spacing:2px;text-shadow:0 2px 8px #000}.mini-person{position:absolute;bottom:19%;left:48%;width:13px;height:44px;border-radius:10px 10px 4px 4px;background:linear-gradient(#d8b17a 0 25%,#172b26 26%);box-shadow:0 0 20px #d8b17a88;animation:walkMini 3s ease-in-out infinite}@keyframes miniFloat{50%{transform:translateY(-6px)}}@keyframes walkMini{0%,100%{transform:translateX(-25px)}50%{transform:translateX(25px)}}
+.library-open{margin-top:4px}.library-modal,.skill-modal,.reader-modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(7,20,16,.82);backdrop-filter:blur(12px)}.library-modal.open,.skill-modal.open,.reader-modal.open{display:flex}.library-shell{width:min(1120px,96vw);height:min(760px,94vh);border:1px solid #b98b38;border-radius:22px;overflow:hidden;background:#092f25;box-shadow:0 30px 90px #0009;display:flex;flex-direction:column}.library-top{display:flex;align-items:center;justify-content:space-between;padding:13px 18px;background:#f7f0df;color:#17382c;gap:12px}.library-top strong{font:700 18px Georgia}.library-top small{display:block;color:#647368;font-size:11px}.library-controls{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.lib-control{border:1px solid #d9c69f;border-radius:30px;padding:8px 12px;background:#fffaf0;color:#064b35;font-weight:700;font-size:12px;cursor:pointer}.lib-control.primary{background:#064b35;color:#fff;border-color:#064b35}.lib-room{position:relative;flex:1;min-height:0;overflow:hidden;background:radial-gradient(ellipse at 50% 15%,#52735b 0,#173e31 38%,#08291f 78%);perspective:1000px}.room-back{position:absolute;inset:0 8% 24%;background:linear-gradient(180deg,#1d503d,#0b3026);border-left:8px solid #a9782d;border-right:8px solid #a9782d;box-shadow:inset 0 0 70px #0008}.room-back:before{content:"MUZAHIDUL'S KNOWLEDGE LIBRARY";position:absolute;top:8%;left:0;right:0;text-align:center;color:#f1d28a;font:700 clamp(13px,2vw,22px) Georgia;letter-spacing:2px;text-shadow:0 3px 12px #000}.room-back:after{content:"";position:absolute;left:5%;right:5%;top:22%;height:2px;background:#d7ae5c;box-shadow:0 105px #d7ae5c,0 210px #d7ae5c}.room-shelf{position:absolute;left:13%;right:13%;top:31%;height:43%;display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(5px,1.4vw,18px);z-index:2}.room-skill{position:relative;align-self:start;min-height:82px;height:100%;max-height:135px;border:1px solid #e0bd6e;border-bottom:9px solid #a8782d;border-radius:8px 8px 4px 4px;background:linear-gradient(145deg,#fff3d8,#cba65e);color:#15392c;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;cursor:pointer;box-shadow:0 10px 18px #0006;transition:transform .35s,box-shadow .35s,filter .35s}.room-skill:nth-child(3n){background:linear-gradient(145deg,#e9f4e8,#79a28a)}.room-skill:nth-child(3n+2){background:linear-gradient(145deg,#f2e7d6,#a88b68)}.room-skill:hover,.room-skill:focus-visible{transform:translateY(-18px) scale(1.08);box-shadow:0 18px 28px #0008,0 0 22px #e6c46f88;filter:brightness(1.08);outline:2px solid #f5d98f}.room-skill b{font-size:clamp(10px,1.2vw,15px)}.room-skill small{font-size:9px;opacity:.75}.room-skill .object-icon{font-size:clamp(21px,3vw,34px);line-height:1}.room-floor{position:absolute;left:-8%;right:-8%;bottom:-17%;height:45%;background:repeating-linear-gradient(90deg,transparent 0 9.7%,#d8b66c28 9.8% 10%),repeating-linear-gradient(0deg,#b18b4c 0 2px,#84622f 2px 4px);transform:rotateX(58deg);transform-origin:top;box-shadow:inset 0 18px 35px #0008}.room-walkway{position:absolute;bottom:3%;left:42%;width:16%;height:27%;background:linear-gradient(180deg,#d6b36b22,#d6b36b08);clip-path:polygon(40% 0,60% 0,100% 100%,0 100%);z-index:1}.room-instructions{position:absolute;bottom:13px;left:50%;transform:translateX(-50%);z-index:5;background:#fff8e9ee;color:#17382c;border:1px solid #d9b45d;border-radius:30px;padding:8px 15px;font-size:12px;font-weight:700;white-space:nowrap;box-shadow:0 5px 18px #0004}.room-nav{position:absolute;bottom:62px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:5}.walk-btn{border:1px solid #e4c477;background:#0b4b37;color:#fff;border-radius:30px;padding:9px 14px;font-size:12px;font-weight:700;cursor:pointer}.room-caption{position:absolute;top:16px;left:18px;color:#f8e7bd;font-size:11px;z-index:4;text-shadow:0 2px 8px #000}.skill-detail-card{width:min(460px,94vw);background:#fffaf0;color:#182c24;border:1px solid #d9b45d;border-radius:20px;padding:25px;box-shadow:0 25px 70px #0008;position:relative;animation:detailIn .45s cubic-bezier(.2,.8,.2,1)}@keyframes detailIn{from{opacity:0;transform:translateY(35px) scale(.88) rotateX(12deg)}to{opacity:1;transform:none}}.detail-close{position:absolute;right:13px;top:12px;border:0;background:#efe4ce;border-radius:50%;width:34px;height:34px;cursor:pointer}.detail-head{display:flex;gap:16px;align-items:center;margin:8px 0 16px}.detail-icon{width:72px;height:72px;border-radius:18px;display:grid;place-items:center;background:linear-gradient(145deg,#0b533b,#092f25);color:#f3d58e;font-size:32px;box-shadow:0 10px 20px #064b3533}.detail-head h3{font-size:25px}.detail-head p{font-size:12px;color:#657166}.detail-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}.detail-action{padding:13px;border-radius:12px;border:1px solid #dfcfaa;background:#fff5df;color:#164b37;font-weight:800;cursor:pointer;text-align:left}.detail-action span{display:block;font-size:11px;color:#6d766d;font-weight:500;margin-top:4px}.detail-action.primary{background:#064b35;color:white;border-color:#064b35}.detail-action.primary span{color:#e6d8b8}.reader-shell{width:min(1050px,96vw);height:min(780px,94vh);background:#f5ead4;border:1px solid #d6b66f;border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 25px 90px #0009}.reader-top{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:#064b35;color:#fff;gap:10px}.reader-top strong{font:700 17px Georgia}.reader-top button{border:1px solid #d5b56f;background:#fff6e3;color:#064b35;border-radius:20px;padding:7px 12px;font-weight:700;cursor:pointer}.book-stage{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:18px;background:radial-gradient(ellipse,#d9c49b,#bba77f)}.book{position:relative;width:min(780px,94%);height:min(620px,100%);display:flex;align-items:stretch;perspective:1600px;filter:drop-shadow(0 16px 20px #46351c55)}.book-page{width:50%;height:100%;background:#fffdf6;border:1px solid #d8cba9;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}.book-page.left{border-radius:10px 0 0 10px;box-shadow:inset -12px 0 18px -18px #57452a}.book-page.right{border-radius:0 10px 10px 0;box-shadow:inset 12px 0 18px -18px #57452a}.book-page canvas{max-width:100%;max-height:100%;object-fit:contain}.book-page .empty-page{padding:25px;text-align:center;color:#526052}.page-flip{position:absolute;z-index:4;top:0;right:0;width:50%;height:100%;transform-origin:left center;transform-style:preserve-3d;pointer-events:none}.page-flip.turn{animation:pageTurn .65s ease-in-out}@keyframes pageTurn{0%{transform:rotateY(0);filter:brightness(1)}45%{filter:brightness(.72)}100%{transform:rotateY(-180deg);filter:brightness(1)}}.flip-front,.flip-back{position:absolute;inset:0;background:#fffdf6;border:1px solid #d8cba9;backface-visibility:hidden;display:grid;place-items:center;color:#526052}.flip-back{transform:rotateY(180deg)}.reader-bottom{display:flex;align-items:center;justify-content:center;gap:14px;padding:12px;background:#fffaf0;border-top:1px solid #e4d6b8;color:#254536}.reader-bottom button{border:0;border-radius:24px;background:#064b35;color:white;padding:9px 17px;font-weight:700;cursor:pointer}.reader-bottom button:disabled{opacity:.35;cursor:not-allowed}.reader-note{font-size:11px;color:#6a7169;text-align:center;padding:0 12px 10px;background:#fffaf0}.reader-loading{position:absolute;color:#375c48;font-weight:700}.library-toast{position:absolute;top:55px;left:50%;transform:translateX(-50%);z-index:10;background:#fff8e9;color:#1a4937;border-radius:24px;padding:8px 14px;font-size:12px;box-shadow:0 6px 18px #0004;opacity:0;pointer-events:none;transition:.3s}.library-toast.show{opacity:1}.sound-state{font-size:10px;color:#fff0c8;margin-left:4px}
+@media(max-width:760px){.library-preview{grid-template-columns:1fr;padding:22px}.library-scene-mini{height:190px}.mini-room{height:155px}.library-shell{height:96vh;width:98vw;border-radius:13px}.library-top{align-items:flex-start;flex-direction:column}.room-shelf{left:5%;right:5%;top:32%;grid-template-columns:repeat(3,1fr);height:42%;gap:6px}.room-skill{min-height:52px;max-height:70px;flex-direction:row;gap:5px;border-bottom-width:5px}.room-skill .object-icon{font-size:19px}.room-skill small{display:none}.room-back{inset:0 3% 27%}.room-back:after{top:19%;box-shadow:0 75px #d7ae5c,0 150px #d7ae5c}.room-nav{bottom:56px}.room-instructions{font-size:10px;bottom:10px;max-width:94%;white-space:normal;text-align:center}.reader-shell{height:94vh}.book{height:min(580px,100%);width:98%}.book-stage{padding:8px}.reader-bottom{gap:8px}.reader-bottom button{padding:8px 12px}.detail-actions{grid-template-columns:1fr}.library-controls{width:100%}}
+@media(prefers-reduced-motion:reduce){.mini-shelves i,.mini-person{animation:none!important}.page-flip.turn{animation-duration:.01ms}}
+
 </style>
 </head>
 <body>
-<header>
- <div class="wrap nav">
-  <a class="brand" href="#home"><span class="brand-mark">M</span> Muzahidul Islam</a>
-  <nav id="nav"><a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a></nav>
-  <div class="nav-right">
-   <button class="icon-btn" id="theme" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
-   <a class="btn btn-green" href="#certificates"><i class="fa-solid fa-award"></i> 3 Certificates</a>
-   <button class="menu-btn" id="menu" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
-  </div>
- </div>
-</header>
-
+<div class="loader" id="loader"><div><div class="loader-mark">M</div><small>স্বাগতম</small></div></div><div class="grain"></div><div class="cursor-glow"></div><div class="progress" id="progress"></div>
+<header><div class="wrap nav"><a class="brand" href="#home"><span class="brand-mark">M</span><span>MD Muzahidul Islam</span></a><nav id="nav"><a href="#home">হোম</a><a href="#about">আমার সম্পর্কে</a><a href="#skills">দক্ষতা</a><a href="#knowledge-library">নোট লাইব্রেরি</a><a href="#projects">প্রকল্প</a><a href="#education">শিক্ষা</a><a href="#certificates">সনদ</a><a href="#contact">যোগাযোগ</a></nav><div class="nav-actions"><button class="round-btn" id="themeBtn" aria-label="রঙ পরিবর্তন">☾</button><button class="menu-btn" id="menuBtn" aria-label="মেনু">☰</button></div></div></header>
 <main>
-<section class="hero" id="home">
- <div class="wrap">
-  <div class="hero-grid">
-   <div>
-    <div class="kicker"><i class="fa-solid fa-circle"></i> CSE Undergraduate · Android Developer · AI Automation Enthusiast</div>
-    <h1>MD Muzahidul <span class="gold">Islam</span></h1>
-    <div class="role">BSc in Computer Science & Engineering · Currently Studying</div>
-    <p class="intro">Interested in software development, AI automation, Android app development and robotics. I enjoy building practical projects, learning new technologies and connecting software with real-world ideas.</p>
-    <div class="hero-actions">
-     <a class="btn btn-green" href="#projects"><i class="fa-solid fa-code"></i> View My Projects</a>
-     <a class="btn btn-outline" href="#contact"><i class="fa-regular fa-envelope"></i> Get In Touch</a>
-    </div>
-    <div class="socials">
-     <a href="https://github.com/muzahidul86233" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-     <a href="#contact" aria-label="LinkedIn profile link to be added"><i class="fa-brands fa-linkedin-in"></i></a>
-     <a href="#contact" aria-label="Email to be added"><i class="fa-regular fa-envelope"></i></a>
-    </div>
-   </div>
-   <div class="hero-art">
-    <div class="focus-card">
-     <span><i class="fa-solid fa-laptop-code"></i> Software Development</span>
-     <span><i class="fa-solid fa-wand-magic-sparkles"></i> AI Automation</span>
-     <span><i class="fa-brands fa-android"></i> Android App Development</span>
-     <span><i class="fa-solid fa-robot"></i> Robotics & IoT</span>
-    </div>
-    <div class="portrait-frame">
-     <img src="assets/profile.png" alt="MD Muzahidul Islam professional portrait">
-    </div>
-   </div>
-  </div>
-  <div class="stats">
-   <div class="stat"><i class="fa-solid fa-graduation-cap"></i><div><b>Undergraduate</b><small>BSc in CSE · Ongoing</small></div></div>
-   <div class="stat"><i class="fa-solid fa-code"></i><div><b>Projects</b><small>Hands-on Practice</small></div></div>
-   <div class="stat"><i class="fa-solid fa-robot"></i><div><b>AI & IoT</b><small>Exploring</small></div></div>
-   <div class="stat"><i class="fa-solid fa-seedling"></i><div><b>Always</b><small>Learning</small></div></div>
-  </div>
- </div>
-</section>
+<section class="hero" id="home"><div class="waterfall-glow"></div><div class="wrap"><div class="hero-grid"><div class="hero-copy"><div class="kicker reveal"><span class="dot"></span> সিএসই শিক্ষার্থী · সফটওয়্যার ও প্রযুক্তিপ্রেমী</div><h1 class="reveal delay-1">আমি <span class="gold">মুজাহিদুল</span><br>ইসলাম</h1><p class="role reveal delay-2">কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং শিক্ষার্থী</p><p class="intro reveal delay-2">সফটওয়্যার তৈরি, অ্যান্ড্রয়েড অ্যাপ, কৃত্রিম বুদ্ধিমত্তাভিত্তিক অটোমেশন এবং রোবোটিকস নিয়ে কাজ করতে ও শিখতে ভালোবাসি। বাস্তব সমস্যার প্রযুক্তিনির্ভর সমাধান তৈরি করাই আমার আগ্রহ।</p><div class="hero-actions reveal delay-3"><a class="btn btn-green magnetic" href="#projects">⌘ আমার প্রকল্প দেখুন</a><a class="btn btn-outline magnetic" href="#contact">✉ যোগাযোগ করুন</a></div><div class="socials reveal delay-3"><a href="https://github.com/muzahidul86233" target="_blank" rel="noreferrer" aria-label="GitHub">GH</a><a href="#contact" aria-label="LinkedIn">in</a><a href="#contact" aria-label="ইমেইল">✉</a></div></div><div class="hero-art parallax"><div class="orbit"></div><div class="focus-card"><span><i>⌘</i> সফটওয়্যার উন্নয়ন</span><span><i>✦</i> এআই অটোমেশন</span><span><i>▣</i> অ্যান্ড্রয়েড অ্যাপ</span><span><i>⚙</i> রোবোটিকস</span></div><div class="portrait-frame" id="heroPortrait"><img src="assets/profile.webp" alt="মুজাহিদুল ইসলামের পেশাদার ছবি"></div><div class="float-chip">কোডিং · শেখা · তৈরি</div></div></div><div class="stats reveal"><div class="stat"><i>♧</i><div><b>চলমান</b><small>সিএসই ডিগ্রি</small></div></div><div class="stat"><i>⌘</i><div><b>৫+</b><small>বাস্তব প্রকল্প</small></div></div><div class="stat"><i>⚙</i><div><b>এআই ও আইওটি</b><small>অনুশীলন ও অনুসন্ধান</small></div></div><div class="stat"><i>✦</i><div><b>নিয়মিত</b><small>নতুন কিছু শেখা</small></div></div></div></div></section>
+<section id="about"><div class="wrap"><div class="about-skills"><div class="reveal from-left"><div class="section-head"><h2>আমার সম্পর্কে</h2></div><div class="about-card"><div class="about-photo"><img src="assets/working.webp" alt="ল্যাপটপে কাজ করার সময় মুজাহিদুল"></div><div class="about-copy"><p>আমি Northern University Bangladesh-এর কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং বিভাগের একজন শিক্ষার্থী।</p><p>প্রোগ্রামিং, অ্যাপ তৈরি, প্রযুক্তি নিয়ে পরীক্ষা-নিরীক্ষা এবং বাস্তবভিত্তিক প্রকল্পে কাজ করতে আগ্রহী।</p></div></div><ul class="checks"><li>বাস্তব সমস্যার কার্যকর সমাধান তৈরিতে আগ্রহী</li><li>সফটওয়্যার ও হার্ডওয়্যার দুই ক্ষেত্রেই শেখার চেষ্টা করি</li><li>নতুন প্রযুক্তি শেখা ও দক্ষতা বাড়ানো আমার লক্ষ্য</li></ul><div class="study-card"><strong>🇩🇪 জার্মান ভাষা শিখছি</strong><p>বর্তমানে জার্মান ভাষার A1 পর্যায়ে পড়াশোনা করছি। ভাষার দক্ষতা বাড়িয়ে ভবিষ্যতে জার্মানিতে পড়াশোনা ও পেশাগত সুযোগের জন্য নিজেকে প্রস্তুত করছি।</p><span class="study-badge">বর্তমান স্তর: A1 · শেখা চলছে</span></div></div><div class="reveal from-right delay-1" id="skills"><div class="section-head"><h2>দক্ষতা ও প্রযুক্তি</h2></div><div class="skill-groups"><div><div class="group-label">প্রোগ্রামিং</div><div class="skill-grid"><div class="skill"><span class="ico">C++</span><b>C / C++</b><small>প্রোগ্রামিং</small></div><div class="skill"><span class="ico">☕</span><b>Java</b><small>শেখা ও অনুশীলন</small></div><div class="skill"><span class="ico">⌘</span><b>OOP ও DSA</b><small>সমস্যা সমাধান</small></div></div></div><div><div class="group-label">অ্যান্ড্রয়েড অ্যাপ উন্নয়ন</div><div class="skill-grid"><div class="skill"><span class="ico">▣</span><b>Android</b><small>অ্যাপ তৈরি</small></div><div class="skill"><span class="ico">◈</span><b>Android Studio</b><small>ডেভেলপমেন্ট টুল</small></div><div class="skill"><span class="ico">🔥</span><b>Firebase</b><small>অ্যাপ ব্যাকএন্ড</small></div></div></div><div><div class="group-label">এআই ও অটোমেশন</div><div class="skill-grid"><div class="skill"><span class="ico">✦</span><b>এআই অটোমেশন</b><small>কর্মপ্রবাহ তৈরি</small></div><div class="skill"><span class="ico">⛓</span><b>n8n</b><small>ওয়ার্কফ্লো</small></div><div class="skill"><span class="ico">◉</span><b>এআই এজেন্ট</b><small>অনুসন্ধান ও অনুশীলন</small></div></div></div><div><div class="group-label">ক্লাউড ও ডেভেলপার টুল</div><div class="skill-grid"><div class="skill"><span class="ico">aws</span><b>AWS</b><small>ক্লাউড সেবা</small></div><div class="skill"><span class="ico">⌂</span><b>Git ও GitHub</b><small>কোড ব্যবস্থাপনা</small></div><div class="skill"><span class="ico">⌨</span><b>VS Code</b><small>কোড এডিটর</small></div></div></div><div><div class="group-label">রোবোটিকস ও ইলেকট্রনিকস</div><div class="skill-grid"><div class="skill"><span class="ico">▦</span><b>ESP32</b><small>মাইক্রোকন্ট্রোলার</small></div><div class="skill"><span class="ico">♧</span><b>Arduino</b><small>ইলেকট্রনিকস</small></div><div class="skill"><span class="ico">⚙</span><b>রোবোটিকস</b><small>হাতে-কলমে কাজ</small></div></div></div></div></div></div></div></section>
 
-<section id="about">
- <div class="wrap about-skills">
-  <div>
-   <div class="section-title"><h2>About Me</h2></div>
-   <div class="about-card">
-    <div class="about-photo"><img src="assets/profile.png" alt="MD Muzahidul Islam portrait"></div>
-    <div class="about-copy">
-     <p>I'm a Computer Science and Engineering student at Northern University Bangladesh. I enjoy solving problems, building applications and exploring technology.</p>
-     <p>My interests include Android app development, Firebase, AI-powered workflow automation and robotics.</p>
-    </div>
-   </div>
-   <ul class="checks">
-    <li><i class="fa-solid fa-circle-check"></i> Focused on practical, real-world projects</li>
-    <li><i class="fa-solid fa-circle-check"></i> Interested in software and hardware</li>
-    <li><i class="fa-solid fa-circle-check"></i> Always learning and improving</li>
-   </ul>
-   <div class="focus-panel">
-    <div class="focus-panel-heading"><i class="fa-solid fa-compass"></i><div><strong>Current Focus & Learning Journey</strong><small>Building skills step by step</small></div></div>
-    <div class="focus-items">
-     <div><i class="fa-brands fa-android"></i><span><b>Android Development</b><small>Creating and improving mobile apps</small></span></div>
-     <div><i class="fa-solid fa-wand-magic-sparkles"></i><span><b>AI & Workflow Automation</b><small>Exploring n8n, AI agents and integrations</small></span></div>
-     <div><i class="fa-solid fa-microchip"></i><span><b>Robotics & IoT</b><small>Learning through ESP32 and Arduino projects</small></span></div>
-    </div>
-    <div class="study-status"><i class="fa-solid fa-graduation-cap"></i> Currently pursuing BSc in CSE at Northern University Bangladesh</div>
-   </div>
-  </div>
-  <div id="skills">
-   <div class="section-title"><h2>Skills & Technologies</h2></div>
-   <div class="skill-groups">
-    <div><div class="group-label">Programming Languages</div><div class="skill-grid">
-     <div class="skill"><i class="fa-solid fa-code"></i><b>C / C++</b><small>Programming</small></div>
-     <div class="skill"><i class="fa-brands fa-java"></i><b>Java</b><small>Learning & practice</small></div>
-    </div></div>
-    <div><div class="group-label">Android App Development</div><div class="skill-grid">
-     <div class="skill"><i class="fa-brands fa-android"></i><b>Android Development</b><small>App development</small></div>
-     <div class="skill"><i class="fa-solid fa-mobile-screen-button"></i><b>Android Studio</b><small>Development tool</small></div>
-     <div class="skill"><i class="fa-solid fa-fire"></i><b>Firebase</b><small>App backend & services</small></div>
-    </div></div>
-    <div><div class="group-label">AI & Automation</div><div class="skill-grid">
-     <div class="skill"><i class="fa-solid fa-wand-magic-sparkles"></i><b>AI Automation</b><small>Workflow building</small></div>
-     <div class="skill"><i class="fa-solid fa-diagram-project"></i><b>n8n</b><small>Workflow practice</small></div>
-     <div class="skill"><i class="fa-solid fa-robot"></i><b>AI Agents</b><small>Exploring</small></div>
-    </div></div>
-    <div><div class="group-label">Cloud & Developer Tools</div><div class="skill-grid">
-     <div class="skill"><i class="fa-brands fa-aws"></i><b>AWS</b><small>Cloud platform</small></div>
-     <div class="skill"><i class="fa-brands fa-github"></i><b>Git & GitHub</b><small>Version control</small></div>
-     <div class="skill"><i class="fa-solid fa-code"></i><b>VS Code</b><small>Code editor</small></div>
-     <div class="skill"><i class="fa-solid fa-cubes"></i><b>OOP & DSA</b><small>Core concepts</small></div>
-    </div></div>
-    <div><div class="group-label">Robotics & Electronics</div><div class="skill-grid">
-     <div class="skill"><i class="fa-solid fa-microchip"></i><b>ESP32</b><small>IoT projects</small></div>
-     <div class="skill"><i class="fa-solid fa-gears"></i><b>Arduino</b><small>Prototyping</small></div>
-    </div></div>
-   </div>
-  </div>
- </div>
-</section>
+<section class="library-section" id="knowledge-library"><div class="wrap"><div class="section-head reveal"><h2>আমার Knowledge Library</h2></div><p class="section-sub reveal">প্রযুক্তি, প্রোগ্রামিং ও শেখার নোট এক জায়গায়। সাধারণভাবে স্কিল দেখুন, অথবা লাইব্রেরিতে ঢুকে 3D অভিজ্ঞতা নিন।</p><div class="library-preview reveal"><div class="library-copy"><div class="library-kicker">INTERACTIVE LEARNING SPACE</div><h3>শিখুন, ঘুরে দেখুন, <span class="gold">নোট পড়ুন</span></h3><p>এখানে C++, Java, Android, AI Automation, Cloud এবং Robotics-এর স্কিলগুলো সাজানো আছে। যেকোনো স্কিল বেছে নিয়ে তার নোট ও প্রজেক্টের তথ্য দেখতে পারবেন।</p><div class="library-points"><span>সহজ Skill Navigation</span><span>PDF নোট</span><span>বইয়ের পাতা উল্টানোর অভিজ্ঞতা</span></div><button class="btn btn-green library-open" id="openLibrary">✦ 3D Library-তে প্রবেশ করুন</button> <a class="btn btn-outline" href="#skills">সাধারণ স্কিল দেখুন ↓</a></div><div class="library-scene-mini" aria-label="লাইব্রেরির 3D প্রিভিউ"><div class="mini-room"><div class="mini-sign">KNOWLEDGE LIBRARY</div><div class="mini-shelves"><i></i><i></i><i></i><i></i><i></i></div><div class="mini-floor"></div><div class="mini-person"></div></div></div></div></div></section>
 
-<section id="projects">
- <div class="wrap">
-  <div class="section-title"><h2>Featured Projects</h2></div>
-  <div class="project-grid">
-   <article class="project"><div class="project-visual"><i class="fa-solid fa-store"></i></div><div class="project-body"><h3>Super Shop Management System</h3><p>A C++ application for product management, inventory operations, billing and sales reporting.</p><div class="tags"><span>C++</span><span>OOP</span><span>File Handling</span></div><a class="project-link" href="https://github.com/muzahidul86233" target="_blank" rel="noopener">GitHub Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></article>
-   <article class="project"><div class="project-visual"><i class="fa-solid fa-car-side"></i></div><div class="project-body"><h3>Autonomous Robot Car</h3><p>An experimental robot car using ESP32, motor control and ultrasonic sensing for obstacle detection.</p><div class="tags"><span>ESP32</span><span>Arduino</span><span>Robotics</span></div><a class="project-link" href="https://github.com/muzahidul86233" target="_blank" rel="noopener">GitHub Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></article>
-   <article class="project"><div class="project-visual"><i class="fa-solid fa-scissors"></i></div><div class="project-body"><h3>Barber GO</h3><p>A barber appointment and shop management app with booking, customer profiles, favorites and queue features.</p><div class="tags"><span>Android</span><span>Firebase</span><span>Mobile App</span></div><a class="project-link" href="https://github.com/muzahidul86233" target="_blank" rel="noopener">GitHub Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></article>
-   <article class="project"><div class="project-visual"><i class="fa-solid fa-utensils"></i></div><div class="project-body"><h3>Bachelor Home: Meal Manager</h3><p>A meal management application concept for coordinating members, meals, expenses and shared household tasks.</p><div class="tags"><span>Android</span><span>Meal Management</span><span>App Development</span></div><a class="project-link" href="https://github.com/muzahidul86233" target="_blank" rel="noopener">GitHub Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></article>
-   <article class="project"><div class="project-visual"><i class="fa-solid fa-diagram-project"></i></div><div class="project-body"><h3>AI Automation Workflows</h3><p>Exploring workflow automation with n8n, AI agents, Telegram integrations and connected services.</p><div class="tags"><span>n8n</span><span>AI Agents</span><span>Automation</span></div><a class="project-link" href="https://github.com/muzahidul86233" target="_blank" rel="noopener">GitHub Profile <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></article>
-   <article class="project"><div class="project-visual"><i class="fa-solid fa-window-maximize"></i></div><div class="project-body"><h3>Personal Portfolio Website</h3><p>A responsive personal website built to present my skills, projects, education and certificates.</p><div class="tags"><span>HTML</span><span>CSS</span><span>GitHub Pages</span></div><a class="project-link" href="https://muzahidul86233.github.io/" target="_blank" rel="noopener">Live Website <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></article>
-  </div>
-  <p class="note">Project links currently point to my GitHub profile. Individual repository links can be added as each project repository is confirmed.</p>
- </div>
-</section>
+<section class="projects" id="projects"><div class="wrap"><div class="section-head reveal"><h2>আমার প্রকল্পসমূহ</h2></div><p class="section-sub reveal">শেখা, পরীক্ষা ও বাস্তব প্রয়োগের মাধ্যমে তৈরি কিছু কাজ।</p><div class="project-grid"><article class="project reveal"><div class="project-visual">🛒</div><div class="project-body"><h3>সুপার শপ ব্যবস্থাপনা</h3><p>C++ দিয়ে পণ্য ব্যবস্থাপনা, খোঁজ, হালনাগাদ, বিল তৈরি এবং বিক্রির হিসাব রাখার ডেস্কটপ অ্যাপ্লিকেশন।</p><div class="tags"><span>C++</span><span>OOP</span><span>ফাইল ব্যবস্থাপনা</span></div></div></article><article class="project reveal delay-1"><div class="project-visual">🍽</div><div class="project-body"><h3>মিল ব্যবস্থাপনা সিস্টেম</h3><p>দৈনিক মিল, সদস্য ও খরচের হিসাব সহজভাবে পরিচালনার জন্য তৈরি ব্যবস্থাপনা প্রকল্প।</p><div class="tags"><span>অ্যাপ্লিকেশন</span><span>ডেটা ব্যবস্থাপনা</span></div></div></article><article class="project reveal delay-2"><div class="project-visual">✂</div><div class="project-body"><h3>Barber GO</h3><p>গ্রাহক, দোকান মালিক ও অ্যাডমিনের জন্য বুকিং, কিউ এবং দোকান ব্যবস্থাপনার অ্যান্ড্রয়েড অ্যাপ।</p><div class="tags"><span>Android</span><span>Firebase</span><span>মোবাইল অ্যাপ</span></div></div></article><article class="project reveal"><div class="project-visual">🚗</div><div class="project-body"><h3>স্বয়ংক্রিয় রোবট কার</h3><p>ESP32, মোটর ড্রাইভার ও সেন্সর ব্যবহার করে বাধা শনাক্ত করে চলতে পারে এমন রোবট গাড়ি।</p><div class="tags"><span>ESP32</span><span>Arduino</span><span>রোবোটিকস</span></div></div></article><article class="project reveal delay-1"><div class="project-visual">✧</div><div class="project-body"><h3>এআই অটোমেশন</h3><p>n8n, এআই এজেন্ট ও বিভিন্ন সেবার সংযোগ ব্যবহার করে স্বয়ংক্রিয় কর্মপ্রবাহ তৈরির অনুশীলন।</p><div class="tags"><span>n8n</span><span>AI Agent</span><span>Automation</span></div></div></article></div></div></section>
+<section id="education"><div class="wrap"><div class="section-head reveal"><h2>শিক্ষা ও ভাষা শিক্ষা</h2></div><div class="education-grid"><div class="timeline reveal from-left"><div class="edu-item"><h3>কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং</h3><p>Northern University Bangladesh</p><small>বর্তমানে অধ্যয়নরত</small></div><div class="edu-item"><h3>উচ্চমাধ্যমিক সার্টিফিকেট (HSC)</h3><p>Hazi Nasir Uddin College</p><small>২০২৩</small></div><div class="edu-item"><h3>মাধ্যমিক স্কুল সার্টিফিকেট (SSC)</h3><p>Khordo ML High School</p><small>২০২১</small></div></div><div class="language-card reveal from-right"><div class="flag">🇩🇪</div><h3>জার্মান ভাষা শিক্ষা</h3><p>নতুন ভাষা শেখার যাত্রায় বর্তমানে A1 স্তরে আছি। নিয়মিত শব্দভান্ডার, ব্যাকরণ, পড়া, লেখা ও কথোপকথনের অনুশীলন করছি।</p><span class="level">A1 · প্রাথমিক পর্যায়</span></div></div></div></section>
+<section class="certificates" id="certificates"><div class="wrap"><div class="section-head reveal"><h2>আমার সনদপত্র</h2></div><p class="section-sub reveal">সনদে ক্লিক করলে মূল PDF নতুন ট্যাবে খুলবে।</p><div class="cert-grid"><article class="cert reveal"><div class="cert-icon">✹</div><h3>Zero to Hero in Android — Season 1</h3><p>২৩ ঘণ্টা ১১ মিনিট · সনদ প্রদান: ১৭ জুন ২০২৬</p><a href="assets/certificates/android-season-1.pdf" target="_blank" rel="noreferrer">সনদ দেখুন ↗</a></article><article class="cert reveal delay-1"><div class="cert-icon">✹</div><h3>Zero to Hero in Android — Season 2</h3><p>৩৯ ঘণ্টা ০৬ মিনিট · সনদ প্রদান: ২৭ সেপ্টেম্বর ২০২৬</p><a href="assets/certificates/android-season-2.pdf" target="_blank" rel="noreferrer">সনদ দেখুন ↗</a></article><article class="cert reveal delay-2"><div class="cert-icon">✹</div><h3>Zero to Hero in Android — Season 3</h3><p>৪৩ ঘণ্টা ৫৪ মিনিট · সনদ প্রদান: ২৭ সেপ্টেম্বর ২০২৬</p><a href="assets/certificates/android-season-3.pdf" target="_blank" rel="noreferrer">সনদ দেখুন ↗</a></article></div></div></section>
+<section id="contact"><div class="wrap"><div class="section-head reveal"><h2>যোগাযোগ করুন</h2></div><div class="contact-grid"><div class="contact-info reveal from-left"><p>কোনো প্রকল্প, প্রযুক্তি বা সহযোগিতার বিষয়ে কথা বলতে চাইলে GitHub-এর মাধ্যমে যোগাযোগ করতে পারেন।</p><div class="contact-row"><div class="contact-icon">⌂</div><div><b>GitHub</b><small>github.com/muzahidul86233</small></div></div><div class="contact-row"><div class="contact-icon">in</div><div><b>LinkedIn</b><small>প্রোফাইল লিংক পরে যুক্ত করুন</small></div></div></div><div class="contact-box reveal from-right"><h3>একসঙ্গে কিছু তৈরি করি</h3><p>নতুন ধারণা, শেখার সুযোগ ও প্রযুক্তিভিত্তিক সহযোগিতাকে স্বাগত জানাই।</p><div class="contact-actions"><a class="btn btn-green" href="https://github.com/muzahidul86233" target="_blank" rel="noreferrer">GitHub দেখুন ↗</a><a class="btn btn-outline" href="#home">উপরে ফিরে যান ↑</a></div></div></div></div></section>
+</main><footer><div class="wrap"><div class="footer-row"><div class="footer-brand"><span>M.</span> MD Muzahidul Islam</div><div class="footer-nav"><a href="#home">হোম</a><a href="#about">আমার সম্পর্কে</a><a href="#skills">দক্ষতা</a><a href="#projects">প্রকল্প</a><a href="#contact">যোগাযোগ</a></div><a href="https://github.com/muzahidul86233" target="_blank" rel="noreferrer">GitHub ↗</a></div><div class="copyright">© ২০২৬ MD Muzahidul Islam · কৌতূহল, অনুশীলন ও নিষ্ঠায় তৈরি</div></div></footer><button class="to-top" id="toTop" aria-label="উপরে যান">↑</button>
 
-<section id="education">
- <div class="wrap lower-grid">
-  <div>
-   <div class="section-title"><h2>Education</h2></div>
-   <div class="timeline">
-    <div class="timeline-item"><h3>BSc in Computer Science & Engineering</h3><p>Northern University Bangladesh</p><small>Currently pursuing · Undergraduate</small></div>
-    <div class="timeline-item"><h3>Higher Secondary Certificate (HSC)</h3><p>Hazi Nasir Uddin College</p><small>2023</small></div>
-    <div class="timeline-item"><h3>Secondary School Certificate (SSC)</h3><p>Khordo ML High School</p><small>2021</small></div>
-   </div>
-  </div>
-  <div id="contact">
-   <div class="section-title"><h2>Let's Connect</h2></div>
-   <div class="contact"><h3>Have a project, idea or collaboration in mind?</h3><p>I'm interested in learning, building useful projects and connecting with people in technology.</p>
-    <div class="contact-links">
-     <a class="btn btn-green" href="https://github.com/muzahidul86233" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
-     <a class="btn btn-outline" href="#certificates"><i class="fa-solid fa-award"></i> 3 Certificates</a>
-    </div>
-    <p class="note">LinkedIn button is ready. Add your exact LinkedIn profile URL and email address to activate the contact links.</p>
-   </div>
-  </div>
- </div>
-</section>
+<div class="library-modal" id="libraryModal" role="dialog" aria-modal="true" aria-label="3D Knowledge Library"><div class="library-shell"><div class="library-top"><div><strong>MUZAHIDUL'S KNOWLEDGE LIBRARY</strong><small>শেলফ থেকে একটি স্কিল বেছে নিন। নোট পড়তে স্কিলের কার্ডে ক্লিক করুন।</small></div><div class="library-controls"><button class="lib-control" id="soundToggle">🔊 সাউন্ড চালু</button><button class="lib-control" id="ambienceToggle">♫ পরিবেশের শব্দ: বন্ধ</button><button class="lib-control" id="closeLibrary">বন্ধ করুন ✕</button></div></div><div class="lib-room" id="libRoom"><div class="room-back"></div><div class="room-caption">← স্কিল নির্বাচন করুন · মাউস বা টাচ দিয়ে কার্ডে ক্লিক করুন</div><div class="room-shelf" id="roomShelf"></div><div class="room-walkway"></div><div class="room-floor"></div><div class="room-nav"><button class="walk-btn" id="walkForward">↑ সামনে হাঁটুন</button><button class="walk-btn" id="walkBack">↓ পেছনে যান</button></div><div class="room-instructions">আপনি লাইব্রেরিতে আছেন · উপরের শেলফ থেকে স্কিল নির্বাচন করুন</div><div class="library-toast" id="libraryToast"></div></div></div></div>
+<div class="skill-modal" id="skillModal" role="dialog" aria-modal="true" aria-label="স্কিলের বিস্তারিত"><div class="skill-detail-card"><button class="detail-close" id="closeSkill" aria-label="বন্ধ করুন">✕</button><div class="detail-head"><div class="detail-icon" id="detailIcon">C++</div><div><h3 id="detailTitle">C++</h3><p id="detailSubtitle">Programming Language</p></div></div><p id="detailDescription">স্কিলের বিস্তারিত এখানে দেখা যাবে।</p><div class="detail-actions"><button class="detail-action primary" id="openSkillNotes">📖 নোট পড়ুন<span>PDF বইয়ের পাতার মতো উল্টে পড়ুন</span></button><button class="detail-action" id="openSkillProjects">⌘ অনুশীলন ও কাজ<span>সম্পর্কিত প্রজেক্ট ও প্র্যাকটিস</span></button></div></div></div>
+<div class="reader-modal" id="readerModal" role="dialog" aria-modal="true" aria-label="PDF নোট রিডার"><div class="reader-shell"><div class="reader-top"><strong id="readerTitle">C++ Notes</strong><button id="closeReader">বন্ধ করুন ✕</button></div><div class="book-stage"><div class="reader-loading" id="readerLoading">নোট লোড হচ্ছে...</div><div class="book" id="book"><div class="book-page left"><canvas id="pageLeft"></canvas><div class="empty-page" id="emptyLeft" hidden></div></div><div class="book-page right"><canvas id="pageRight"></canvas><div class="empty-page" id="emptyRight" hidden></div></div><div class="page-flip" id="pageFlip"><div class="flip-front">পাতা উল্টাচ্ছে...</div><div class="flip-back">পরের পৃষ্ঠা</div></div></div></div><div class="reader-bottom"><button id="prevPage">← আগের পৃষ্ঠা</button><span id="pageCount">পৃষ্ঠা ১ / ১</span><button id="nextPage">পরের পৃষ্ঠা →</button></div><div class="reader-note">মোবাইলেও বাটন ব্যবহার করে পৃষ্ঠা উল্টাতে পারবেন। PDF আলাদাভাবে খুলতে বা ডাউনলোড করতে চাইলে নিচের লিংক ব্যবহার করুন: <a id="downloadNote" href="assets/notes/cpp-starter-notes.pdf" target="_blank" rel="noreferrer">PDF খুলুন ↗</a></div></div></div>
 
-<section id="certificates">
- <div class="wrap">
-  <div class="section-title"><h2>Certificates</h2></div>
-  <div class="cert-grid">
-   <article class="cert"><i class="fa-solid fa-certificate"></i><h3>Zero to Hero in Android — Season 1</h3><p>23 hours 11 minutes · Issued June 17, 2026</p><a href="assets/certificates/android-season-1.pdf" target="_blank">View Certificate <i class="fa-solid fa-arrow-up-right-from-square"></i></a></article>
-   <article class="cert"><i class="fa-solid fa-certificate"></i><h3>Zero to Hero in Android — Season 2</h3><p>39 hours 06 minutes · Issued September 27, 2026</p><a href="assets/certificates/android-season-2.pdf" target="_blank">View Certificate <i class="fa-solid fa-arrow-up-right-from-square"></i></a></article>
-   <article class="cert"><i class="fa-solid fa-certificate"></i><h3>Zero to Hero in Android — Season 3</h3><p>43 hours 54 minutes · Issued September 27, 2026</p><a href="assets/certificates/android-season-3.pdf" target="_blank">View Certificate <i class="fa-solid fa-arrow-up-right-from-square"></i></a></article>
-  </div>
- </div>
-</section>
-</main>
-
-<footer>
- <div class="wrap">
-  <div class="footer-row">
-   <div class="footer-brand">MD Muzahidul Islam</div>
-   <div class="footer-nav"><a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a></div>
-   <div class="footer-social"><a href="https://github.com/muzahidul86233" aria-label="GitHub"><i class="fa-brands fa-github"></i></a></div>
-  </div>
-  <div class="copyright">© <span id="year"></span> MD Muzahidul Islam. Built with curiosity and dedication.</div>
- </div>
-</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script>
-const nav=document.getElementById('nav');
-document.getElementById('menu').addEventListener('click',()=>nav.classList.toggle('open'));
-nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
-document.getElementById('theme').addEventListener('click',()=>{
- document.body.classList.toggle('dark');
- document.getElementById('theme').innerHTML=document.body.classList.contains('dark')?'<i class="fa-solid fa-sun"></i>':'<i class="fa-solid fa-moon"></i>';
-});
-document.getElementById('year').textContent=new Date().getFullYear();
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+
+// Knowledge Library interactions and gentle synthesized footsteps (no external audio files required)
+const libraryModal=$('#libraryModal'),skillModal=$('#skillModal'),readerModal=$('#readerModal');
+const librarySkills=[
+ {name:'C / C++',short:'C++',icon:'C++',sub:'Programming & OOP',desc:'C এবং C++ প্রোগ্রামিং, OOP, Data Structures ও সমস্যা সমাধানের অনুশীলন।',pdf:'assets/notes/cpp-starter-notes.pdf',hasPdf:true},
+ {name:'Java',short:'Java',icon:'☕',sub:'Programming Language',desc:'Java-এর বেসিক, OOP এবং Android development-এর ভিত্তি।',pdf:'assets/notes/java-notes.pdf'},
+ {name:'Python',short:'Python',icon:'Py',sub:'Programming Language',desc:'Python syntax, programming fundamentals এবং automation শেখার নোট।',pdf:'assets/notes/python-notes.pdf'},
+ {name:'Android Studio',short:'Android',icon:'▣',sub:'Android Development Tool',desc:'Android অ্যাপ তৈরির IDE, project structure এবং development workflow।',pdf:'assets/notes/android-studio-notes.pdf'},
+ {name:'Firebase',short:'Firebase',icon:'🔥',sub:'App Backend',desc:'Firebase Authentication, Firestore এবং Android app integration।',pdf:'assets/notes/firebase-notes.pdf'},
+ {name:'AWS',short:'AWS',icon:'☁',sub:'Cloud Services',desc:'AWS cloud services সম্পর্কে শেখার নোট ও ধারণা।',pdf:'assets/notes/aws-notes.pdf'},
+ {name:'AI Automation',short:'AI',icon:'✦',sub:'Automation',desc:'AI automation এবং বাস্তব workflow তৈরির ধারণা।',pdf:'assets/notes/ai-automation-notes.pdf'},
+ {name:'n8n',short:'n8n',icon:'⛓',sub:'Workflow Automation',desc:'n8n workflow, trigger, node এবং integration।',pdf:'assets/notes/n8n-notes.pdf'},
+ {name:'AI Agents',short:'Agents',icon:'◉',sub:'AI Exploration',desc:'AI Agent-এর ধারণা, tools এবং automation workflow।',pdf:'assets/notes/ai-agents-notes.pdf'},
+ {name:'ESP32',short:'ESP32',icon:'▦',sub:'Microcontroller',desc:'ESP32 board, sensor ও IoT project-এর অনুশীলন।',pdf:'assets/notes/esp32-notes.pdf'},
+ {name:'Arduino',short:'Arduino',icon:'♧',sub:'Electronics',desc:'Arduino programming এবং electronics project।',pdf:'assets/notes/arduino-notes.pdf'},
+ {name:'Git & GitHub',short:'Git',icon:'⌘',sub:'Developer Tools',desc:'Version control, repository এবং GitHub Pages workflow।',pdf:'assets/notes/git-github-notes.pdf'}
+];
+let activeSkill=librarySkills[0],audioCtx=null,soundEnabled=false,ambienceEnabled=false,walkTimer=null,walkCount=0,pdfDoc=null,currentPage=1,flipBusy=false;
+const shelf=$('#roomShelf');librarySkills.forEach((sk,i)=>{const b=document.createElement('button');b.className='room-skill';b.type='button';b.innerHTML=`<span class="object-icon">${sk.icon}</span><b>${sk.name}</b><small>বিস্তারিত দেখতে ক্লিক</small>`;b.addEventListener('click',()=>{footstep();activeSkill=sk;$('#detailIcon').textContent=sk.icon;$('#detailTitle').textContent=sk.name;$('#detailSubtitle').textContent=sk.sub;$('#detailDescription').textContent=sk.desc;skillModal.classList.add('open')});shelf.appendChild(b)});
+function ensureAudio(){if(!audioCtx){const AC=window.AudioContext||window.webkitAudioContext;if(AC)audioCtx=new AC()}if(audioCtx&&audioCtx.state==='suspended')audioCtx.resume();}
+function footstep(){if(!soundEnabled)return;ensureAudio();if(!audioCtx)return;const t=audioCtx.currentTime;const n=audioCtx.createBuffer(1,Math.floor(audioCtx.sampleRate*.12),audioCtx.sampleRate);const d=n.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/d.length,3);const src=audioCtx.createBufferSource();src.buffer=n;const filter=audioCtx.createBiquadFilter();filter.type='lowpass';filter.frequency.value=850;const g=audioCtx.createGain();g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.20,t+.008);g.gain.exponentialRampToValueAtTime(.0001,t+.12);src.connect(filter);filter.connect(g);g.connect(audioCtx.destination);src.start(t);const osc=audioCtx.createOscillator(),og=audioCtx.createGain();osc.type='sine';osc.frequency.setValueAtTime(105,t);osc.frequency.exponentialRampToValueAtTime(48,t+.09);og.gain.setValueAtTime(.0001,t);og.gain.exponentialRampToValueAtTime(.13,t+.01);og.gain.exponentialRampToValueAtTime(.0001,t+.11);osc.connect(og);og.connect(audioCtx.destination);osc.start(t);osc.stop(t+.12);}
+function ambience(){if(!ambienceEnabled||!soundEnabled)return;ensureAudio();if(!audioCtx)return;const o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type='sine';o.frequency.value=58;g.gain.value=.012;o.connect(g);g.connect(audioCtx.destination);o.start();return ()=>{g.gain.setTargetAtTime(0,audioCtx.currentTime,.15);setTimeout(()=>o.stop(),600)}}
+function toast(msg){const t=$('#libraryToast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+$('#openLibrary').addEventListener('click',()=>{libraryModal.classList.add('open');document.body.style.overflow='hidden';if(soundEnabled)footstep();});
+function closeLib(){libraryModal.classList.remove('open');skillModal.classList.remove('open');document.body.style.overflow='';}
+$('#closeLibrary').addEventListener('click',closeLib);$('#closeSkill').addEventListener('click',()=>skillModal.classList.remove('open'));
+$('#soundToggle').addEventListener('click',()=>{soundEnabled=!soundEnabled;if(soundEnabled)ensureAudio();$('#soundToggle').textContent=soundEnabled?'🔊 সাউন্ড চালু':'🔇 সাউন্ড বন্ধ';toast(soundEnabled?'হাঁটার শব্দ চালু হয়েছে':'সাউন্ড বন্ধ করা হয়েছে')});
+$('#ambienceToggle').addEventListener('click',()=>{ambienceEnabled=!ambienceEnabled;$('#ambienceToggle').textContent=ambienceEnabled?'♫ পরিবেশের শব্দ: চালু':'♫ পরিবেশের শব্দ: বন্ধ';toast(ambienceEnabled?'পরিবেশের শব্দ চালু':'পরিবেশের শব্দ বন্ধ')});
+function walk(dir){const room=$('#libRoom');walkCount+=dir;room.style.backgroundPosition=`${walkCount*5}px 0`;footstep();setTimeout(footstep,230);toast(dir>0?'আপনি সামনে এগোচ্ছেন':'আপনি পেছনে ফিরছেন')}
+$('#walkForward').addEventListener('click',()=>walk(1));$('#walkBack').addEventListener('click',()=>walk(-1));
+$('#libRoom').addEventListener('keydown',e=>{if(e.key==='ArrowUp'){e.preventDefault();walk(1)}if(e.key==='ArrowDown'){e.preventDefault();walk(-1)}});
+addEventListener('keydown',e=>{if(!libraryModal.classList.contains('open'))return;if(e.key==='Escape'){if(readerModal.classList.contains('open'))closeReader();else if(skillModal.classList.contains('open'))skillModal.classList.remove('open');else closeLib()}if(e.key==='ArrowUp'&&!skillModal.classList.contains('open'))walk(1)});
+$('#openSkillProjects').addEventListener('click',()=>{skillModal.classList.remove('open');closeLib();$('#projects').scrollIntoView({behavior:'smooth'});});
+$('#openSkillNotes').addEventListener('click',()=>{skillModal.classList.remove('open');openReader(activeSkill)});
+function openReader(sk){readerModal.classList.add('open');$('#readerTitle').textContent=sk.name+' · নোট';$('#downloadNote').href=sk.pdf;document.body.style.overflow='hidden';currentPage=1;pdfDoc=null;$('#readerLoading').style.display='block';$('#readerLoading').textContent='PDF নোট লোড হচ্ছে...';if(!sk.hasPdf){$('#readerLoading').textContent='এই বিষয়ের PDF নোট এখনো যোগ করা হয়নি।';$('#pageCount').textContent='নোট প্রস্তুত হচ্ছে';$('#prevPage').disabled=true;$('#nextPage').disabled=true;$('#downloadNote').textContent='PDF এখনো যোগ করা হয়নি';return}$('#downloadNote').textContent='PDF খুলুন ↗';if(!window.pdfjsLib){$('#readerLoading').textContent='PDF Reader লোড হয়নি। নিচের PDF খুলুন লিংক ব্যবহার করুন।';return}pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';pdfjsLib.getDocument(sk.pdf).promise.then(doc=>{pdfDoc=doc;$('#readerLoading').style.display='none';renderSpread()}).catch(()=>{$('#readerLoading').textContent='PDF লোড করা যায়নি। নিচের লিংক থেকে PDF খুলুন।'})}
+function renderCanvas(pageNum,canvasId,emptyId){const canvas=$('#'+canvasId),empty=$('#'+emptyId),ctx=canvas.getContext('2d');if(!pdfDoc||pageNum>pdfDoc.numPages){canvas.style.display='none';empty.hidden=false;empty.textContent='';return Promise.resolve()}empty.hidden=true;canvas.style.display='block';return pdfDoc.getPage(pageNum).then(page=>{const vp=page.getViewport({scale:1});const holder=canvas.parentElement;const scale=Math.min((holder.clientWidth-10)/vp.width,(holder.clientHeight-10)/vp.height,1.45);const v=page.getViewport({scale});canvas.width=v.width*devicePixelRatio;canvas.height=v.height*devicePixelRatio;canvas.style.width=v.width+'px';canvas.style.height=v.height+'px';return page.render({canvasContext:ctx,viewport:v,transform:devicePixelRatio!==1?[devicePixelRatio,0,0,devicePixelRatio,0,0]:null}).promise})}
+function renderSpread(){if(!pdfDoc)return;const left=currentPage%2===0?currentPage:currentPage;const right=currentPage+1;renderCanvas(left,'pageLeft','emptyLeft');renderCanvas(right,'pageRight','emptyRight');$('#pageCount').textContent=`পৃষ্ঠা ${currentPage}–${Math.min(right,pdfDoc.numPages)} / ${pdfDoc.numPages}`;$('#prevPage').disabled=currentPage<=1;$('#nextPage').disabled=currentPage+1>=pdfDoc.numPages}
+function turnPage(dir){if(!pdfDoc||flipBusy)return;const next=currentPage+(dir*2);if(next<1||next>pdfDoc.numPages)return;flipBusy=true;const flip=$('#pageFlip');flip.classList.remove('turn');void flip.offsetWidth;flip.classList.add('turn');footstep();setTimeout(()=>{currentPage=next;renderSpread();flip.classList.remove('turn');flipBusy=false},620)}
+$('#nextPage').addEventListener('click',()=>turnPage(1));$('#prevPage').addEventListener('click',()=>turnPage(-1));function closeReader(){readerModal.classList.remove('open');if(!libraryModal.classList.contains('open'))document.body.style.overflow=''}$('#closeReader').addEventListener('click',closeReader);
+
+window.addEventListener('load',()=>setTimeout(()=>$('#loader').classList.add('done'),550));
+const progress=$('#progress'),toTop=$('#toTop');function onScroll(){const max=document.documentElement.scrollHeight-innerHeight;progress.style.width=(max>0?scrollY/max*100:0)+'%';toTop.classList.toggle('show',scrollY>500);if(innerWidth>800){const shift=Math.min(scrollY*.12,90);$('.hero-art').style.translate=`0 ${shift}px`}$$('section[id]').forEach(s=>{const r=s.getBoundingClientRect();if(r.top<innerHeight*.7&&r.bottom>0)s.classList.add('seen')})}addEventListener('scroll',onScroll,{passive:true});onScroll();
+const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.12});$$('.reveal').forEach(el=>io.observe(el));
+$('#menuBtn').addEventListener('click',()=>$('#nav').classList.toggle('open'));$$('#nav a').forEach(a=>a.addEventListener('click',()=>$('#nav').classList.remove('open')));
+$('#toTop').addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+const navLinks=$$('nav a');const sectionObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){navLinks.forEach(a=>a.classList.toggle('active',a.hash==='#'+e.target.id))}}),{rootMargin:'-35% 0px -55% 0px'});$$('main section[id]').forEach(s=>sectionObserver.observe(s));
+const glow=$('.cursor-glow');addEventListener('pointermove',e=>{document.documentElement.style.setProperty('--mx',e.clientX+'px');document.documentElement.style.setProperty('--my',e.clientY+'px')},{passive:true});
+const hero=$('.hero-art'),portrait=$('#heroPortrait');hero.addEventListener('pointermove',e=>{if(innerWidth<800)return;const r=hero.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;portrait.style.transform=`rotateY(${x*9}deg) rotateX(${-y*8}deg) translateY(-3px)`});hero.addEventListener('pointerleave',()=>portrait.style.transform='');
+$$('.project,.cert,.skill').forEach(card=>{card.addEventListener('pointermove',e=>{if(innerWidth<800)return;const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;if(card.classList.contains('project'))card.style.transform=`perspective(900px) rotateY(${x*7}deg) rotateX(${-y*6}deg) translateY(-5px)`});card.addEventListener('pointerleave',()=>card.style.transform='')});
+$$('.magnetic').forEach(btn=>{btn.addEventListener('pointermove',e=>{if(innerWidth<800)return;const r=btn.getBoundingClientRect();btn.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.10}px,${(e.clientY-r.top-r.height/2)*.14}px)`});btn.addEventListener('pointerleave',()=>btn.style.transform='')});
+$('#themeBtn').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');if(dark){document.documentElement.style.setProperty('--paper','#17251f');document.documentElement.style.setProperty('--paper2','#20352b');document.documentElement.style.setProperty('--ink','#f7f0df');document.documentElement.style.setProperty('--muted','#c4cbbf');document.documentElement.style.setProperty('--card','rgba(32,53,43,.92)');document.documentElement.style.setProperty('--line','#45604f');document.documentElement.style.setProperty('--shadow','0 18px 45px rgba(0,0,0,.25)');$('#themeBtn').textContent='☀'}else{['--paper','--paper2','--ink','--muted','--card','--line','--shadow'].forEach((p,i)=>document.documentElement.style.removeProperty(p));$('#themeBtn').textContent='☾'}});
 </script>
-</body>
-</html>
+</body></html>

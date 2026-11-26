@@ -61,11 +61,11 @@ section{padding:78px 0;position:relative}.section-head{display:flex;align-items:
 .floor-lines{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 18px,#f4d68a38 19px 20px),repeating-linear-gradient(90deg,transparent 0 9%,#f4d68a22 9.2% 9.5%);transform:perspective(260px) rotateX(15deg);transform-origin:top}
 .walking-person{position:absolute;z-index:6;left:50%;bottom:12%;width:76px;height:190px;transform:translateX(-50%) translateY(var(--walk-depth,0px));filter:drop-shadow(0 5px 9px #0009);transition:transform .6s cubic-bezier(.2,.75,.2,1)}
 .person-shadow{position:absolute;bottom:-2px;left:4px;width:70px;height:17px;background:#020d09a8;border-radius:50%;filter:blur(5px)}
-.person-head{position:absolute;top:4px;left:27px;width:23px;height:27px;background:#07140f;border-radius:48% 48% 42% 42%;box-shadow:inset -4px 0 #1c3028}
-.person-body{position:absolute;top:29px;left:17px;width:43px;height:77px;background:linear-gradient(90deg,#07130f,#20352b 50%,#07130f);clip-path:polygon(25% 0,75% 0,100% 25%,83% 100%,17% 100%,0 25%);border-radius:10px}
-.person-arm{position:absolute;top:35px;width:13px;height:67px;background:#0b1b14;border-radius:10px;transform-origin:top center}
+.person-head{position:absolute;top:4px;left:27px;width:23px;height:27px;background:linear-gradient(90deg,#9a6545,#d7a27a 58%,#8a593e);border-radius:48% 48% 42% 42%;box-shadow:inset -4px 0 #754a36}
+.person-body{position:absolute;top:29px;left:17px;width:43px;height:77px;background:linear-gradient(90deg,#102d38,#315866 50%,#102d38);clip-path:polygon(25% 0,75% 0,100% 25%,83% 100%,17% 100%,0 25%);border-radius:10px}
+.person-arm{position:absolute;top:35px;width:13px;height:67px;background:linear-gradient(90deg,#172e38,#385664,#132832);border-radius:10px;transform-origin:top center}
 .left-arm{left:13px;transform:rotate(13deg)}.right-arm{right:9px;transform:rotate(-13deg)}
-.person-leg{position:absolute;top:98px;width:17px;height:77px;background:linear-gradient(90deg,#07120e,#26362d,#07120e);border-radius:8px 8px 5px 5px;transform-origin:top center}
+.person-leg{position:absolute;top:98px;width:17px;height:77px;background:linear-gradient(90deg,#101b24,#35404a,#101b24);border-radius:8px 8px 5px 5px;transform-origin:top center}
 .left-leg{left:21px}.right-leg{right:19px}
 .walking-person.walking .left-leg{animation:legWalk .34s ease-in-out 4 alternate}
 .walking-person.walking .right-leg{animation:legWalk .34s ease-in-out 4 alternate-reverse}
@@ -77,6 +77,14 @@ section{padding:78px 0;position:relative}.section-head{display:flex;align-items:
 .room-nav{bottom:59px!important}
 .room-instructions{bottom:10px!important}
 .lib-room:after{content:"";position:absolute;inset:0;pointer-events:none;z-index:7;background:linear-gradient(90deg,#031a12aa,transparent 18%,transparent 82%,#031a12aa),linear-gradient(180deg,#031a1230,transparent 35%,#031a1230)}
+
+.person-leg:after{content:"";position:absolute;bottom:-2px;left:-4px;width:25px;height:10px;border-radius:9px 9px 5px 5px;background:linear-gradient(180deg,#343b3e,#090e10);box-shadow:0 2px 4px #0008}
+.corridor-wall .side-shelf{overflow:visible}
+.corridor-wall{pointer-events:auto}
+.walking-person.walking{filter:drop-shadow(0 9px 12px #000b)}
+.walking-person.walking .person-shadow{animation:shadowWalk .3s ease-in-out 10 alternate}
+@keyframes shadowWalk{to{transform:scaleX(.78);opacity:.65}}
+
 /* Handwritten study-book pages */
 .hand-page{width:50%;height:100%;position:relative;overflow:hidden;padding:30px 28px 25px 42px;background-color:#fffdf4;background-image:linear-gradient(90deg,transparent 0 30px,#e5a6a6 31px,#e5a6a6 32px,transparent 33px),repeating-linear-gradient(180deg,transparent 0 29px,#b7d1e4 30px,#b7d1e4 31px);color:#234d82;box-shadow:inset 0 0 22px #6f552015}
 .hand-page:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 20% 10%,#fff9 0,transparent 60%);pointer-events:none}
@@ -111,11 +119,43 @@ section{padding:78px 0;position:relative}.section-head{display:flex;align-items:
 }
 @media(prefers-reduced-motion:reduce){.walking-person.walking .person-leg,.walking-person.walking .person-arm{animation:none!important}}
 
+
+/* V6 reliability and accessibility fixes */
+.site-language-btn{border:1px solid #d8bd86;background:#fff8e9;color:#174735;border-radius:24px;padding:8px 12px;font-weight:800;font-size:12px;cursor:pointer;white-space:nowrap}
+.site-language-btn:hover{background:#e8d5ac;transform:translateY(-2px)}
+.corridor-wall{width:36%!important;top:7%!important;bottom:19%!important;z-index:8!important}
+.corridor-wall.left{left:-1%!important;transform:perspective(900px) rotateY(13deg)!important;transform-origin:right center!important}
+.corridor-wall.right{right:-1%!important;transform:perspective(900px) rotateY(-13deg)!important;transform-origin:left center!important}
+.side-shelf{left:5%!important;right:5%!important;top:18%!important;bottom:5%!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-template-rows:repeat(4,minmax(0,1fr))!important;grid-auto-rows:minmax(0,1fr)!important;gap:7px!important;z-index:10!important}
+.room-skill{position:relative!important;z-index:11!important;pointer-events:auto!important;min-width:0!important;cursor:pointer!important}
+.room-skill:active{transform:translateY(2px) scale(.97)!important}
+.corridor-end{z-index:4!important}
+.walking-person{z-index:12!important;pointer-events:none!important;transform:translateX(-50%) translateY(var(--walk-depth,0px)) scale(var(--walk-scale,1));transform-origin:center bottom;transition:transform .85s cubic-bezier(.2,.7,.2,1)}
+.walking-person.walking .person-leg{animation:legWalk .30s ease-in-out 5 alternate!important}
+.walking-person.walking .person-arm{animation:armWalk .30s ease-in-out 5 alternate!important}
+.walking-person.walking .person-body{animation:bodyWalk .30s ease-in-out 10 alternate}
+.walking-person.walking .person-head{animation:headWalk .60s ease-in-out 5 alternate}
+@keyframes bodyWalk{to{transform:translateY(-5px)}}
+@keyframes headWalk{to{transform:translateY(-2px)}}
+.lib-room:after{z-index:14!important;pointer-events:none!important}
+.skill-modal{z-index:300!important}.reader-modal{z-index:400!important}
+.skill-modal.open,.reader-modal.open{display:flex!important}
+.detail-close,.detail-action,#closeReader,#nextPage,#prevPage{cursor:pointer;pointer-events:auto}
+.monitor-screen img{display:block!important;opacity:1!important;visibility:visible!important;min-width:100%;min-height:100%;object-fit:cover}
+@media(max-width:760px){
+ .corridor-wall{width:43%!important}
+ .corridor-wall.left{left:-4%!important}
+ .corridor-wall.right{right:-4%!important}
+ .side-shelf{grid-template-columns:1fr!important;grid-template-rows:repeat(3,minmax(0,1fr))!important;gap:5px!important}
+ .walking-person{transform:translateX(-50%) translateY(var(--walk-depth,0px)) scale(calc(var(--walk-scale,1)*.72))}
+ .site-language-btn{padding:7px 9px;font-size:11px}
+}
+
 </style>
 </head>
 <body>
 <div class="loader" id="loader"><div><div class="loader-mark">M</div><small>স্বাগতম</small></div></div><div class="grain"></div><div class="cursor-glow"></div><div class="progress" id="progress"></div>
-<header><div class="wrap nav"><a class="brand" href="#home"><span class="brand-mark">M</span><span>MD Muzahidul Islam</span></a><nav id="nav"><a href="#home">হোম</a><a href="#about">আমার সম্পর্কে</a><a href="#skills">দক্ষতা</a><a href="#knowledge-library">নোট লাইব্রেরি</a><a href="#projects">প্রকল্প</a><a href="#education">শিক্ষা</a><a href="#certificates">সনদ</a><a href="#contact">যোগাযোগ</a></nav><div class="nav-actions"><button class="round-btn" id="themeBtn" aria-label="রঙ পরিবর্তন">☾</button><button class="menu-btn" id="menuBtn" aria-label="মেনু">☰</button></div></div></header>
+<header><div class="wrap nav"><a class="brand" href="#home"><span class="brand-mark">M</span><span>MD Muzahidul Islam</span></a><nav id="nav"><a href="#home">হোম</a><a href="#about">আমার সম্পর্কে</a><a href="#skills">দক্ষতা</a><a href="#knowledge-library">নোট লাইব্রেরি</a><a href="#projects">প্রকল্প</a><a href="#education">শিক্ষা</a><a href="#certificates">সনদ</a><a href="#contact">যোগাযোগ</a></nav><div class="nav-actions"><button class="site-language-btn" id="siteLanguageToggle" type="button" aria-label="Switch website language">বাংলা</button><button class="round-btn" id="themeBtn" aria-label="রঙ পরিবর্তন">☾</button><button class="menu-btn" id="menuBtn" aria-label="মেনু">☰</button></div></div></header>
 <main>
 <section class="hero" id="home"><div class="waterfall-glow"></div><div class="wrap"><div class="hero-grid"><div class="hero-copy"><div class="kicker reveal"><span class="dot"></span> সিএসই শিক্ষার্থী · সফটওয়্যার ও প্রযুক্তিপ্রেমী</div><h1 class="reveal delay-1">আমি <span class="gold">মুজাহিদুল</span><br>ইসলাম</h1><p class="role reveal delay-2">কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং শিক্ষার্থী</p><p class="intro reveal delay-2">সফটওয়্যার তৈরি, অ্যান্ড্রয়েড অ্যাপ, কৃত্রিম বুদ্ধিমত্তাভিত্তিক অটোমেশন এবং রোবোটিকস নিয়ে কাজ করতে ও শিখতে ভালোবাসি। বাস্তব সমস্যার প্রযুক্তিনির্ভর সমাধান তৈরি করাই আমার আগ্রহ।</p><div class="hero-actions reveal delay-3"><a class="btn btn-green magnetic" href="#projects">⌘ আমার প্রকল্প দেখুন</a><a class="btn btn-outline magnetic" href="#contact">✉ যোগাযোগ করুন</a></div><div class="socials reveal delay-3"><a href="https://github.com/muzahidul86233" target="_blank" rel="noreferrer" aria-label="GitHub">GH</a><a href="https://www.linkedin.com/in/md-muzahidul-islam-19b4a8400/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a><a href="#contact" aria-label="ইমেইল">✉</a></div></div><div class="hero-art parallax"><div class="orbit"></div><div class="focus-card"><span><i>⌘</i> সফটওয়্যার উন্নয়ন</span><span><i>✦</i> এআই অটোমেশন</span><span><i>▣</i> অ্যান্ড্রয়েড অ্যাপ</span><span><i>⚙</i> রোবোটিকস</span></div><div class="portrait-frame" id="heroPortrait"><img src="assets/profile.webp" alt="মুজাহিদুল ইসলামের পেশাদার ছবি"></div><div class="float-chip">কোডিং · শেখা · তৈরি</div></div></div><div class="stats reveal"><div class="stat"><i>♧</i><div><b>চলমান</b><small>সিএসই ডিগ্রি</small></div></div><div class="stat"><i>⌘</i><div><b>৫+</b><small>বাস্তব প্রকল্প</small></div></div><div class="stat"><i>⚙</i><div><b>এআই ও আইওটি</b><small>অনুশীলন ও অনুসন্ধান</small></div></div><div class="stat"><i>✦</i><div><b>নিয়মিত</b><small>নতুন কিছু শেখা</small></div></div></div></div></section>
 <section id="about"><div class="wrap"><div class="about-skills"><div class="reveal from-left"><div class="section-head"><h2>আমার সম্পর্কে</h2></div><div class="about-card"><div class="about-photo"><img src="assets/working.webp" alt="ল্যাপটপে কাজ করার সময় মুজাহিদুল"></div><div class="about-copy"><p>আমি Northern University Bangladesh-এর কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং বিভাগের একজন শিক্ষার্থী।</p><p>প্রোগ্রামিং, অ্যাপ তৈরি, প্রযুক্তি নিয়ে পরীক্ষা-নিরীক্ষা এবং বাস্তবভিত্তিক প্রকল্পে কাজ করতে আগ্রহী।</p></div></div><ul class="checks"><li>বাস্তব সমস্যার কার্যকর সমাধান তৈরিতে আগ্রহী</li><li>সফটওয়্যার ও হার্ডওয়্যার দুই ক্ষেত্রেই শেখার চেষ্টা করি</li><li>নতুন প্রযুক্তি শেখা ও দক্ষতা বাড়ানো আমার লক্ষ্য</li></ul><div class="study-card"><strong>🇩🇪 জার্মান ভাষা শিখছি</strong><p>বর্তমানে জার্মান ভাষার A1 পর্যায়ে পড়াশোনা করছি। ভাষার দক্ষতা বাড়িয়ে ভবিষ্যতে জার্মানিতে পড়াশোনা ও পেশাগত সুযোগের জন্য নিজেকে প্রস্তুত করছি।</p><span class="study-badge">বর্তমান স্তর: A1 · শেখা চলছে</span></div></div><div class="reveal from-right delay-1" id="skills"><div class="section-head"><h2>দক্ষতা ও প্রযুক্তি</h2></div><div class="skill-groups"><div><div class="group-label">প্রোগ্রামিং</div><div class="skill-grid"><div class="skill"><span class="ico">C++</span><b>C / C++</b><small>প্রোগ্রামিং</small></div><div class="skill"><span class="ico">☕</span><b>Java</b><small>শেখা ও অনুশীলন</small></div><div class="skill"><span class="ico">⌘</span><b>OOP ও DSA</b><small>সমস্যা সমাধান</small></div></div></div><div><div class="group-label">অ্যান্ড্রয়েড অ্যাপ উন্নয়ন</div><div class="skill-grid"><div class="skill"><span class="ico">▣</span><b>Android</b><small>অ্যাপ তৈরি</small></div><div class="skill"><span class="ico">◈</span><b>Android Studio</b><small>ডেভেলপমেন্ট টুল</small></div><div class="skill"><span class="ico">🔥</span><b>Firebase</b><small>অ্যাপ ব্যাকএন্ড</small></div></div></div><div><div class="group-label">এআই ও অটোমেশন</div><div class="skill-grid"><div class="skill"><span class="ico">✦</span><b>এআই অটোমেশন</b><small>কর্মপ্রবাহ তৈরি</small></div><div class="skill"><span class="ico">⛓</span><b>n8n</b><small>ওয়ার্কফ্লো</small></div><div class="skill"><span class="ico">◉</span><b>এআই এজেন্ট</b><small>অনুসন্ধান ও অনুশীলন</small></div></div></div><div><div class="group-label">ক্লাউড ও ডেভেলপার টুল</div><div class="skill-grid"><div class="skill"><span class="ico">aws</span><b>AWS</b><small>ক্লাউড সেবা</small></div><div class="skill"><span class="ico">⌂</span><b>Git ও GitHub</b><small>কোড ব্যবস্থাপনা</small></div><div class="skill"><span class="ico">⌨</span><b>VS Code</b><small>কোড এডিটর</small></div></div></div><div><div class="group-label">মাইক্রোসফট অফিস টুলস</div><div class="skill-grid"><div class="skill"><span class="ico">▦</span><b>Microsoft Excel</b><small>ডেটা ও ফর্মুলা</small></div><div class="skill"><span class="ico">▣</span><b>PowerPoint</b><small>প্রেজেন্টেশন</small></div></div></div><div><div class="group-label">রোবোটিকস ও ইলেকট্রনিকস</div><div class="skill-grid"><div class="skill"><span class="ico">▦</span><b>ESP32</b><small>মাইক্রোকন্ট্রোলার</small></div><div class="skill"><span class="ico">♧</span><b>Arduino</b><small>ইলেকট্রনিকস</small></div><div class="skill"><span class="ico">⚙</span><b>রোবোটিকস</b><small>হাতে-কলমে কাজ</small></div></div></div></div></div></div></div></section>
@@ -133,7 +173,7 @@ section{padding:78px 0;position:relative}.section-head{display:flex;align-items:
   <div class="corridor-ceiling"></div>
   <div class="corridor-end">
     <div class="end-sign">MUZAHIDUL'S KNOWLEDGE LIBRARY</div>
-    <div class="desk-monitor"><div class="monitor-frame"><div class="monitor-screen"><img src="assets/working.webp" alt="ল্যাপটপে কাজ করার সময় মুজাহিদুল"><span>MD MUZAHIDUL ISLAM<br><small>LEARN · BUILD · PRACTICE</small></span></div></div><div class="monitor-stand"></div><div class="desk-surface"></div></div>
+    <div class="desk-monitor"><div class="monitor-frame"><div class="monitor-screen"><img src="./assets/working.webp" onerror="this.onerror=null;this.src='./assets/profile.webp'" alt="Muzahidul working at a laptop"><span>MD MUZAHIDUL ISLAM<br><small>LEARN · BUILD · PRACTICE</small></span></div></div><div class="monitor-stand"></div><div class="desk-surface"></div></div>
   </div>
   <div class="corridor-wall left"><div class="wall-label">PROGRAMMING & DEVELOPMENT</div><div class="side-shelf" id="leftShelf"></div></div>
   <div class="corridor-wall right"><div class="wall-label">TOOLS, CLOUD & ROBOTICS</div><div class="side-shelf" id="rightShelf"></div></div>
@@ -156,19 +196,19 @@ const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelecto
 // Knowledge Library: corridor navigation, generated soundscape and handwritten page-turn reader.
 const libraryModal=$('#libraryModal'),skillModal=$('#skillModal'),readerModal=$('#readerModal');
 const librarySkills=[
- {name:'C / C++',short:'C++',icon:'C++',sub:'Programming & OOP',desc:'C এবং C++ প্রোগ্রামিং, OOP, Data Structures ও সমস্যা সমাধানের অনুশীলন।',pdf:'assets/notes/cpp-starter-notes.pdf',hasPdf:true},
- {name:'Java',short:'Java',icon:'☕',sub:'Programming Language',desc:'Java-এর বেসিক, OOP এবং Android development-এর ভিত্তি।',pdf:'assets/notes/java-notes.pdf'},
- {name:'Android Studio',short:'Android',icon:'▣',sub:'Android Development Tool',desc:'Android অ্যাপ তৈরির IDE, project structure এবং development workflow।',pdf:'assets/notes/android-studio-notes.pdf'},
- {name:'Firebase',short:'Firebase',icon:'🔥',sub:'App Backend',desc:'Firebase Authentication, Firestore এবং Android app integration।',pdf:'assets/notes/firebase-notes.pdf'},
- {name:'AWS',short:'AWS',icon:'☁',sub:'Cloud Services',desc:'AWS cloud services সম্পর্কে শেখার নোট ও ধারণা।',pdf:'assets/notes/aws-notes.pdf'},
- {name:'AI Automation',short:'AI',icon:'✦',sub:'Automation',desc:'AI automation এবং বাস্তব workflow তৈরির ধারণা।',pdf:'assets/notes/ai-automation-notes.pdf'},
- {name:'n8n',short:'n8n',icon:'⛓',sub:'Workflow Automation',desc:'n8n workflow, trigger, node এবং integration।',pdf:'assets/notes/n8n-notes.pdf'},
- {name:'AI Agents',short:'Agents',icon:'◉',sub:'AI Exploration',desc:'AI Agent-এর ধারণা, tools এবং automation workflow।',pdf:'assets/notes/ai-agents-notes.pdf'},
- {name:'ESP32',short:'ESP32',icon:'▦',sub:'Microcontroller',desc:'ESP32 board, sensor ও IoT project-এর অনুশীলন।',pdf:'assets/notes/esp32-notes.pdf'},
- {name:'Arduino',short:'Arduino',icon:'♧',sub:'Electronics',desc:'Arduino programming এবং electronics project।',pdf:'assets/notes/arduino-notes.pdf'},
- {name:'Git & GitHub',short:'Git',icon:'⌘',sub:'Developer Tools',desc:'Version control, repository এবং GitHub Pages workflow।',pdf:'assets/notes/git-github-notes.pdf'},
- {name:'Microsoft Excel',short:'Excel',icon:'▦',sub:'Spreadsheet & Data',desc:'Excel formula, data sorting, filtering ও PivotTable-এর ছোট নোট।',pdf:'assets/notes/excel-notes.pdf'},
- {name:'Microsoft PowerPoint',short:'PowerPoint',icon:'▣',sub:'Presentation Tool',desc:'স্লাইড ডিজাইন, লেআউট ও প্রেজেন্টেশন তৈরির নোট।',pdf:'assets/notes/powerpoint-notes.pdf'}
+ {name:'C / C++',short:'C++',icon:'C++',sub:'Programming & OOP',desc:'C এবং C++ প্রোগ্রামিং, OOP, Data Structures ও সমস্যা সমাধানের অনুশীলন।',descEn:'C and C++ programming, object-oriented programming, data structures and problem-solving practice.',pdf:'assets/notes/cpp-starter-notes.pdf',hasPdf:true},
+ {name:'Java',short:'Java',icon:'☕',sub:'Programming Language',desc:'Java-এর বেসিক, OOP এবং Android development-এর ভিত্তি।',descEn:'Java fundamentals, object-oriented programming and the foundations of Android development.',pdf:'assets/notes/java-notes.pdf'},
+ {name:'Android Studio',short:'Android',icon:'▣',sub:'Android Development Tool',desc:'Android অ্যাপ তৈরির IDE, project structure এবং development workflow।',descEn:'The Android development environment, project structure and app-building workflow.',pdf:'assets/notes/android-studio-notes.pdf'},
+ {name:'Firebase',short:'Firebase',icon:'🔥',sub:'App Backend',desc:'Firebase Authentication, Firestore এবং Android app integration।',descEn:'Firebase Authentication, Cloud Firestore and backend integration for Android applications.',pdf:'assets/notes/firebase-notes.pdf'},
+ {name:'AWS',short:'AWS',icon:'☁',sub:'Cloud Services',desc:'AWS cloud services সম্পর্কে শেখার নোট ও ধারণা।',descEn:'Introductory notes on cloud concepts and commonly used AWS services.',pdf:'assets/notes/aws-notes.pdf'},
+ {name:'AI Automation',short:'AI',icon:'✦',sub:'Automation',desc:'AI automation এবং বাস্তব workflow তৈরির ধারণা।',descEn:'Practical ideas for connecting AI tools and automating repeatable tasks.',pdf:'assets/notes/ai-automation-notes.pdf'},
+ {name:'n8n',short:'n8n',icon:'⛓',sub:'Workflow Automation',desc:'n8n workflow, trigger, node এবং integration।',descEn:'Workflow automation with triggers, nodes, credentials and integrations.',pdf:'assets/notes/n8n-notes.pdf'},
+ {name:'AI Agents',short:'Agents',icon:'◉',sub:'AI Exploration',desc:'AI Agent-এর ধারণা, tools এবং automation workflow।',descEn:'Agent fundamentals, tools, instructions and practical workflows.',pdf:'assets/notes/ai-agents-notes.pdf'},
+ {name:'ESP32',short:'ESP32',icon:'▦',sub:'Microcontroller',desc:'ESP32 board, sensor ও IoT project-এর অনুশীলন।',descEn:'Microcontroller basics, GPIO, Wi-Fi and small IoT projects.',pdf:'assets/notes/esp32-notes.pdf'},
+ {name:'Arduino',short:'Arduino',icon:'♧',sub:'Electronics',desc:'Arduino programming এবং electronics project।',descEn:'Arduino programming, sensors, actuators and hands-on electronics.',pdf:'assets/notes/arduino-notes.pdf'},
+ {name:'Git & GitHub',short:'Git',icon:'⌘',sub:'Developer Tools',desc:'Version control, repository এবং GitHub Pages workflow।',descEn:'Version control basics, commits, branches and GitHub collaboration.',pdf:'assets/notes/git-github-notes.pdf'},
+ {name:'Microsoft Excel',short:'Excel',icon:'▦',sub:'Spreadsheet & Data',desc:'Excel formula, data sorting, filtering ও PivotTable-এর ছোট নোট।',descEn:'Spreadsheets, formulas, tables, sorting, filtering and useful shortcuts.',pdf:'assets/notes/excel-notes.pdf'},
+ {name:'Microsoft PowerPoint',short:'PowerPoint',icon:'▣',sub:'Presentation Tool',desc:'স্লাইড ডিজাইন, লেআউট ও প্রেজেন্টেশন তৈরির নোট।',descEn:'Presentation structure, slide design, visual hierarchy and delivery tips.',pdf:'assets/notes/powerpoint-notes.pdf'}
 ];
 let libraryLanguage='en';
 let activeSkill=librarySkills[0],audioCtx=null,soundEnabled=false,ambienceEnabled=false,ambienceNodes=[],walkCount=0,currentPage=1,flipBusy=false;
@@ -186,6 +226,26 @@ function makeSkillCard(sk){
 }
 const leftShelf=$('#leftShelf'),rightShelf=$('#rightShelf');
 librarySkills.forEach((sk,i)=>(i%2?rightShelf:leftShelf).appendChild(makeSkillCard(sk)));
+// Reliable click handling for every shelf card (including touch devices).
+$$('.room-skill').forEach((card,i)=>{card.dataset.skillIndex=String(i);card.setAttribute('aria-label','Open '+librarySkills[i].name+' notes')});
+function openSkillCard(sk){
+ activeSkill=sk;
+ $('#detailIcon').textContent=sk.icon;
+ $('#detailTitle').textContent=sk.name;
+ $('#detailSubtitle').textContent=sk.sub;
+ $('#detailDescription').textContent=(libraryLanguage==='en'?(sk.descEn||sk.desc):(sk.descBn||sk.desc));
+ skillModal.classList.add('open');
+ skillModal.setAttribute('aria-label','Skill details');
+}
+[leftShelf,rightShelf].forEach(shelf=>shelf.addEventListener('click',e=>{
+ const card=e.target.closest('.room-skill'); if(!card)return;
+ const sk=librarySkills[Number(card.dataset.skillIndex)];
+ if(!sk)return;
+ e.preventDefault(); e.stopPropagation();
+ if(soundEnabled)playPaper();
+ openSkillCard(sk);
+},true));
+
 
 function ensureAudio(){
  if(!audioCtx){const AC=window.AudioContext||window.webkitAudioContext;if(AC)audioCtx=new AC()}
@@ -230,7 +290,7 @@ function startAmbience(){
 }
 function stopAmbience(){ambienceNodes.forEach(n=>n.stop());ambienceNodes=[]}
 function toast(msg){const t=$('#libraryToast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
-$('#openLibrary').addEventListener('click',()=>{libraryModal.classList.add('open');document.body.style.overflow='hidden';setLibraryLanguage('en');if(soundEnabled)footstep()});
+$('#openLibrary').addEventListener('click',()=>{libraryModal.classList.add('open');document.body.style.overflow='hidden';setLibraryLanguage(websiteLanguage||'en');if(soundEnabled)footstep()});
 function closeLib(){libraryModal.classList.remove('open');skillModal.classList.remove('open');document.body.style.overflow='';}
 $('#closeLibrary').addEventListener('click',closeLib);$('#closeSkill').addEventListener('click',()=>skillModal.classList.remove('open'));
 $('#soundToggle').addEventListener('click',()=>{
@@ -246,14 +306,24 @@ $('#ambienceToggle').addEventListener('click',()=>{
  toast(ambienceEnabled?'লাইব্রেরির হালকা পরিবেশের শব্দ চালু':'পরিবেশের শব্দ বন্ধ');
 });
 function walk(dir){
- const person=$('#walkingPerson');walkCount=Math.max(-2,Math.min(5,walkCount+dir));
- const depth=walkCount*12;person.style.setProperty('--walk-depth',depth+'px');
+ const person=$('#walkingPerson');
+ walkCount=Math.max(0,Math.min(5,walkCount+dir));
+ // Move towards the workstation: the figure recedes, gets smaller and visibly walks.
+ const depth=-walkCount*23;
+ const scale=1-walkCount*.055;
+ person.style.setProperty('--walk-depth',depth+'px');
+ person.style.setProperty('--walk-scale',String(scale));
  person.classList.remove('walking');void person.offsetWidth;person.classList.add('walking');
- if(soundEnabled){footstep();setTimeout(footstep,360);setTimeout(footstep,720);if(ambienceEnabled)startAmbience()}
- toast(dir>0?'আপনি কম্পিউটারের দিকে এগোচ্ছেন':'আপনি পেছনে ফিরে যাচ্ছেন');
- setTimeout(()=>person.classList.remove('walking'),1450);
+ if(soundEnabled){
+   ensureAudio();
+   [0,360,720,1080].forEach((delay)=>setTimeout(()=>{if(soundEnabled)footstep()},delay));
+   if(ambienceEnabled)startAmbience();
+ }
+ toast(dir>0?(libraryLanguage==='en'?'Walking towards the workstation':'কম্পিউটারের দিকে এগিয়ে যাচ্ছেন'):(libraryLanguage==='en'?'Walking back':'পেছনে ফিরে যাচ্ছেন'));
+ setTimeout(()=>person.classList.remove('walking'),1650);
 }
 $('#walkForward').addEventListener('click',()=>walk(1));$('#walkBack').addEventListener('click',()=>walk(-1));
+$('#corridorScene').addEventListener('click',e=>{if(e.target.closest('.room-skill'))return;if(e.target.closest('.room-nav'))return;if(e.target.closest('.corridor-floor'))walk(1)});
 $('#libRoom').addEventListener('keydown',e=>{if(e.key==='ArrowUp'){e.preventDefault();walk(1)}if(e.key==='ArrowDown'){e.preventDefault();walk(-1)}});
 addEventListener('keydown',e=>{if(!libraryModal.classList.contains('open'))return;if(e.key==='Escape'){if(readerModal.classList.contains('open'))closeReader();else if(skillModal.classList.contains('open'))skillModal.classList.remove('open');else closeLib()}if(e.key==='ArrowUp'&&!skillModal.classList.contains('open'))walk(1)});
 $('#openSkillProjects').addEventListener('click',()=>{skillModal.classList.remove('open');closeLib();$('#projects').scrollIntoView({behavior:'smooth'})});
@@ -308,5 +378,78 @@ const hero=$('.hero-art'),portrait=$('#heroPortrait');hero.addEventListener('poi
 $$('.project,.cert,.skill').forEach(card=>{card.addEventListener('pointermove',e=>{if(innerWidth<800)return;const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;if(card.classList.contains('project'))card.style.transform=`perspective(900px) rotateY(${x*7}deg) rotateX(${-y*6}deg) translateY(-5px)`});card.addEventListener('pointerleave',()=>card.style.transform='')});
 $$('.magnetic').forEach(btn=>{btn.addEventListener('pointermove',e=>{if(innerWidth<800)return;const r=btn.getBoundingClientRect();btn.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.10}px,${(e.clientY-r.top-r.height/2)*.14}px)`});btn.addEventListener('pointerleave',()=>btn.style.transform='')});
 $('#themeBtn').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark');if(dark){document.documentElement.style.setProperty('--paper','#17251f');document.documentElement.style.setProperty('--paper2','#20352b');document.documentElement.style.setProperty('--ink','#f7f0df');document.documentElement.style.setProperty('--muted','#c4cbbf');document.documentElement.style.setProperty('--card','rgba(32,53,43,.92)');document.documentElement.style.setProperty('--line','#45604f');document.documentElement.style.setProperty('--shadow','0 18px 45px rgba(0,0,0,.25)');$('#themeBtn').textContent='☀'}else{['--paper','--paper2','--ink','--muted','--card','--line','--shadow'].forEach((p,i)=>document.documentElement.style.removeProperty(p));$('#themeBtn').textContent='☾'}});
+
+// Whole-website bilingual mode. English is the first-visit default.
+const siteTranslations = {
+'স্বাগতম':'Welcome',
+'হোম':'Home','আমার সম্পর্কে':'About','দক্ষতা':'Skills','নোট লাইব্রেরি':'Knowledge Library','প্রকল্প':'Projects','শিক্ষা':'Education','সনদ':'Certificates','যোগাযোগ':'Contact',
+'সিএসই শিক্ষার্থী · সফটওয়্যার ও প্রযুক্তিপ্রেমী':'CSE Student · Software & Technology Enthusiast',
+'আমি':'I am','কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং শিক্ষার্থী':'Computer Science and Engineering Student',
+'⌘ আমার প্রকল্প দেখুন':'⌘ Explore My Projects','✉ যোগাযোগ করুন':'✉ Contact Me',
+'সফটওয়্যার উন্নয়ন':'Software Development','এআই অটোমেশন':'AI Automation','অ্যান্ড্রয়েড অ্যাপ':'Android Apps','রোবোটিকস':'Robotics',
+'কোডিং · শেখা · তৈরি':'CODE · LEARN · BUILD','চলমান':'In Progress','সিএসই ডিগ্রি':'CSE Degree','বাস্তব প্রকল্প':'Real Projects','এআই ও আইওটি':'AI & IoT','অনুশীলন ও অনুসন্ধান':'Practice & Exploration','নিয়মিত':'Consistently','নতুন কিছু শেখা':'Learning New Things',
+'আমি Northern University Bangladesh-এর কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং বিভাগের একজন শিক্ষার্থী।':'I am a Computer Science and Engineering student at Northern University Bangladesh.',
+'প্রোগ্রামিং, অ্যাপ তৈরি, প্রযুক্তি নিয়ে পরীক্ষা-নিরীক্ষা এবং বাস্তবভিত্তিক প্রকল্পে কাজ করতে আগ্রহী।':'I enjoy programming, building apps, exploring technology and working on practical projects.',
+'বাস্তব সমস্যার কার্যকর সমাধান তৈরিতে আগ্রহী':'Interested in building practical solutions to real-world problems',
+'সফটওয়্যার ও হার্ডওয়্যার দুই ক্ষেত্রেই শেখার চেষ্টা করি':'Continuously learning across software and hardware',
+'নতুন প্রযুক্তি শেখা ও দক্ষতা বাড়ানো আমার লক্ষ্য':'Focused on learning new technologies and improving my skills',
+'🇩🇪 জার্মান ভাষা শিখছি':'🇩🇪 Learning German',
+'বর্তমানে জার্মান ভাষার A1 পর্যায়ে পড়াশোনা করছি। ভাষার দক্ষতা বাড়িয়ে ভবিষ্যতে জার্মানিতে পড়াশোনা ও পেশাগত সুযোগের জন্য নিজেকে প্রস্তুত করছি।':'I am currently studying German at A1 level and building my language skills for future study and career opportunities in Germany.',
+'বর্তমান স্তর: A1 · শেখা চলছে':'Current level: A1 · In progress',
+'দক্ষতা ও প্রযুক্তি':'Skills & Technologies','প্রোগ্রামিং':'Programming','শেখা ও অনুশীলন':'Learning & Practice','সমস্যা সমাধান':'Problem Solving',
+'অ্যান্ড্রয়েড অ্যাপ উন্নয়ন':'Android App Development','অ্যাপ তৈরি':'App Development','ডেভেলপমেন্ট টুল':'Development Tools','অ্যাপ ব্যাকএন্ড':'App Backend',
+'এআই ও অটোমেশন':'AI & Automation','কর্মপ্রবাহ তৈরি':'Workflow Building','ওয়ার্কফ্লো':'Workflows','এআই এজেন্ট':'AI Agents','অনুসন্ধান ও অনুশীলন':'Exploration & Practice',
+'ক্লাউড ও ডেভেলপার টুল':'Cloud & Developer Tools','ক্লাউড সেবা':'Cloud Services','কোড ব্যবস্থাপনা':'Version Control','কোড এডিটর':'Code Editor',
+'মাইক্রোসফট অফিস টুলস':'Microsoft Office Tools','ডেটা ও ফর্মুলা':'Data & Formulas','প্রেজেন্টেশন':'Presentations','রোবোটিকস ও ইলেকট্রনিকস':'Robotics & Electronics','মাইক্রোকন্ট্রোলার':'Microcontrollers','ইলেকট্রনিকস':'Electronics','হাতে-কলমে কাজ':'Hands-on Projects',
+'আমার Knowledge Library':'My Knowledge Library','আমার পড়া, শেখা ও নিয়মিত অনুশীলনের নোট এখানে সাজানো আছে। স্কিল বেছে নোট পড়ুন, অথবা 3D লাইব্রেরি ঘুরে দেখুন।':'My study, learning and practice notes are collected here. Choose a skill to read notes or explore the 3D library.',
+'শিখুন, ঘুরে দেখুন,':'LEARN, EXPLORE,','নোট পড়ুন':'READ NOTES','আমার শেখা ও অনুশীলনের বিষয়গুলো এখানে সাজানো। যেকোনো স্কিল বেছে তার নোট, শেখার বিষয় এবং সংশ্লিষ্ট কাজ দেখতে পারবেন।':'Explore the skills I study and practise. Select any skill to view its notes, learning topics and related work.',
+'সহজ Skill Navigation':'Easy Skill Navigation','PDF নোট':'PDF Notes','বইয়ের পাতা উল্টানোর অভিজ্ঞতা':'Book-style Page Turning','✦ 3D Library-তে প্রবেশ করুন':'✦ Enter the 3D Library','সাধারণ স্কিল দেখুন ↓':'View Skills ↓',
+'আমার প্রকল্পসমূহ':'My Projects','শেখা, পরীক্ষা ও বাস্তব প্রয়োগের মাধ্যমে তৈরি কিছু কাজ।':'A selection of projects built through learning, experimentation and practical application.',
+'সুপার শপ ব্যবস্থাপনা':'Super Shop Management','C++ দিয়ে পণ্য ব্যবস্থাপনা, খোঁজ, হালনাগাদ, বিল তৈরি এবং বিক্রির হিসাব রাখার ডেস্কটপ অ্যাপ্লিকেশন।':'A C++ desktop application for product management, search, updates, billing and sales records.',
+'ফাইল ব্যবস্থাপনা':'File Management','মিল ব্যবস্থাপনা সিস্টেম':'Meal Management System','দৈনিক মিল, সদস্য ও খরচের হিসাব সহজভাবে পরিচালনার জন্য তৈরি ব্যবস্থাপনা প্রকল্প।':'A management project for tracking daily meals, members and expenses.',
+'অ্যাপ্লিকেশন':'Application','ডেটা ব্যবস্থাপনা':'Data Management','গ্রাহক, দোকান মালিক ও অ্যাডমিনের জন্য বুকিং, কিউ এবং দোকান ব্যবস্থাপনার অ্যান্ড্রয়েড অ্যাপ।':'An Android app for customer and shop-owner bookings, queues and shop management.',
+'মোবাইল অ্যাপ':'Mobile App','স্বয়ংক্রিয় রোবট কার':'Autonomous Robot Car','ESP32, মোটর ড্রাইভার ও সেন্সর ব্যবহার করে বাধা শনাক্ত করে চলতে পারে এমন রোবট গাড়ি।':'A robot car that detects obstacles using an ESP32, motor driver and sensors.',
+'n8n, এআই এজেন্ট ও বিভিন্ন সেবার সংযোগ ব্যবহার করে স্বয়ংক্রিয় কর্মপ্রবাহ তৈরির অনুশীলন।':'Practice building automated workflows using n8n, AI agents and service integrations.',
+'শিক্ষা ও ভাষা শিক্ষা':'Education & Language Learning','কম্পিউটার সায়েন্স অ্যান্ড ইঞ্জিনিয়ারিং':'Computer Science and Engineering','বর্তমানে অধ্যয়নরত':'Currently Studying',
+'উচ্চমাধ্যমিক সার্টিফিকেট (HSC)':'Higher Secondary Certificate (HSC)','মাধ্যমিক স্কুল সার্টিফিকেট (SSC)':'Secondary School Certificate (SSC)',
+'জার্মান ভাষা শিক্ষা':'German Language Learning','নতুন ভাষা শেখার যাত্রায় বর্তমানে A1 স্তরে আছি। নিয়মিত শব্দভান্ডার, ব্যাকরণ, পড়া, লেখা ও কথোপকথনের অনুশীলন করছি।':'I am at A1 level and regularly practise vocabulary, grammar, reading, writing and conversation.',
+'A1 · প্রাথমিক পর্যায়':'A1 · Beginner Level','আমার সনদপত্র':'My Certificates','প্রতিটি সনদে ক্লিক করলে মূল PDF নতুন ট্যাবে খুলবে।':'Click a certificate to open the original PDF in a new tab.',
+'PDF-এ সনদ দেখুন ↗':'View Certificate PDF ↗','যোগাযোগ করুন':'Get in Touch',
+'কোনো প্রকল্প, প্রযুক্তি বা সহযোগিতার বিষয়ে কথা বলতে চাইলে GitHub-এর মাধ্যমে যোগাযোগ করতে পারেন।':'For project, technology or collaboration discussions, you can reach me through GitHub.',
+'একসঙ্গে কিছু তৈরি করি':'Let’s Build Something Together','নতুন ধারণা, শেখার সুযোগ ও প্রযুক্তিভিত্তিক সহযোগিতাকে স্বাগত জানাই।':'I welcome new ideas, learning opportunities and technology collaborations.',
+'GitHub দেখুন ↗':'Visit GitHub ↗','LinkedIn প্রোফাইল দেখুন ↗':'View LinkedIn Profile ↗',
+'© ২০২৬ MD Muzahidul Islam · কৌতূহল, অনুশীলন ও নিষ্ঠায় তৈরি':'© 2026 MD Muzahidul Islam · Built with curiosity, practice and dedication',
+'বাংলা / English':'বাংলা / English','শেলফ থেকে একটি স্কিল বেছে নিন। নোট পড়তে স্কিলের কার্ডে ক্লিক করুন।':'Choose a skill from the shelves. Click a card to open its notes.',
+'🔊 সাউন্ড চালু':'🔊 Sound on','♫ পরিবেশের শব্দ: বন্ধ':'♫ Ambient sound: off','বন্ধ করুন ✕':'Close ✕',
+'লাইব্রেরির দুই পাশের তাক থেকে একটি স্কিল বেছে নিন':'Choose a skill from either side shelf','↑ সামনে হাঁটুন':'↑ Walk forward','↓ পেছনে যান':'↓ Walk back',
+'আপনি এখন লাইব্রেরির পথে · স্কিলের কার্ডে ক্লিক করে নোট দেখুন':'You are in the library · Select a skill card to view notes',
+'স্কিলের বিস্তারিত এখানে দেখা যাবে।':'Skill details will appear here.',
+'📖 আমার শেখার নোট':'📖 View My Notes','পড়াশোনা ও অনুশীলনের নোট বইয়ের মতো পড়ুন':'Read my study and practice notes like a book',
+'⌘ অনুশীলন ও কাজ':'⌘ Practice & Projects','সম্পর্কিত প্রজেক্ট ও প্র্যাকটিস':'Related projects and practice',
+'নোট লোড হচ্ছে...':'Loading notes...','পাতা উল্টাচ্ছে...':'Turning page...','পরের পৃষ্ঠা':'Next page','← আগের পৃষ্ঠা':'← Previous page',
+'পৃষ্ঠা ১ / ১':'Page 1 / 1','পরের পৃষ্ঠা →':'Next page →',
+'মোবাইলেও বাটন ব্যবহার করে পৃষ্ঠা উল্টাতে পারবেন। PDF আলাদাভাবে খুলতে বা ডাউনলোড করতে চাইলে নিচের লিংক ব্যবহার করুন:':'Use the buttons to turn pages on mobile too. To open or download the PDF separately, use the link below:',
+'PDF খুলুন ↗':'Open PDF ↗'
+};
+let websiteLanguage='en';
+function applyWebsiteLanguage(lang){
+ websiteLanguage=lang;
+ const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
+ const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
+ nodes.forEach(node=>{
+   if(!node.__originalText)node.__originalText=node.nodeValue;
+   const original=node.__originalText.trim();
+   if(!original)return;
+   if(lang==='en' && siteTranslations[original])node.nodeValue=node.nodeValue.replace(original,siteTranslations[original]);
+   else if(lang==='bn')node.nodeValue=node.nodeValue.replace(node.nodeValue.trim(),original);
+ });
+ const btn=$('#siteLanguageToggle');
+ if(btn)btn.textContent=lang==='en'?'বাংলা':'English';
+ document.documentElement.lang=lang==='en'?'en':'bn';
+ if(typeof setLibraryLanguage==='function')setLibraryLanguage(lang);
+}
+$('#siteLanguageToggle').addEventListener('click',()=>applyWebsiteLanguage(websiteLanguage==='en'?'bn':'en'));
+applyWebsiteLanguage('en');
+
 </script>
 </body></html>
